@@ -16,7 +16,7 @@ body{font-family:'Nunito',system-ui,sans-serif;background:#F0F4FF;color:#1e293b;
 #app{max-width:480px;margin:0 auto;min-height:100vh;}
 
 /* AUTH SCREENS */
-.auth-screen{display:none;flex-direction:column;align-items:center;justify-content:center;
+.auth-screen{display:none;flex-direction:column;align-items:center;justify-content:center;hh
   min-height:100vh;padding:32px 24px;
   background:linear-gradient(160deg,#dbeafe 0%,#fce7f3 100%);}
 .auth-screen.active{display:flex;}
@@ -1161,6 +1161,17 @@ function buildIntelHome(todos,semGastos,pres,tot,mT,eT,totPas){
 
 
 // ── RENDER APP ──
+function buildVista(sem,todos,pres,tot,disp,roll){
+  if(vista==="home")return bHome(sem,todos,pres,tot,disp,roll);
+  if(vista==="insights")return bInsights(sem,todos,pres,tot,disp,roll);
+  if(vista==="agregar")return bAgregar();
+  if(vista==="historial")return bHistorial(todos);
+  if(vista==="analisis")return bAnalisis(todos);
+  if(vista==="finanzas")return bFinanzas();
+  if(vista==="config")return bConfig();
+  return "";
+}
+
 function renderApp(){
   if(chartCat){try{chartCat.destroy();}catch(e){}chartCat=null;}
   if(chartMes){try{chartMes.destroy();}catch(e){}chartMes=null;}
