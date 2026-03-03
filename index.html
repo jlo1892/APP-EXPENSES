@@ -218,7 +218,7 @@ input:focus{border-color:var(--uc);background:#fff;}
 </style></head>
 
 <body>
-<div id="app">
+<div id="auth-container" style="display:flex;flex-direction:column">
   <!-- SCREEN 1: LOGIN GOOGLE -->
   <div id="scr-login" class="auth-screen active">
     <div class="auth-logo">💑</div>
@@ -301,6 +301,7 @@ input:focus{border-color:var(--uc);background:#fff;}
     </div>
   </div>
 </div>
+<div id="app" style="display:none"></div>
 <div id="toast"></div>
 <input type="file" id="ocrin" accept="image/*" capture="environment"/>
 <script>
@@ -323,6 +324,8 @@ auth=firebase.auth();
 
 // ── SCREEN HELPERS ──
 function showScreen(id){
+  document.getElementById("auth-container").style.display="flex";
+  document.getElementById("app").style.display="none";
   document.querySelectorAll(".auth-screen").forEach(function(s){s.classList.remove("active");});
   var s=document.getElementById(id);if(s)s.classList.add("active");
 }
@@ -362,8 +365,8 @@ function cargarEspacio(sid,rol){
     var light=rol==="manolo"?"#EFF6FF":"#FDF2F8";
     document.documentElement.style.setProperty("--uc",col);
     document.documentElement.style.setProperty("--ul",light);
-    // Hide all auth screens before rendering app
-    document.querySelectorAll(".auth-screen").forEach(function(s){s.classList.remove("active");});
+    document.getElementById("auth-container").style.display="none";
+    document.getElementById("app").style.display="block";
     checkSemana();checkMes();renderApp();
     dbListener=function(snap2){
       if(!fbGuard&&snap2.exists()){
@@ -488,7 +491,8 @@ function _doEntrar(sid,rol){
   var light=rol==="manolo"?"#EFF6FF":"#FDF2F8";
   document.documentElement.style.setProperty("--uc",col);
   document.documentElement.style.setProperty("--ul",light);
-  document.querySelectorAll(".auth-screen").forEach(function(s){s.classList.remove("active");});
+  document.getElementById("auth-container").style.display="none";
+  document.getElementById("app").style.display="block";
   checkSemana();checkMes();renderApp();
   // Then load data from Firebase in background
   db.ref("espacios/"+sid).once("value",function(snap){
