@@ -394,16 +394,22 @@ auth.onAuthStateChanged(function(user){
     showSpin(false);
     if(snap.exists()&&snap.val().espacioId){
       var sid=snap.val().espacioId;
-      // Check if user already has an assigned role in the space
-      db.ref("espacios/"+sid+"/miembros").once("value",function(msnap){
-        var miembros=msnap.val()||{};
-        if(miembros[user.uid]){
-          cargarEspacio(sid,miembros[user.uid]);
-        } else {
-          // User's space exists but role not set — show role picker
-          mostrarRoles(sid);
-        }
-      });
+      var savedRol=snap.val().rol||null;
+      // If rol saved directly on user node, use it (fastest path)
+      if(savedRol){
+        cargarEspacio(sid,savedRol);
+      } else {
+        // Fallback: check miembros in space
+        db.ref("espacios/"+sid+"/miembros/"+user.uid).once("value",function(msnap){
+          if(msnap.exists()&&msnap.val()){
+            // Also save to fast-path for next time
+            db.ref("usuarios/"+user.uid+"/rol").set(msnap.val());
+            cargarEspacio(sid,msnap.val());
+          } else {
+            mostrarRoles(sid);
+          }
+        });
+      }
     } else {
       // New user — show setup
       var nombre=user.displayName?user.displayName.split(" ")[0]:"";
@@ -437,7 +443,7 @@ document.getElementById("btn-crear-espacio").onclick=function(){
   updates["espacios/"+sid+"/creadoPor"]=user.uid;
   updates["espacios/"+sid+"/creadoEn"]=Date.now();
   updates["codigos/"+code]=sid;
-  updates["usuarios/"+user.uid]={espacioId:sid,email:user.email||"",nombre:user.displayName||""};
+  updates["usuarios/"+user.uid]={espacioId:sid,email:user.email||"",nombre:user.displayName||"",rol:rol};
   db.ref().update(updates,function(err){
     if(err){alert("Error creando espacio: "+err.message);return;}
     document.getElementById("code-value").textContent=code;
@@ -504,23 +510,28 @@ document.getElementById("btn-confirmar-join").onclick=function(){
 document.getElementById("back-from-codigo").onclick=function(){showScreen("scr-setup");};
 document.getElementById("back-from-join").onclick=function(){showScreen("scr-setup");};
 
-// ── MOSTRAR ROLES (usuario sin rol asignado) ──
+// ── MOSTRAR ROLES (primera vez) ──
 function mostrarRoles(sid){
-  db.ref("espacios/"+sid+"/miembros").once("value",function(msnap){
-    var miembros=msnap.val()||{};
+  db.ref("espacios/"+sid).once("value",function(espSnap){
+    var perfs=(espSnap.val()||{}).perfiles||{manolo:{emoji:"👨",nombre:"Manolo"},esposa:{emoji:"👩",nombre:"Esposa"}};
     var roles=["manolo","esposa"];
     var rolCards=[document.getElementById("btn-rol-0"),document.getElementById("btn-rol-1")];
     roles.forEach(function(r,i){
-      var perfil=ST.perfiles[r]||{emoji:i===0?"👨":"👩",nombre:r};
+      var perfil=perfs[r]||{emoji:i===0?"👨":"👩",nombre:r};
       var eEl=document.getElementById("rol"+i+"-emoji");
       var nEl=document.getElementById("rol"+i+"-name");
       if(eEl)eEl.textContent=perfil.emoji;
       if(nEl)nEl.textContent=perfil.nombre;
-      if(rolCards[i])rolCards[i].onclick=function(){
-        var updates={};
-        updates["espacios/"+sid+"/miembros/"+auth.currentUser.uid]=r;
-        db.ref().update(updates,function(){cargarEspacio(sid,r);});
-      };
+      // IIFE to fix closure — r must be captured per iteration
+      (function(rol){
+        if(rolCards[i])rolCards[i].onclick=function(){
+          var uid=auth.currentUser.uid;
+          var updates={};
+          updates["espacios/"+sid+"/miembros/"+uid]=rol;
+          updates["usuarios/"+uid+"/rol"]=rol;
+          db.ref().update(updates,function(){cargarEspacio(sid,rol);});
+        };
+      })(r);
     });
     showScreen("scr-rol");
   });
@@ -1118,7 +1129,10 @@ function renderApp(){
       '<div class="barw"><div class="barf" style="width:'+pct+'%;background:'+(rojo?"#fbbf24":"rgba(255,255,255,.9)")+'"></div></div>'+
       '<div class="ctrl">'+
         '<div style="font-size:12px;font-weight:700;opacity:.9;text-align:center;margin-bottom:10px">💰 Ajustar presupuesto</div>'+
-        '<div class="ajrow">'+AJS.map(function(a){return '<button class="aj btn-aj'+(a===ajuste?" on":"")+'" data-a="'+a+'">$'+a+'</button>';}).join("")+'</div>'+
+        '<div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">'+
+          '<input type="number" inputmode="decimal" id="inp-ajuste" value="'+ajuste+'" min="1" style="flex:1;min-width:0;border:2px solid rgba(255,255,255,.4);border-radius:10px;background:rgba(255,255,255,.15);color:#fff;padding:8px 10px;font-size:15px;font-weight:900;font-family:inherit;outline:none;text-align:center" placeholder="100"/>'+
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:5px">'+AJS.map(function(a){return '<button class="aj btn-aj" data-a="'+a+'">'+a+'</button>';}).join("")+'</div>'+
+        '</div>'+
         '<div class="pmrow"><button class="pm pmm" id="bmen">− '+fmt(ajuste)+'</button><button class="pm pmp" id="bmas">+ '+fmt(ajuste)+'</button></div>'+
       '</div>'+
     periodoActualHTML()+'</div>'+'<div id="tabs">'+
@@ -1152,7 +1166,9 @@ function bindAll(todos){
   g("bcam").onclick=function(){auth.signOut().then(function(){usuario=null;spaceId=null;currentUser=null;location.reload();});};
   g("bmen").onclick=function(){camPres(-ajuste);};
   g("bmas").onclick=function(){camPres(ajuste);};
-  qa(".btn-aj",function(b){b.onclick=function(){ajuste=parseInt(b.dataset.a);renderApp();};});
+  qa(".btn-aj",function(b){b.onclick=function(){ajuste=parseInt(b.dataset.a);var inp=document.getElementById("inp-ajuste");if(inp)inp.value=ajuste;document.getElementById("bmen").textContent="− "+fmt(ajuste);document.getElementById("bmas").textContent="+ "+fmt(ajuste);};});
+  var inpAj=document.getElementById("inp-ajuste");
+  if(inpAj){inpAj.oninput=function(){var v=parseFloat(this.value);if(v>0){ajuste=v;document.getElementById("bmen").textContent="− "+fmt(ajuste);document.getElementById("bmas").textContent="+ "+fmt(ajuste);}};}
   qa(".btn-tab",function(b){b.onclick=function(){vista=b.dataset.v;if(vista!=="analisis")mesOffset=0;if(vista!=="historial")histBusqueda="";renderApp();};});
   if(g("go-insights"))g("go-insights").onclick=function(){vista="insights";renderApp();};
   if(g("ins-back"))g("ins-back").onclick=function(){vista="home";renderApp();};
