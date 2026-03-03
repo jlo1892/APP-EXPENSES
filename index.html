@@ -432,11 +432,13 @@ document.getElementById("btn-google-login").onclick=function(){
 };
 
 // ── CREAR ESPACIO ──
+var _pendingSid=null, _pendingRol=null;
 document.getElementById("btn-crear-espacio").onclick=function(){
   var user=auth.currentUser;if(!user)return;
   var code=genCode();
   var sid=db.ref("espacios").push().key;
   var rol="manolo";
+  _pendingSid=sid; _pendingRol=rol;
   var updates={};
   updates["espacios/"+sid+"/miembros/"+user.uid]=rol;
   updates["espacios/"+sid+"/codigoInvitacion"]=code;
@@ -461,11 +463,17 @@ document.getElementById("btn-copiar-codigo").onclick=function(){
 
 // ── CONTINUAR SIN PAREJA ──
 document.getElementById("btn-continuar-sin-pareja").onclick=function(){
-  var user=auth.currentUser;if(!user)return;
-  db.ref("usuarios/"+user.uid+"/espacioId").once("value",function(snap){
-    var sid=snap.val();if(!sid)return;
-    cargarEspacio(sid,"manolo");
-  });
+  if(_pendingSid&&_pendingRol){
+    cargarEspacio(_pendingSid,_pendingRol);
+  } else {
+    var user=auth.currentUser;if(!user)return;
+    db.ref("usuarios/"+user.uid).once("value",function(snap){
+      var d=snap.val()||{};
+      var sid=d.espacioId,rol=d.rol||"manolo";
+      if(!sid){alert("Error: no se encontró el espacio.");return;}
+      cargarEspacio(sid,rol);
+    });
+  }
 };
 
 // ── UNIRSE CON CÓDIGO ──
