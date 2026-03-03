@@ -362,6 +362,8 @@ function cargarEspacio(sid,rol){
     var light=rol==="manolo"?"#EFF6FF":"#FDF2F8";
     document.documentElement.style.setProperty("--uc",col);
     document.documentElement.style.setProperty("--ul",light);
+    // Hide all auth screens before rendering app
+    document.querySelectorAll(".auth-screen").forEach(function(s){s.classList.remove("active");});
     checkSemana();checkMes();renderApp();
     dbListener=function(snap2){
       if(!fbGuard&&snap2.exists()){
@@ -463,18 +465,68 @@ document.getElementById("btn-copiar-codigo").onclick=function(){
 
 // ── CONTINUAR SIN PAREJA ──
 document.getElementById("btn-continuar-sin-pareja").onclick=function(){
-  if(_pendingSid&&_pendingRol){
-    cargarEspacio(_pendingSid,_pendingRol);
-  } else {
+  var sid=_pendingSid,rol=_pendingRol||"manolo";
+  if(!sid){
     var user=auth.currentUser;if(!user)return;
+    // Fallback: read from Firebase
     db.ref("usuarios/"+user.uid).once("value",function(snap){
       var d=snap.val()||{};
-      var sid=d.espacioId,rol=d.rol||"manolo";
-      if(!sid){alert("Error: no se encontró el espacio.");return;}
-      cargarEspacio(sid,rol);
-    });
+      sid=d.espacioId;rol=d.rol||"manolo";
+      if(!sid){alert("Error: no se encontró el espacio. Intenta cerrar sesión y volver a entrar.");return;}
+      _doEntrar(sid,rol);
+    },function(err){alert("Error de permisos Firebase: "+err.message+"\n\nRevisa las reglas de tu base de datos en Firebase Console.");});
+    return;
   }
+  _doEntrar(sid,rol);
 };
+
+function _doEntrar(sid,rol){
+  // Directly set state and render — don't wait for Firebase read
+  spaceId=sid;
+  usuario=rol;
+  var col=rol==="manolo"?"#2563EB":"#DB2777";
+  var light=rol==="manolo"?"#EFF6FF":"#FDF2F8";
+  document.documentElement.style.setProperty("--uc",col);
+  document.documentElement.style.setProperty("--ul",light);
+  document.querySelectorAll(".auth-screen").forEach(function(s){s.classList.remove("active");});
+  checkSemana();checkMes();renderApp();
+  // Then load data from Firebase in background
+  db.ref("espacios/"+sid).once("value",function(snap){
+    if(snap.exists()){
+      var v=snap.val();
+      if(v.settings)ST.settings=Object.assign({},ST.settings,v.settings);
+      if(v.perfiles)ST.perfiles=v.perfiles;
+      if(v.finanzas)ST.finanzas=v.finanzas;
+      ST.gastos=v.gastos||{};
+      ST.rollovers=v.rollovers||{};
+      ST.ultimaSemana=v.ultimaSemana||null;
+      ST.ultimoMes=v.ultimoMes||null;
+      ST.resumenesMensuales=v.resumenesMensuales||{};
+      ST.frecuentes=v.frecuentes||[];
+      ST.invitaciones=v.invitaciones||{};
+      ST.reacciones=v.reacciones||{};
+      ST.deudas=v.deudas||[];
+      ST.autoadds=v.autoadds||{};
+      ST.categorias=v.categorias||[];
+      renderApp();
+    }
+  },function(err){console.warn("Firebase read error:",err.message);});
+  // Start realtime listener
+  dbListener=function(snap2){
+    if(!fbGuard&&snap2.exists()){
+      var v2=snap2.val();
+      if(v2.settings)ST.settings=Object.assign({},ST.settings,v2.settings);
+      if(v2.perfiles)ST.perfiles=v2.perfiles;
+      ST.gastos=v2.gastos||{};
+      ST.rollovers=v2.rollovers||{};
+      ST.resumenesMensuales=v2.resumenesMensuales||{};
+      ST.frecuentes=v2.frecuentes||[];
+      ST.deudas=v2.deudas||[];
+      renderApp();
+    }
+  };
+  db.ref("espacios/"+sid).on("value",dbListener);
+}
 
 // ── UNIRSE CON CÓDIGO ──
 document.getElementById("btn-unirse-espacio").onclick=function(){showScreen("scr-join");};
