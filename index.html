@@ -322,6 +322,20 @@ firebase.initializeApp(FC);
 db=firebase.database();
 auth=firebase.auth();
 
+// Handle redirect result from mobile Google login
+auth.getRedirectResult().then(function(result){
+  if(result&&result.user){
+    // User returned from redirect - auth state will be handled by onAuthStateChanged
+  }
+}).catch(function(err){
+  showSpin(false);
+  console.error("Redirect result error:",err);
+  if(err.code&&err.code!=="auth/no-auth-event"){
+    alert("Error al iniciar sesión: "+err.message);
+  }
+});
+
+
 // ── SCREEN HELPERS ──
 function showScreen(id){
   document.getElementById("auth-container").style.display="flex";
@@ -429,11 +443,20 @@ auth.onAuthStateChanged(function(user){
 document.getElementById("btn-google-login").onclick=function(){
   showSpin(true);
   var provider=new firebase.auth.GoogleAuthProvider();
-  auth.signInWithPopup(provider).catch(function(err){
-    showSpin(false);
-    console.error(err);
-    alert("Error al iniciar sesión: "+err.message);
-  });
+  var isMobile=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)||window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone===true;
+  if(isMobile){
+    auth.signInWithRedirect(provider).catch(function(err){
+      showSpin(false);
+      console.error(err);
+      alert("Error al iniciar sesión: "+err.message);
+    });
+  } else {
+    auth.signInWithPopup(provider).catch(function(err){
+      showSpin(false);
+      console.error(err);
+      alert("Error al iniciar sesión: "+err.message);
+    });
+  }
 };
 
 // ── CREAR ESPACIO ──
@@ -1808,7 +1831,13 @@ function bConfig(){
   '<div class="ss"><div class="sst">🔔 Notificaciones</div><div class="scard">'+
     (!("Notification"in window)?'<p style="font-size:13px;color:#64748b">No soportado.</p>':
       ST.settings.notifActivas?'<p style="font-size:13px;color:#16a34a;font-weight:700">✅ Activas</p>':
-      '<button id="btn-notif" class="bprimary" style="background:#f59e0b">🔔 Activar notificaciones</button>')+'</div></div>';
+      '<button id="btn-notif" class="bprimary" style="background:#f59e0b">🔔 Activar notificaciones</button>')+'</div></div>'+'
+  '<div class="ss"><div class="sst">🔑 Ambiente</div><div class="scard">'+
+  '<div class="sr"><div style="font-size:13px;font-weight:600">Código de invitación</div>'+
+  '<div style="font-size:14px;color:var(--uc);font-weight:700;letter-spacing:2px;font-family:monospace">'+( spaceId||'—')+'</div></div>'+
+  '<div class="sr"><div style="font-size:12px;color:#64748b">Comparte este código con tu pareja para que se una al espacio.</div></div>'+
+  '<button class="bprimary" onclick="if(spaceId&&navigator.clipboard)navigator.clipboard.writeText(spaceId).then(function(){showToast(\"✅ Código copiado\")}).catch(function(){showToast(\"Código: \"+spaceId)})">📋 Copiar código</button>'+
+  '</div></div>';
 }
 
 // ── MODAL (emoji + reacciones) ──
