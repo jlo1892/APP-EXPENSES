@@ -682,8 +682,7 @@ es:{
   insTitle:'✨ Insights',
   insDesc:'Proyecciones, patrones y herramientas para tomar mejores decisiones semana a semana.',
   insProyTag:'📆 PROYECCIÓN',insProyTitle:'¿Cómo vas a cerrar este mes?',
-  insProyDesc:'Con {n} días de datos, proyectamos tu gasto total si mantienes este ritmo.',
-  insProySpent:'Gasto proyectado',insProyBudget:'Presupuesto mes',
+  insProyDesc:'Con {n} días de datos proyectamos tu gasto total si mantienes este ritmo.',
   insProyUnder:'✅ Van {n} por debajo del presupuesto',insProyOver:'⚠️ Van {n} por encima del presupuesto',
   insProyGuide:'Guía: gasta máximo ~{n} por día para cerrar el mes dentro del presupuesto',
   insProyExceeded:'⚠️ Ya excedieron el presupuesto mensual en {n}',
@@ -791,7 +790,7 @@ es:{
 
   /* Empty states */
   emptyInsights:'Agrega gastos para ver tus Insights',
-  emptyHistorial:'Sin resultados para ese filtro',
+  emptyHistorial:'Sin resultados. Prueba otro filtro o rango.',
   emptyHome:'¡Semana en cero! 🎉',
 
   /* Days/Months */
@@ -941,6 +940,102 @@ es:{
   proFeature3:'Modo pareja con control compartido',proFeature4:'Análisis profundo de hábitos de gasto',
   proFeature5:'Exportación y respaldo automático',proFeature6:'Alertas inteligentes de gasto',
   proFeature7:'Sin anuncios, para siempre',proFeatureNote:'Más control, mejores decisiones, semana a semana.',
+
+  /* Auth errors */
+  errEmailUsed:'Este correo ya está registrado.',
+  errWeakPass:'La contraseña debe tener al menos 6 caracteres.',
+  errBadEmail:'Correo electrónico inválido.',
+  errUserNotFound:'No se encontró ninguna cuenta con este correo.',
+  errWrongPass:'Contraseña incorrecta.',
+
+  /* Greeting */
+  greetHola:'¡Hola, ',
+
+  /* Toast / alerts */
+  toastWelcome:'✅ ¡Bienvenido a Saldo!',
+  toastRedirecting:'Abriendo con redirección...',
+  toastFillForm:'Completa monto y descripción',
+  toastInvalidType:'Tipo no válido',
+  toastGenerating:'Generando...',
+  toastGeneratingAI:'🤖 Generando análisis...',
+  toastAddedIncome:' agregado',
+  toastBothDates:'Completa ambas fechas',
+  toastPeriodRemoved:'Período eliminado',
+
+  /* Period banner */
+  periodCurrent:'Período actual',
+  periodDaysOf:'de',
+  periodDaysSuffix:'días',
+
+  /* Insights tags (alias keys used in code) */
+  insTagProy:'📆 PROYECCIÓN',
+  insTagPat:'🧠 PATRONES',
+  insTagSim:'🧪 SIMULADOR',
+  insTagRacha:'🎮 RACHA',
+  insTagScore:'⭐ PUNTAJE',
+  insTitleProy:'¿Cómo vas a cerrar este mes?',
+  insTitlePat:'Lo que tus hábitos revelan',
+  insTitleSim:'¿Qué pasaría si gastaras menos en...?',
+  insTitleRacha:'Racha de ahorro semanal',
+  insTitleScore:'Puntaje de la semana',
+  insDescPat:'Detectamos tendencias en tus movimientos que fácilmente pasan desapercibidas.',
+  insDescSim:'Elige una categoría y mira cuánto podrías ahorrar si reduces ese gasto.',
+  insDescRacha:'Tu progreso hacia la meta de ahorro. Mantener la racha semana a semana construye hábitos financieros sólidos.',
+  insDescScore:'Un número del 0 al 100 que resume qué tan bien manejaste tu dinero esta semana.',
+
+  /* Simulator labels */
+  simEstimated:'Ahorro estimado: ',
+  simPerYear:' al año',
+  simProjDrop:'La proyección bajaría a: ',
+  simVsBud:'Vs presupuesto (',
+
+  /* Insights — simulator label overrides */
+  insSimCatLbl:'Categoría',
+  insSimReduceLbl:'Reducir',
+
+  /* Streak labels */
+  insStreakLabel:'Racha:',
+  insStreakWeeks:'sem.',
+  insGoalLabel:'Meta:',
+
+  /* Analysis */
+  analBestDay:'🔴 Día con el mayor gasto promedio',
+  analPieTitle:'🥧 Por categoría',
+  analTop50:' representa más del 50% del gasto',
+  analTrendPct:'% mayor que ',
+
+  /* Finances sections */
+  finCalcDist:'📊 Distribución calculada',
+  finSectionPeriod:'Ciclo personalizado',
+  finPeriodDesc:'Define un período diferente al calendario semanal (ej: quincenal).',
+  finSectionDebts:'Deudas y créditos',
+  finSectionFrec:'Frecuentes',
+  finSectionAI:'Resúmenes mensuales con IA',
+
+  /* Config */
+  cfgWeekDesc:'Elige el día con el que empieza tu semana de gastos.',
+  cfgGoalDesc:'Cuánto quieres ahorrar cada semana. Activa la barra de progreso, la racha y el puntaje en Insights.',
+  cfgSpaceShare:'Comparte este código para invitar a alguien',
+
+  /* Prompt extras */
+  promptExtraIncome:'¿Cuánto ingreso extra agregar al presupuesto de esta semana?',
+
+  /* Cycle explanation keys */
+  onbCycleExplainWeekly:'Saldo te da una guía de gasto para cada semana. Sencillo y directo — ideal para revisar tu dinero con frecuencia.',
+  onbCycleExplainBiweekly:'Recibes o manejas tu dinero cada dos semanas. Saldo divide ese monto entre 2 y te da una meta semanal clara para no quedarte corto antes del próximo ciclo.',
+  onbCycleExplainMonthly:'Manejas todo tu dinero a inicio de mes. Saldo divide el disponible entre las semanas del mes y te dice cuánto puedes gastar cada semana sin descuadrar el mes.',
+  onbCycleExplainCustom:'Defines tu propio ciclo. Saldo adapta el plan y te convierte el monto en una guía semanal para que siempre sepas qué es seguro gastar hoy.',
+
+  /* Fixed expenses total label */
+  onbFixedTotal:'Total fijos:',
+  onbFixedNamePh:'Nombre (ej: Renta)',
+  onbFixedAmtPh:'Monto',
+
+  /* Auth space errors */
+  errSpaceFull:'Este espacio ya tiene 2 integrantes.',
+  errSpaceNotFound:'Error: no se encontró el espacio.',
+
+
 },
 
 en:{
@@ -1026,8 +1121,6 @@ en:{
   histCalDays:'Su,Mo,Tu,We,Th,Fr,Sa',
 
   /* Insights */
-  insTitle:'✨ Financial insights',
-  insDesc:'Deep analysis of your spending habits, projections, and tools to make better financial decisions together.',
   insProyTag:'📆 PROJECTION',insProyTitle:'How are you tracking for the month?',
   insProyDesc:'With {n} days of data, we calculate your projected total at this pace.',
   insProySpent:'Projected spend',insProyBudget:'Monthly budget',
@@ -1057,7 +1150,7 @@ en:{
   insScoreTip4:'💡 To improve: you\'re spending more than last week.',
   insScoreTip5:'✅ Very solid score. Keep it up!',
   insOutOf:'out of 100 possible points',
-  insNoData:'Add expenses to see your Insights',
+  insNoData:'No data yet',
 
   /* Análisis */
   analTitle:'📈 Monthly analysis',
@@ -1094,7 +1187,6 @@ en:{
   finFixedName:'Fixed expense name:',finFixedAmount:'Monthly amount:',
   finFrecTitle:'⚡ Frequent expenses',finFrecDesc:'Quick-add shortcuts for expenses you log regularly — one tap and done.',
   finFrecAdd:'+ Add quick access',finFrecDesc2:'Description of frequent expense:',finFrecAmount:'Amount:',
-  finDebtTitle:'💳 Debts',finDebtDesc:'Total balance',finDebtMonthly:'Monthly payment',
   finDebtActive:'active',finDebtActives:'active',
   finDebtAdd:'+ Add debt',finDebtPause:'⏸️ Pause',finDebtResume:'▶ Activate',
   finExport:'📥 Export CSV',
@@ -1106,13 +1198,10 @@ en:{
   /* Config */
   cfgTitle:'⚙️ Settings',
   cfgProfileTitle:'👤 Profiles',cfgProfileSave:'Save',cfgProfileEmoji:'Change emoji',
-  cfgWeekTitle:'📅 Week starts on',cfgWeekDays:'Sun,Mon,Tue,Wed,Thu,Fri,Sat',
   cfgBudgetTitle:'💰 Weekly budget',
-  cfgGoalTitle:'🎯 Weekly savings goal',cfgGoalPlaceholder:'0',cfgGoalSave:'Save goal',
   cfgCatTitle:'🏷️ Custom categories',cfgCatPlaceholder:'Category name',cfgCatAdd:'+ Agregar categoría',
   cfgNotifTitle:'Notifications',cfgNotifLabel:'🔔 Daily reminders',
   cfgNotifSub:'Daily reminders so you never forget to log your expenses',cfgNotifOn:'Enabled',cfgNotifOff:'Enable',
-  cfgSpaceTitle:'🔗 Your space',cfgSpaceCode:'Space code',cfgSpaceCopy:'📋 Copy code',
   cfgLangTitle:'🌐 Idioma / Language',
 
   /* Shared / modals */
@@ -1187,34 +1276,13 @@ en:{
   /* Auth extras */
   greetHola:'Hello, ',toastRedirecting:'Opening with redirect...',
   toastWelcome:'✅ Welcome to Saldo!',periodCurrent:'Current period',
-  insTagProy:'📆 PROJECTION',insTitleProy:'How will we close out the month?',
-  insTagPat:'🧠 PATTERNS',insTitlePat:'What your spending habits reveal',
-  insDescPat:'Analizamos sus movimientos para detectar tendencias que pueden pasar desapercibidas.',
-  insTagSim:'🧪 SIMULATOR',insTitleSim:'What if you spent less on...?',
-  insDescSim:'Elige una categoría y simula cuánto ahorrarían si redujeran ese gasto.',
-  insTagRacha:'🎮 STREAK',insTitleRacha:'How are you doing this week?',
-  insDescRacha:'Your progress toward your weekly savings goal. Keeping the streak builds good habits.',
-  insTagScore:'🏁 SCORE',insTitleScore:'Financial score',
-  insDescScore:'A 0-100 number summarizing how well your finances are going this week. <b>70+ is excellent.</b>',
-  simEstimated:'Estimated savings: ',simPerYear:' per year',
-  simProjDrop:'Projection would drop to: ',simVsBud:'Vs budget (',
   toastBothDates:'Complete both dates',toastPeriodRemoved:'Period removed',
   cfgWeekTitle:'When does the week start?',
   cfgWeekDesc:'Choose the day you consider the start of your spending week.',
   cfgGoalTitle:'Weekly savings goal',
-  cfgGoalDesc:'Set how much you want to save each week. This activates the progress bar and streak in Insights.',
+  cfgGoalDesc:'How much you want to save each week. This unlocks the progress bar, streak and score in Insights.',
   cfgSpaceTitle:'Your space code',
   cfgSpaceShare:'Share this code to invite someone',
-  homeLastExpenses:'Recent transactions',
-  aiMonthSummary:'🤖 Monthly AI summary',
-  analBudgetOver:'Budget exceeded by ',
-  analTrendPct:'% higher than ',analTop50:' accounts for over 50% of spending',
-  analBestDay:'🔴 Day with highest avg spending',
-  finDebtTitle:'💳 Debts & credit',finCalcDist:'📊 Calculated distribution',
-  finSectionPeriod:'Custom period',
-  finPeriodDesc:'Define a custom period different from calendar weeks (e.g. bi-weekly).',
-  finSectionDebts:'Debts & credit',finSectionFrec:'Quick access',
-  finSectionAI:'Monthly AI summaries',
   toastFillForm:'Fill in amount and description',toastInvalidType:'Invalid type',
   toastGenerating:'Generating...',toastGeneratingAI:'🤖 Generating analysis...',
   toastAddedIncome:' added',
@@ -1223,8 +1291,6 @@ en:{
   onb2Title:"What's your name?",onb2Desc:'Personalize your profile. You can always update it later.',
   onb3Title:'What is your monthly income?',
   onb3Desc:'This is the starting point. Saldo subtracts your fixed obligations and divides the rest across your weeks — so you always know your safe daily spending number.',
-  onb4Title:'Gastos fijos',
-  onb4Desc:'Rent, utilities, subscriptions... Everything you pay every month. Deducted before calculating your free budget.',
   onb5Title:'How do you track your money?',
   onb5Desc:'Choose your cycle. Saldo adjusts your weekly budget and projections based on how you divide your month.',
   onb6Title:'Your weekly money guide',onb6Desc:'Each section has a clear purpose. A quick map before you start.',
@@ -1246,7 +1312,7 @@ en:{
   errWrongPass:'Incorrect password.',
   simIfSpend:'spending ',simPct:'% less',
   onbTourTitle:'Meet Saldo',
-  homeRolloverSuffix:' from previous balance',homeBudgetIncreased:'Your budget increased to ',
+  homeRolloverSuffix:' from last week',homeBudgetIncreased:'Your budget this week is ',
 
   /* Header inline keys */
   heroSignOut:'Sign out ↩',heroAvailable:'💰 Available this week',heroOverBudget:'⚠️ Over budget by',
@@ -1335,13 +1401,70 @@ en:{
 
   aiMonthSummary:'🤖 Monthly AI summary',
   analBudgetOver:'Budget exceeded by ',
-  analTrendPct:'% higher than ',analTop50:' accounts for over 50% of spending',
+  analTrendPct:'% higher than ',analTop50:' represents over 50% of total spending',
   analBestDay:'🔴 Day with highest avg spending',
   finDebtTitle:'💳 Debts & credit',finCalcDist:'📊 Calculated distribution',
   finSectionPeriod:'Custom period',
   finPeriodDesc:'Define a custom period different from calendar weeks (e.g. bi-weekly).',
-  finSectionDebts:'Debts & credit',finSectionFrec:'Quick access',
+  finSectionDebts:'Debts & credit',finSectionFrec:'Frequent expenses',
   finSectionAI:'Monthly AI summaries',
+  /* Missing EN keys that are in code */
+  onb7MonthIncome:'Monthly income',
+
+  /* Cycle explanation */
+  onbCycleExplainWeekly:'Saldo gives you a weekly spending guide — simple and direct. Perfect if you like to check in on your money often.',
+  onbCycleExplainBiweekly:'You manage your money every two weeks. Saldo splits that amount in half and gives you a clear weekly target so you never run dry before your next cycle.',
+  onbCycleExplainMonthly:'You handle all your money at the start of the month. Saldo divides it across the weeks ahead and tells you how much to spend each week without losing control mid-month.',
+  onbCycleExplainCustom:'You define your own cycle. Saldo adapts the plan and converts your amount into a weekly guide so you always know what is safe to spend today.',
+
+  /* Period banner */
+  periodDaysOf:'of',
+  periodDaysSuffix:'days',
+
+  /* Insights tag/title aliases */
+  insTagProy:'📆 PROJECTION',
+  insTagPat:'🧠 PATTERNS',
+  insTagSim:'🧪 SIMULATOR',
+  insTagRacha:'🎮 STREAK',
+  insTagScore:'⭐ SCORE',
+  insTitleProy:'How are you tracking for the month?',
+  insTitlePat:'What your habits reveal',
+  insTitleSim:'What if you cut spending on...?',
+  insTitleRacha:'Weekly savings streak',
+  insTitleScore:'Your weekly score',
+  insDescPat:'We detect trends in your spending that are easy to miss on your own.',
+  insDescSim:'Pick a category and see how much you could save by spending less there.',
+  insDescRacha:'Your progress toward your savings goal. Keeping the streak week after week builds real financial habits.',
+  insDescScore:'A 0–100 score that shows how well you managed your money this week.',
+
+  /* Simulator */
+  simEstimated:'Estimated savings: ',
+  simPerYear:' per year',
+  simProjDrop:'Projection would drop to: ',
+  simVsBud:'Vs budget (',
+  insSimCatLbl:'Category',
+  insSimReduceLbl:'Reduce by',
+
+  /* Streak */
+  insStreakLabel:'Streak:',
+  insStreakWeeks:'wk.',
+  insGoalLabel:'Goal:',
+
+  /* Fixed expenses labels in onboarding */
+  onbFixedTotal:'Fixed total:',
+  onbFixedNamePh:'Name (e.g. Rent)',
+  onbFixedAmtPh:'Amount',
+
+
+  /* Missing EN keys */
+  cfgGoalSave:'Save goal',
+  cfgSpaceCode:'Space code',
+  cfgSpaceCopy:'📋 Copy code',
+  finDebtDesc:'Monthly payment',
+  errSpaceFull:'This space already has 2 members.',
+  errSpaceNotFound:'Error: space not found.',
+
+
 }
 };
 function t(k){return(TX[LANG]||TX.es)[k]||(TX.es[k]||k);}
@@ -1523,7 +1646,7 @@ document.getElementById("btn-crear-espacio").onclick=function(){
 document.getElementById("btn-copiar-codigo").onclick=function(){var code=document.getElementById("code-value").textContent;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast(t('toastCodeCopied')+code,"#10b981");}).catch(function(){prompt("Copia:",code);});}else{prompt("Copia:",code);}};
 document.getElementById("btn-continuar-sin-pareja").onclick=function(){
   var sid=_pendingSid,rol=_pendingRol||"manolo";
-  if(!sid){var user=auth.currentUser;if(!user)return;db.ref("usuarios/"+user.uid).once("value",function(snap){var d=snap.val()||{};sid=d.espacioId;rol=d.rol||"manolo";if(!sid){alert("Error: no se encontró el espacio.");return;}_doEntrar(sid,rol);});return;}
+  if(!sid){var user=auth.currentUser;if(!user)return;db.ref("usuarios/"+user.uid).once("value",function(snap){var d=snap.val()||{};sid=d.espacioId;rol=d.rol||"manolo";if(!sid){alert(t("errSpaceNotFound")||"Error: espacio no encontrado");return;}_doEntrar(sid,rol);});return;}
   _doEntrar(sid,rol);
 };
 function _doEntrar(sid,rol){
@@ -1548,7 +1671,7 @@ document.getElementById("btn-confirmar-join").onclick=function(){
     var sid=snap.val();
     db.ref("espacios/"+sid+"/miembros").once("value",function(ms){
       var miembros=ms.val()||{},uids=Object.keys(miembros);
-      if(uids.length>=2&&!miembros[user.uid]){alert("Este espacio ya tiene 2 integrantes.");return;}
+      if(uids.length>=2&&!miembros[user.uid]){alert(t("errSpaceFull")||"Este espacio ya tiene 2 integrantes.");return;}
       if(miembros[user.uid]){var u={};u["usuarios/"+user.uid]={espacioId:sid,email:user.email||"",nombre:user.displayName||""};db.ref().update(u,function(){cargarEspacio(sid,miembros[user.uid]);});return;}
       var rolExistente=uids.length>0?Object.values(miembros)[0]:null;
       var rolNuevo=rolExistente==="manolo"?"esposa":"manolo";
@@ -1627,7 +1750,7 @@ function periodoActualHTML(){
   var pct=Math.min(100,Math.round((diasTransc/Math.max(totalDias,1))*100));
   var fF=function(d){return d.toLocaleDateString("es-MX",{day:"2-digit",month:"short"});};
   var calc=calcPres(),presPeriodo=calc?Math.round(calc.porSem*(totalDias/7)):0;
-  return '<div class="periodoBanner"><div><div style="font-size:10px;opacity:.8;text-transform:uppercase;letter-spacing:1px">'+t('periodCurrent')+'</div><div style="font-size:13px;font-weight:800;margin-top:2px">'+fF(d1)+' — '+fF(d2)+'</div></div><div style="flex:1;margin:0 12px"><div class="periodoBar"><div class="periodoBarF" style="width:'+pct+'%"></div></div><div style="font-size:10px;margin-top:3px;opacity:.8;text-align:center">'+diasTransc+' de '+totalDias+' días</div></div>'+(presPeriodo?'<div style="text-align:right"><div style="font-size:10px;opacity:.8">'+t('finCurPeriod')+'</div><div style="font-size:14px;font-weight:900">'+fmt(presPeriodo)+'</div></div>':"")+'</div>';
+  return '<div class="periodoBanner"><div><div style="font-size:10px;opacity:.8;text-transform:uppercase;letter-spacing:1px">'+t('periodCurrent')+'</div><div style="font-size:13px;font-weight:800;margin-top:2px">'+fF(d1)+' — '+fF(d2)+'</div></div><div style="flex:1;margin:0 12px"><div class="periodoBar"><div class="periodoBarF" style="width:'+pct+'%"></div></div><div style="font-size:10px;margin-top:3px;opacity:.8;text-align:center">'+diasTransc+' '+t('periodDaysOf')+' '+totalDias+' '+t('periodDaysSuffix')+'</div></div>'+(presPeriodo?'<div style="text-align:right"><div style="font-size:10px;opacity:.8">'+t('finCurPeriod')+'</div><div style="font-size:14px;font-weight:900">'+fmt(presPeriodo)+'</div></div>':"")+'</div>';
 }
 
 // ── AHORRO — calcula acumulado desde todo el historial ──
@@ -1769,7 +1892,7 @@ function insWhatIf(todos){
   allCats().forEach(function(c){if(c.id==="renta")return;var v=st.byCatProj[c.id]||0;if(v>mx){mx=v;def=c.id;}});
   if(!WF.cat)WF.cat=def;
   var opts=allCats().map(function(c){return'<option value="'+c.id+'" '+(WF.cat===c.id?"selected":"")+'>'+c.i+" "+c.l+'</option>';}).join("");
-  return'<div class="ins-section"><div class="ins-head"><span class="ins-tag" style="background:#fff7ed;color:#9a3412">'+t('insTagSim')+'</span><div class="ins-title">'+t('insTitleSim')+'</div><div class="ins-desc">'+t('insDescSim')+'</div></div><div class="ins-body"><div style="display:flex;gap:10px;align-items:center;margin-bottom:12px"><label style="font-size:12px;color:#64748b;font-weight:700;flex-shrink:0">Categoría</label><select id="wfCat" style="flex:1;border:2px solid #e2e8f0;border-radius:10px;padding:9px 12px;font-weight:800;font-family:inherit;font-size:13px;background:#f8fafc">'+opts+'</select></div><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><div style="font-size:12px;color:#64748b;font-weight:700;flex-shrink:0">Reducir</div><input id="wfPct" type="range" min="0" max="60" step="5" value="'+(WF.pct||20)+'" style="flex:1"/><div id="wfPctLbl" style="font-size:13px;font-weight:900;color:#111827;width:40px;text-align:right">'+(WF.pct||20)+'%</div></div><div id="wfOut" style="background:#f8fafc;border:2px solid #e2e8f0;border-radius:12px;padding:12px;font-size:13px;line-height:1.8;color:#374151"></div></div></div>';
+  return'<div class="ins-section"><div class="ins-head"><span class="ins-tag" style="background:#fff7ed;color:#9a3412">'+t('insTagSim')+'</span><div class="ins-title">'+t('insTitleSim')+'</div><div class="ins-desc">'+t('insDescSim')+'</div></div><div class="ins-body"><div style="display:flex;gap:10px;align-items:center;margin-bottom:12px"><label style="font-size:12px;color:#64748b;font-weight:700;flex-shrink:0">'+t('insSimCatLbl')+'</label><select id="wfCat" style="flex:1;border:2px solid #e2e8f0;border-radius:10px;padding:9px 12px;font-weight:800;font-family:inherit;font-size:13px;background:#f8fafc">'+opts+'</select></div><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><div style="font-size:12px;color:#64748b;font-weight:700;flex-shrink:0">'+t('insSimReduceLbl')+'</div><input id="wfPct" type="range" min="0" max="60" step="5" value="'+(WF.pct||20)+'" style="flex:1"/><div id="wfPctLbl" style="font-size:13px;font-weight:900;color:#111827;width:40px;text-align:right">'+(WF.pct||20)+'%</div></div><div id="wfOut" style="background:#f8fafc;border:2px solid #e2e8f0;border-radius:12px;padding:12px;font-size:13px;line-height:1.8;color:#374151"></div></div></div>';
 }
 
 function insGamificacion(semGastos,todos,pres,tot){
@@ -1777,7 +1900,7 @@ function insGamificacion(semGastos,todos,pres,tot){
   var lvl=prog>=1?{t:t('gameGoal'),d:t('gameGoalDesc')}:prog>=0.75?{t:t('gameAlmost'),d:t('gameAlmostDesc')}:prog>=0.5?{t:t('gameGood'),d:t('gameGoodDesc')}:prog>=0.25?{t:t('gameOk'),d:t('gameOkDesc')}:{t:t('gameCold'),d:t('gameColdDesc')};
   var streak=0;
   if(meta>0){var dI2=ST.settings.semanaInicia||4;for(var off=1;off<=12;off++){var i=iniSem(dI2,off),f2=finSem(i),t2=Object.values(ST.gastos||{}).filter(function(g){var d=new Date(g.fecha);return d>=i&&d<=f2;}).reduce(function(s,g){return s+g.monto;},0);if(Math.max(0,(ST.settings.presupuesto||0)-t2)>=meta){streak++;}else break;}}
-  return'<div class="ins-section"><div class="ins-head"><span class="ins-tag" style="background:#faf5ff;color:#6d28d9">'+t('insTagRacha')+'</span><div class="ins-title">'+t('insTitleRacha')+'</div><div class="ins-desc">'+t('insDescRacha')+'</div></div><div class="ins-body"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><div style="font-size:15px;font-weight:800">'+lvl.t+'</div>'+(meta>0?'<div style="font-size:12px;color:#64748b">Racha: <b>'+streak+' sem.</b></div>':'')+'</div><div style="background:#f1f5f9;border-radius:50px;height:10px;overflow:hidden;margin-bottom:8px"><div style="background:linear-gradient(90deg,#8b5cf6,#ec4899);height:10px;border-radius:50px;width:'+Math.round(prog*100)+'%"></div></div><div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:10px"><span>0</span>'+(meta>0?'<span>Meta: '+fmt(meta)+'</span>':'<span>'+Math.round(prog*100)+'%</span>')+'</div><div style="font-size:13px;color:#374151">'+lvl.d+'</div>'+(meta===0?'<div style="font-size:12px;color:#94a3b8;margin-top:8px">💡 Configura una meta de ahorro en Ajustes para ver la racha.</div>':'')+'</div></div>';
+  return'<div class="ins-section"><div class="ins-head"><span class="ins-tag" style="background:#faf5ff;color:#6d28d9">'+t('insTagRacha')+'</span><div class="ins-title">'+t('insTitleRacha')+'</div><div class="ins-desc">'+t('insDescRacha')+'</div></div><div class="ins-body"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><div style="font-size:15px;font-weight:800">'+lvl.t+'</div>'+(meta>0?'<div style="font-size:12px;color:#64748b">'+t('insStreakLabel')+' <b>'+streak+' '+t('insStreakWeeks')+'</b></div>':'')+'</div><div style="background:#f1f5f9;border-radius:50px;height:10px;overflow:hidden;margin-bottom:8px"><div style="background:linear-gradient(90deg,#8b5cf6,#ec4899);height:10px;border-radius:50px;width:'+Math.round(prog*100)+'%"></div></div><div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:10px"><span>0</span>'+(meta>0?'<span>'+t('insGoalLabel')+' '+fmt(meta)+'</span>':'<span>'+Math.round(prog*100)+'%</span>')+'</div><div style="font-size:13px;color:#374151">'+lvl.d+'</div>'+(meta===0?'<div style="font-size:12px;color:#94a3b8;margin-top:8px">'+t('insGameNoMeta')+'</div>':'')+'</div></div>';
 }
 
 function insScore(todos,pres,tot,mT,eT,totPas){
@@ -2721,8 +2844,8 @@ function renderOnbStep(){
     var fijosList=ONB_FIJOS.map(function(f,i){return'<div class="onb-fijo-item" style="margin-bottom:6px"><div><div class="onb-fijo-name">'+escapeHtml(f.nombre)+'</div></div><div style="display:flex;align-items:center;gap:8px"><span class="onb-fijo-amt">'+fmt(f.monto)+'</span><button class="onb-fijo-del" data-fi="'+i+'">✕</button></div></div>';}).join("");
     var totalFijos=ONB_FIJOS.reduce(function(s,f){return s+f.monto;},0);
     c.innerHTML='<div class="onb-icon">📋</div><div class="onb-title">'+t('onb4Title')+'</div><div class="onb-desc">'+t('onb4Desc')+'</div>'
-      +(ONB_FIJOS.length?'<div style="width:100%;margin-bottom:8px">'+fijosList+'</div><div style="font-size:13px;font-weight:800;color:#64748b;text-align:right;width:100%;margin-bottom:12px">Total: <span style="color:#ef4444">'+fmt(totalFijos)+'</span></div>':"<div style=\"color:#94a3b8;font-size:13px;margin-bottom:16px;text-align:center;width:100%\">'+t('finFixedNone')+'</div>'")
-      +'<div style="display:flex;gap:8px;width:100%;margin-bottom:8px"><input class="onb-inp" style="flex:1;margin:0" id="onb-fijo-nombre" placeholder="Nombre (ej: Renta)"/><input class="onb-inp" style="width:110px;margin:0" id="onb-fijo-monto" type="number" inputmode="decimal" placeholder="Monto"/></div>'
+      +(ONB_FIJOS.length?'<div style="width:100%;margin-bottom:8px">'+fijosList+'</div><div style="font-size:13px;font-weight:800;color:#64748b;text-align:right;width:100%;margin-bottom:12px">'+t('onbFixedTotal')+' <span style="color:#ef4444">'+fmt(totalFijos)+'</span></div>':"<div style=\"color:#94a3b8;font-size:13px;margin-bottom:16px;text-align:center;width:100%\">'+t('finFixedNone')+'</div>'")
+      +'<div style="display:flex;gap:8px;width:100%;margin-bottom:8px"><input class="onb-inp" style="flex:1;margin:0" id="onb-fijo-nombre" placeholder="'+t('onbFixedNamePh')+'"/><input class="onb-inp" style="width:110px;margin:0" id="onb-fijo-monto" type="number" inputmode="decimal" placeholder="'+t('onbFixedAmtPh')+'"/></div>'
       +'<button onclick="onbAddFijo()" style="width:100%;padding:11px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px dashed #93c5fd;border-radius:12px;color:#1d4ed8;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit">'+t('onbAddFixed')+'</button>'
       +'<button class="onb-btn" id="onb-next" style="margin-top:12px">'+(ONB_FIJOS.length?t('onbNext'):t('onbContinueNoFixed'))+'</button>'
       +'<button class="onb-btn sec" id="onb-back" style="margin-top:6px">'+t('onbBack')+'</button>';
@@ -2733,6 +2856,11 @@ function renderOnbStep(){
     var totalFijos2=ONB_FIJOS.reduce(function(s,f){return s+f.monto;},0);
     var libre=Math.max(0,(ONB_INGRESO||0)-totalFijos2);
     var semsxMes=4.33,sugPres=Math.round(libre/semsxMes/100)*100;
+    var cycleExplainKey={semanal:"onbCycleExplainWeekly",quincenal:"onbCycleExplainBiweekly",mensual:"onbCycleExplainMonthly",personalizado:"onbCycleExplainCustom"};
+    var cycleIconMap={semanal:"📆",quincenal:"🗓️",mensual:"📊",personalizado:"🎯"};
+    var cycleColors={semanal:"#2563EB",quincenal:"#7c3aed",mensual:"#0e7490",personalizado:"#059669"};
+    var selColor=cycleColors[ONB_PERIODO]||"#2563EB";
+    var cycleNameKey={semanal:"onbPeriodWeekly",quincenal:"onbPeriodBiweekly",mensual:"onbPeriodMonthly",personalizado:"onbPeriodCustom"};
     c.innerHTML='<div class="onb-icon">📅</div><div class="onb-title">'+t('onb5Title')+'</div><div class="onb-desc">'+t('onb5Desc')+'</div>'
       +'<div class="onb-periodo-opts">'
       +'<button class="onb-periodo-btn'+(ONB_PERIODO==="semanal"?" sel":"")+'" data-p="semanal"><span class="onb-periodo-icon">📆</span><span class="onb-periodo-label">'+t('onbPeriodWeekly')+'</span></button>'
@@ -2740,8 +2868,12 @@ function renderOnbStep(){
       +'<button class="onb-periodo-btn'+(ONB_PERIODO==="mensual"?" sel":"")+'" data-p="mensual"><span class="onb-periodo-icon">📊</span><span class="onb-periodo-label">'+t('onbPeriodMonthly')+'</span></button>'
       +'<button class="onb-periodo-btn'+(ONB_PERIODO==="personalizado"?" sel":"")+'" data-p="personalizado"><span class="onb-periodo-icon">🎯</span><span class="onb-periodo-label">'+t('onbPeriodCustom')+'</span></button>'
       +'</div>'
-      +(ONB_INGRESO>0?'<div class="onb-highlight"><div class="onb-big">'+fmt(sugPres)+'</div><div class="onb-big-label">'+t('onbSuggestedLbl')+'</div><div style="font-size:11px;color:#64748b;margin-top:4px">'+t('onbSuggestedSub').replace('{0}',fmt(libre))+'</div></div>':"")
-      +'<button class="onb-btn" id="onb-next" style="margin-top:8px">'+t('onbNext')+'</button>'
+      +'<div style="width:100%;background:linear-gradient(135deg,#f8fafc,#eff6ff);border-left:4px solid '+selColor+';border-radius:0 12px 12px 0;padding:14px 16px;margin-top:8px">'
+      +'<div style="font-size:11px;font-weight:800;color:'+selColor+';text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px">'+t(cycleNameKey[ONB_PERIODO])+'</div>'
+      +'<div style="font-size:13px;color:#374151;line-height:1.65">'+t(cycleExplainKey[ONB_PERIODO])+'</div>'
+      +(ONB_INGRESO>0&&libre>0?'<div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e8f0"><div style="font-size:11px;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px">'+t('onbSuggestedLbl')+'</div><div style="font-size:24px;font-weight:900;color:'+selColor+'">'+fmt(sugPres)+'</div><div style="font-size:11px;color:#64748b;margin-top:1px">'+t('onbSuggestedSub').replace('{0}',fmt(libre))+'</div></div>':"")
+      +'</div>'
+      +'<button class="onb-btn" id="onb-next" style="margin-top:12px">'+t('onbNext')+'</button>'
       +'<button class="onb-btn sec" id="onb-back" style="margin-top:6px">'+t('onbBack')+'</button>';
     document.querySelectorAll(".onb-periodo-btn").forEach(function(b){b.onclick=function(){ONB_PERIODO=b.dataset.p;renderOnbStep();};});
     document.getElementById("onb-next").onclick=onbNext;
