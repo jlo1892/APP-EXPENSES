@@ -594,6 +594,67 @@ var EMOJI_ALL=["🏠","🏡","🏢","🏪","🛋️","🪴","🔑","🛠️","�
 var LANG=(function(){try{return localStorage.getItem('saldo_lang')||'es';}catch(e){return'es';}})();
 function setLang(l){LANG=l;try{localStorage.setItem('saldo_lang',l);}catch(e){}document.documentElement.lang=l==='en'?'en':'es';toast(l==='en'?'🇺🇸 English selected':'🇲🇽 Español seleccionado','#2563EB');}
 
+// ── CURRENCIES ──
+var CURRENCIES = [
+  // Americas — shown first
+  {code:'MXN', es:'Peso mexicano',      en:'Mexican Peso'},
+  {code:'USD', es:'Dólar estadounidense', en:'US Dollar'},
+  {code:'CAD', es:'Dólar canadiense',   en:'Canadian Dollar'},
+  {code:'GTQ', es:'Quetzal guatemalteco', en:'Guatemalan Quetzal'},
+  {code:'BZD', es:'Dólar de Belice',    en:'Belize Dollar'},
+  {code:'HNL', es:'Lempira hondureño',  en:'Honduran Lempira'},
+  {code:'NIO', es:'Córdoba nicaragüense', en:'Nicaraguan Córdoba'},
+  {code:'CRC', es:'Colón costarricense', en:'Costa Rican Colón'},
+  {code:'PAB', es:'Balboa panameño',    en:'Panamanian Balboa'},
+  {code:'CUP', es:'Peso cubano',        en:'Cuban Peso'},
+  {code:'DOP', es:'Peso dominicano',    en:'Dominican Peso'},
+  {code:'HTG', es:'Gourde haitiano',    en:'Haitian Gourde'},
+  {code:'JMD', es:'Dólar jamaicano',    en:'Jamaican Dollar'},
+  {code:'TTD', es:'Dólar de Trinidad',  en:'Trinidad & Tobago Dollar'},
+  {code:'BBD', es:'Dólar de Barbados',  en:'Barbadian Dollar'},
+  {code:'BSD', es:'Dólar bahameño',     en:'Bahamian Dollar'},
+  {code:'XCD', es:'Dólar del Caribe Oriental', en:'East Caribbean Dollar'},
+  {code:'AWG', es:'Florín arubeño',     en:'Aruban Florin'},
+  {code:'ANG', es:'Florín antillano',   en:'Netherlands Antillean Guilder'},
+  {code:'KYD', es:'Dólar de Caimán',   en:'Cayman Islands Dollar'},
+  {code:'BMD', es:'Dólar de Bermudas', en:'Bermudian Dollar'},
+  {code:'GYD', es:'Dólar guyanés',     en:'Guyanese Dollar'},
+  {code:'SRD', es:'Dólar surinamés',   en:'Surinamese Dollar'},
+  {code:'COP', es:'Peso colombiano',   en:'Colombian Peso'},
+  {code:'VES', es:'Bolívar venezolano', en:'Venezuelan Bolívar'},
+  {code:'PEN', es:'Sol peruano',       en:'Peruvian Sol'},
+  {code:'BOB', es:'Boliviano',         en:'Bolivian Boliviano'},
+  {code:'BRL', es:'Real brasileño',    en:'Brazilian Real'},
+  {code:'CLP', es:'Peso chileno',      en:'Chilean Peso'},
+  {code:'ARS', es:'Peso argentino',    en:'Argentine Peso'},
+  {code:'PYG', es:'Guaraní paraguayo', en:'Paraguayan Guaraní'},
+  {code:'UYU', es:'Peso uruguayo',     en:'Uruguayan Peso'},
+  {code:'FKP', es:'Libra malvinense',  en:'Falkland Islands Pound'},
+  // International
+  {code:'EUR', es:'Euro',              en:'Euro'},
+  {code:'GBP', es:'Libra esterlina',   en:'British Pound'},
+  {code:'CHF', es:'Franco suizo',      en:'Swiss Franc'},
+  {code:'JPY', es:'Yen japonés',       en:'Japanese Yen'},
+  {code:'CNY', es:'Yuan chino',        en:'Chinese Yuan'},
+  {code:'INR', es:'Rupia india',       en:'Indian Rupee'},
+  {code:'AUD', es:'Dólar australiano', en:'Australian Dollar'},
+];
+
+
+// Build currency selector HTML
+function buildCurrencySelect(id, selectedCode, style) {
+  var ams = CURRENCIES.slice(0, 34); // Americas (first 34)
+  var intl = CURRENCIES.slice(34);   // International
+  var lbl = LANG === 'en' ? 'en' : 'es';
+  var opts = '<optgroup label="' + (LANG==='en'?'Americas':'Américas') + '">';
+  ams.forEach(function(c){ opts += '<option value="'+c.code+'"'+(c.code===selectedCode?' selected':'')+'>'+c.code+' — '+c[lbl]+'</option>'; });
+  opts += '</optgroup><optgroup label="'+(LANG==='en'?'International':'Internacional')+'">';
+  intl.forEach(function(c){ opts += '<option value="'+c.code+'"'+(c.code===selectedCode?' selected':'')+'>'+c.code+' — '+c[lbl]+'</option>'; });
+  opts += '</optgroup>';
+  return '<select id="'+id+'" style="'+(style||'width:100%;border:2px solid #e2e8f0;border-radius:10px;padding:10px 12px;font-size:14px;font-weight:700;font-family:inherit;background:#f8fafc')+'">' + opts + '</select>';
+}
+
+
 var TX={
 es:{
   /* Login */
@@ -762,7 +823,7 @@ es:{
   cfgBudgetTitle:'💰 Presupuesto semanal',
   cfgGoalTitle:'🎯 Meta de ahorro',cfgGoalPlaceholder:'0',cfgGoalSave:'Guardar meta',
   cfgCatTitle:'🏷️ Tus categorías',cfgCatPlaceholder:'Nombre de la categoría',cfgCatAdd:'+ Agregar categoría',
-  cfgNotifTitle:'Notificaciones',cfgNotifLabel:'🔔 Recordatorios diarios',
+  cfgEmojiLabel:'Emoji',cfgNotifTitle:'Notificaciones',cfgNotifLabel:'🔔 Recordatorios diarios',
   cfgNotifSub:'Recordatorios para no olvidar registrar tus gastos',cfgNotifOn:'Activadas',cfgNotifOff:'Activar',
   cfgSpaceTitle:'🔗 Código de espacio',cfgSpaceCode:'Código de espacio',cfgSpaceCopy:'📋 Copiar código',
   cfgLangTitle:'🌐 Idioma / Language',
@@ -922,10 +983,10 @@ es:{
 
   /* Onboarding weekly logic explanation */
   onbHowTitle:'¿Cómo calcula Saldo tu presupuesto?',
-  onbHowStep1:'Ingreso mensual ÷ 4.3 semanas = base semanal',
-  onbHowStep2:'− Gastos fijos = dinero realmente disponible',
-  onbHowStep3:'÷ Días restantes = cuánto puedes gastar hoy',
-  onbHowStep4:'Al agregar gastos, todo se actualiza al instante',
+  onbHowStep1:'Tu ingreso mensual ÷ 4.3 semanas = tu presupuesto semanal base',
+  onbHowStep2:'Menos tus gastos fijos = el dinero que realmente puedes usar',
+  onbHowStep3:'Entre los días que quedan en la semana = tu guía diaria de gasto',
+  onbHowStep4:'Cada gasto que registras actualiza al instante todo lo anterior',
 
   /* Onboarding step 7 labels */
   onb7MonthIncome:'Ingreso mensual',
@@ -1035,6 +1096,21 @@ es:{
   errSpaceFull:'Este espacio ya tiene 2 integrantes.',
   errSpaceNotFound:'Error: no se encontró el espacio.',
 
+
+  /* Currency */
+  cfgCurrTitle:'💱 Moneda',
+  cfgCurrLabel:'Moneda de la app',
+  cfgCurrDesc:'Define cómo se muestran los valores en toda la app.',
+  cfgCurrSave:'Guardar moneda',
+  cfgCurrAmericas:'Américas',
+  cfgCurrIntl:'Internacional',
+  onbCurrLabel:'Moneda',
+  onbCurrDesc:'¿En qué moneda manejas tu dinero?',
+  onbWhy43Title:'¿Por qué ~4.3 semanas?',
+  onbWhy43Body:'Un mes no siempre tiene exactamente 4 semanas. El año tiene 52 semanas divididas entre 12 meses — eso da 4.33 semanas por mes en promedio. Saldo usa ese promedio para que tu guía semanal sea realista, no demasiado optimista ni demasiado corta.',
+  toastDeleted:'🗑️ Eliminado',
+  toastCopied:'📋 Copiado: ',
+  errCopy:'No se pudo copiar. Copia manualmente:',
 
 },
 
@@ -1200,7 +1276,7 @@ en:{
   cfgProfileTitle:'👤 Profiles',cfgProfileSave:'Save',cfgProfileEmoji:'Change emoji',
   cfgBudgetTitle:'💰 Weekly budget',
   cfgCatTitle:'🏷️ Custom categories',cfgCatPlaceholder:'Category name',cfgCatAdd:'+ Agregar categoría',
-  cfgNotifTitle:'Notifications',cfgNotifLabel:'🔔 Daily reminders',
+  cfgEmojiLabel:'Emoji',cfgNotifTitle:'Notifications',cfgNotifLabel:'🔔 Daily reminders',
   cfgNotifSub:'Daily reminders so you never forget to log your expenses',cfgNotifOn:'Enabled',cfgNotifOff:'Enable',
   cfgLangTitle:'🌐 Idioma / Language',
 
@@ -1382,10 +1458,10 @@ en:{
 
   /* Onboarding weekly logic explanation */
   onbHowTitle:'How does Saldo calculate your budget?',
-  onbHowStep1:'Monthly income ÷ 4.3 weeks = weekly base',
-  onbHowStep2:'− Fixed expenses = money truly available',
-  onbHowStep3:'÷ Days remaining = how much you can spend today',
-  onbHowStep4:'Each expense you log updates everything instantly',
+  onbHowStep1:'Your monthly income ÷ 4.3 weeks = your weekly base budget',
+  onbHowStep2:'Minus your fixed expenses = money you are truly free to spend',
+  onbHowStep3:'Divided by days left in the week = your safe daily spending number',
+  onbHowStep4:'Every expense you add instantly updates all three numbers above',
   onb7FixedLabel:'Fixed expenses',
   onb7FreeLabel:'Free to spend',
   onb7PeriodLabel:'Your budget',
@@ -1465,11 +1541,31 @@ en:{
   errSpaceNotFound:'Error: space not found.',
 
 
+  /* Currency */
+  cfgCurrTitle:'💱 Currency',
+  cfgCurrLabel:'App currency',
+  cfgCurrDesc:'Controls how money values are displayed throughout the app.',
+  cfgCurrSave:'Save currency',
+  cfgCurrAmericas:'Americas',
+  cfgCurrIntl:'International',
+  onbCurrLabel:'Currency',
+  onbCurrDesc:'What currency do you use for your money?',
+  onbWhy43Title:'Why ~4.3 weeks?',
+  onbWhy43Body:'A month does not always have exactly 4 weeks. A year has 52 weeks spread across 12 months — that averages to 4.33 weeks per month. Saldo uses that average so your weekly guide is realistic, not too generous or too short.',
+  toastDeleted:'🗑️ Deleted',
+  toastCopied:'📋 Copied: ',
+  errCopy:"Can't copy. Please copy manually:",
+
 }
 };
 function t(k){return(TX[LANG]||TX.es)[k]||(TX.es[k]||k);}
 function allCats(){return CATS.concat((ST.categorias||[]).map(function(c){return{id:c.id,l:c.l,i:c.i,c:c.c||"#64748b"};}));}
-var fmt=function(n){return new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN",minimumFractionDigits:0}).format(n);};
+function fmt(n){
+  var cur=(ST&&ST.settings&&ST.settings.currency)||'MXN';
+  var loc=LANG==='en'?'en-US':'es-MX';
+  try{return new Intl.NumberFormat(loc,{style:'currency',currency:cur,minimumFractionDigits:0,maximumFractionDigits:0}).format(n||0);}
+  catch(e){return cur+' '+(Math.round(n||0)).toLocaleString();}
+}
 var fmtD=function(iso){var loc=LANG==="en"?"en-US":"es-MX";return new Date(iso).toLocaleDateString(loc,{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"});};
 var fmtR=function(a,b){var loc=LANG==="en"?"en-US":"es-MX";return a.toLocaleDateString(loc,{day:"2-digit",month:"short"})+" – "+b.toLocaleDateString(loc,{day:"2-digit",month:"short"});};
 function iniSem(dI,off){off=off||0;var h=new Date();var d=h.getDay()-dI;if(d<0)d+=7;var i=new Date(h);i.setDate(h.getDate()-d-(off*7));i.setHours(0,0,0,0);return i;}
@@ -1480,7 +1576,7 @@ function semsEnMes(y,m){return Math.ceil(new Date(y,m+1,0).getDate()/7);}
 function escapeHtml(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
 
 // ── STATE ──
-var ST={settings:{presupuesto:0,semanaInicia:4,metaAhorro:0,notifActivas:false,periodoInicio:"",periodoFin:"",onboardingDone:false,tipoCuenta:"individual"},perfiles:{manolo:{nombre:"Usuario 1",emoji:"😊"},esposa:{nombre:"Usuario 2",emoji:"😄"}},finanzas:{ingresoMensual:0,gastosRecurrentes:[]},gastos:{},rollovers:{},ultimaSemana:null,ultimoMes:null,resumenesMensuales:{},frecuentes:[],invitaciones:{},reacciones:{},deudas:[],autoadds:{},categorias:[]};
+var ST={settings:{presupuesto:0,semanaInicia:4,metaAhorro:0,notifActivas:false,periodoInicio:"",periodoFin:"",onboardingDone:false,tipoCuenta:"individual",currency:"MXN"},perfiles:{manolo:{nombre:"Usuario 1",emoji:"😊"},esposa:{nombre:"Usuario 2",emoji:"😄"}},finanzas:{ingresoMensual:0,gastosRecurrentes:[]},gastos:{},rollovers:{},ultimaSemana:null,ultimoMes:null,resumenesMensuales:{},frecuentes:[],invitaciones:{},reacciones:{},deudas:[],autoadds:{},categorias:[]};
 var usuario=null,vista="home",ajuste=100,cat="super",emojiFor=null;
 var saving=false,splitActivo=false,ocrLoading=false,mesOffset=0;
 var chartCat=null,chartMes=null,generandoResumen=false;
@@ -1643,7 +1739,7 @@ document.getElementById("btn-crear-espacio").onclick=function(){
   var u={};u["espacios/"+sid+"/miembros/"+user.uid]=rol;u["espacios/"+sid+"/codigoInvitacion"]=code;u["espacios/"+sid+"/creadoPor"]=user.uid;u["espacios/"+sid+"/creadoEn"]=Date.now();u["codigos/"+code]=sid;u["usuarios/"+user.uid]={espacioId:sid,email:user.email||"",nombre:user.displayName||"",rol:rol};
   db.ref().update(u,function(err){if(err){alert("Error: "+err.message);return;}document.getElementById("code-value").textContent=code;showScreen("scr-codigo");});
 };
-document.getElementById("btn-copiar-codigo").onclick=function(){var code=document.getElementById("code-value").textContent;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast(t('toastCodeCopied')+code,"#10b981");}).catch(function(){prompt("Copia:",code);});}else{prompt("Copia:",code);}};
+document.getElementById("btn-copiar-codigo").onclick=function(){var code=document.getElementById("code-value").textContent;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast(t('toastCopied')+code,"#10b981");}).catch(function(){toast(t("errCopy")+" "+code,"#f59e0b");});}else{toast(t("errCopy")+" "+code,"#f59e0b");}};
 document.getElementById("btn-continuar-sin-pareja").onclick=function(){
   var sid=_pendingSid,rol=_pendingRol||"manolo";
   if(!sid){var user=auth.currentUser;if(!user)return;db.ref("usuarios/"+user.uid).once("value",function(snap){var d=snap.val()||{};sid=d.espacioId;rol=d.rol||"manolo";if(!sid){alert(t("errSpaceNotFound")||"Error: espacio no encontrado");return;}_doEntrar(sid,rol);});return;}
@@ -2124,6 +2220,7 @@ function bindAll(todos){
     qa(".pesv",function(b){b.onclick=function(){savePerfil(b.dataset.k);};});
     qa(".db",function(b){b.onclick=function(){setDia(parseInt(b.dataset.i));};});
     var bsm=g("btn-save-meta");if(bsm)bsm.onclick=saveMeta;
+    var bscur=g("btn-save-currency");if(bscur)bscur.onclick=function(){var sel=g("cfg-currency-sel");if(sel){ST.settings.currency=sel.value;saveDB();toast(t("toastSaved"));renderApp();}};
     var bn=g("btn-notif");if(bn)bn.onclick=pedirNotif;
     var bacc=g("btn-add-catcustom");if(bacc)bacc.onclick=addCatCustom;
     qa(".btn-del-catcustom",function(b){b.onclick=function(){delCatCustom(parseInt(b.dataset.i));};});
@@ -2134,7 +2231,7 @@ function bindAll(todos){
     qa(".emoji-opt",function(b){b.onclick=function(){tempCatEmoji=b.dataset.e;saveEmojiReciente(b.dataset.e);emojiPickerOpenCat=false;emojiSearchCat="";renderApp();};});
     // Copy space code button
     var bcc=g("btn-copy-spcode");
-    if(bcc)bcc.onclick=function(){var codeEl=g("conf-code-val");var code=codeEl?codeEl.textContent.trim():"";if(!code||code==="···")return;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast(t('toastCodeCopied')+code,"#10b981");}).catch(function(){prompt("Copia:",code);});}else{prompt("Copia:",code);}};
+    if(bcc)bcc.onclick=function(){var codeEl=g("conf-code-val");var code=codeEl?codeEl.textContent.trim():"";if(!code||code==="···")return;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast(t('toastCopied')+code,"#10b981");}).catch(function(){toast(t("errCopy")+" "+code,"#f59e0b");});}else{toast(t("errCopy")+" "+code,"#f59e0b");}};
   }
   if(editGastoId){
     if(g("modal-close"))g("modal-close").onclick=function(){editGastoId=null;renderApp();};
@@ -2562,7 +2659,7 @@ function bConfig(){
     +'<div class="ss"><div class="sst">'+t('cfgGoalTitle')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('cfgGoalDesc')+'</div><div class="sr"><label class="flbl" style="margin:0">🎯 '+t('cfgWeekGoalLabel')+'</label><input id="inp-meta" type="number" inputmode="decimal" value="'+(s.metaAhorro||0)+'" style="width:120px;text-align:right;padding:8px 10px;font-size:15px;font-weight:900"/></div><button id="btn-save-meta" class="bprimary" style="background:#8b5cf6">'+t('cfgGoalSave')+'</button></div></div>'
     +'<div class="ss"><div class="sst">'+t('cfgSpaceTitle')+'</div><div class="space-code-card"><div style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">'+t('cfgSpaceShare')+'</div><div id="conf-code-val" class="space-code-value">···</div><div class="space-code-label">'+t('cfgSpaceCode')+'</div><button id="btn-copy-spcode" class="btn-copy-code">'+t('cfgSpaceCopy')+'</button></div><div style="font-size:12px;color:#94a3b8;padding:8px">'+t('cfgSpaceJoinHint')+'</div></div>'
     +'<div class="ss"><div class="sst">'+t('cfgCatTitle')+'</div><div class="scard">'
-    +'<div style="margin-bottom:12px"><label class="flbl">Emoji</label>'
+    +'<div style="margin-bottom:12px"><label class="flbl">'+t('cfgEmojiLabel')+'</label>'
     +'<button id="btn-emoji-picker-toggle" class="btn-emoji-toggle"><span style="font-size:28px">'+tempCatEmoji+'</span><span style="font-size:14px;font-weight:700">'+t('cfgEmojiSelect')+'</span><span style="font-size:12px;color:#64748b;margin-left:auto">'+(emojiPickerOpenCat?"▲":"▼")+'</span></button>'
     +(emojiPickerOpenCat?'<div class="emoji-picker-wrap"><input id="emoji-search-cat" class="emoji-search-inp" placeholder="🔍 '+t('histSearchPh').replace('🔍 ','')+'..." value="'+escapeHtml(emojiSearchCat)+'" />'
     +(recientes.length&&!emojiSearchCat?'<div class="emoji-section-label">'+t('cfgEmojiRecent')+'</div><div class="emoji-grid">'+recientes.map(function(e){return'<button class="emoji-opt '+(tempCatEmoji===e?"sel":"")+'\" data-e="'+e+'">'+e+'</button>';}).join("")+'</div>':"")
@@ -2572,6 +2669,7 @@ function bConfig(){
     +'<button id="btn-add-catcustom" style="width:100%;padding:11px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px dashed #93c5fd;border-radius:12px;color:#1d4ed8;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation">'+t('cfgCatAdd')+'</button>'
     +(custCats.length?'<div style="margin-top:12px">'+custCats.map(function(c,i){return'<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:24px">'+c.i+'</span><span style="flex:1;font-size:14px;font-weight:700">'+escapeHtml(c.l)+'</span><button class="btn-del-catcustom" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:14px">🗑️</button></div>';}).join("")+'</div>':"")
     +'</div></div>'
+    +'<div class="ss"><div class="sst">'+t('cfgCurrTitle')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('cfgCurrDesc')+'</div>'+buildCurrencySelect('cfg-currency-sel',(s.currency||'MXN'))+'<button id="btn-save-currency" class="bprimary" style="background:#0ea5e9;margin-top:10px">'+t('cfgCurrSave')+'</button></div></div>'
     +'<div class="ss"><div class="sst">'+t('cfgLangTitle')+'</div><div class="scard"><div class="sr"><div style="font-size:14px;font-weight:700">🌐 '+t('cfgLangLabel')+'</div><div style="display:flex;gap:8px;margin-top:8px">'
     +'<button id="lang-es-cfg" onclick="setLang(\'es\');renderApp();" style="background:'+(LANG==='es'?'#2563EB':'#f1f5f9')+';color:'+(LANG==='es'?'#fff':'#475569')+';border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit">🇲🇽 Español</button>'
     +'<button id="lang-en-cfg" onclick="setLang(\'en\');renderApp();" style="background:'+(LANG==='en'?'#2563EB':'#f1f5f9')+';color:'+(LANG==='en'?'#fff':'#475569')+';border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit">🇺🇸 English</button>'
@@ -2597,7 +2695,7 @@ function renderCharts(todos){
   if(nonZeroData.length){try{chartCat=new Chart(canvCat,{type:"doughnut",data:{labels:catLabels,datasets:[{data:nonZeroData,backgroundColor:catColors,borderWidth:3,borderColor:"#fff"}]},options:{responsive:true,plugins:{legend:{position:"bottom",labels:{font:{family:"Nunito",weight:"700"},boxWidth:12,padding:12}}}}});}catch(e){}}}
   var canvMes=document.getElementById("chartMes");
   if(canvMes){var weeks=[];var bud=monthlyBudgetForDays(7);for(var w=0;w<5;w++){var wI=new Date(y,m,1+w*7);var wF=new Date(y,m,7+w*7,23,59,59);if(wI>fin)break;wF=wF>fin?fin:wF;var wTot=del.filter(function(g){var f=new Date(g.fecha);return f>=wI&&f<=wF;}).reduce(function(s,g){return s+g.monto;},0);weeks.push({label:"Sem "+(w+1),tot:wTot});}
-  if(weeks.length){try{chartMes=new Chart(canvMes,{type:"bar",data:{labels:weeks.map(function(w){return w.label;}),datasets:[{label:"Gasto",data:weeks.map(function(w){return w.tot;}),backgroundColor:weeks.map(function(w){return w.tot>(ST.settings.presupuesto||0)?"rgba(239,68,68,.8)":"rgba(37,99,235,.75)";}),borderRadius:10,borderSkipped:false},{label:"Presupuesto",data:weeks.map(function(){return ST.settings.presupuesto||0;}),type:"line",borderColor:"rgba(16,185,129,.8)",borderWidth:2,pointRadius:0,borderDash:[5,5],fill:false}]},options:{responsive:true,plugins:{legend:{display:true,labels:{font:{family:"Nunito",weight:"700"},boxWidth:12,padding:10}}},scales:{y:{ticks:{callback:function(v){return"$"+v.toLocaleString();},font:{family:"Nunito",weight:"700"}},grid:{color:"#f1f5f9"}},x:{grid:{display:false},ticks:{font:{family:"Nunito",weight:"700"}}}}}});}catch(e){}}}
+  if(weeks.length){try{chartMes=new Chart(canvMes,{type:"bar",data:{labels:weeks.map(function(w){return w.label;}),datasets:[{label:"Gasto",data:weeks.map(function(w){return w.tot;}),backgroundColor:weeks.map(function(w){return w.tot>(ST.settings.presupuesto||0)?"rgba(239,68,68,.8)":"rgba(37,99,235,.75)";}),borderRadius:10,borderSkipped:false},{label:"Presupuesto",data:weeks.map(function(){return ST.settings.presupuesto||0;}),type:"line",borderColor:"rgba(16,185,129,.8)",borderWidth:2,pointRadius:0,borderDash:[5,5],fill:false}]},options:{responsive:true,plugins:{legend:{display:true,labels:{font:{family:"Nunito",weight:"700"},boxWidth:12,padding:10}}},scales:{y:{ticks:{callback:function(v){return fmt(v);},font:{family:"Nunito",weight:"700"}},grid:{color:"#f1f5f9"}},x:{grid:{display:false},ticks:{font:{family:"Nunito",weight:"700"}}}}}});}catch(e){}}}
 }
 
 // ── ACTIONS ──
@@ -2621,7 +2719,7 @@ function doAgregar(){
   if(im)im.value="";if(id2)id2.value="";splitActivo=false;notaActiva=false;esInvitacion=false;
   toast(t('toastRecorded'));vista="home";renderApp();
 }
-function delGasto(id){if(!confirm(t('confirmDelete')))return;delete ST.gastos[id];saveDB();toast("🗑️ Eliminado","#64748b");renderApp();}
+function delGasto(id){if(!confirm(t('confirmDelete')))return;delete ST.gastos[id];saveDB();toast(t("toastDeleted"),"#64748b");renderApp();}
 function addReaccion(gid,r){if(!ST.reacciones)ST.reacciones={};if(!ST.reacciones[gid])ST.reacciones[gid]={};ST.reacciones[gid][usuario]=r;reactFor=null;saveDB();renderApp();}
 function selEmoji(k,e){ST.perfiles[k].emoji=e;emojiFor=null;saveDB();renderApp();}
 function savePerfil(k){var inp=document.getElementById("pinp-"+k);var n=(inp&&inp.value||"").trim();if(!n){toast(t("toastWriteName"),"#f59e0b");return;}ST.perfiles[k].nombre=n;saveDB();toast(t('toastSaved'));renderApp();}
@@ -2786,11 +2884,11 @@ document.getElementById("btn-forgot-submit").onclick=function(){
 document.getElementById("forgot-email").addEventListener("keydown",function(e){if(e.key==="Enter")document.getElementById("btn-forgot-submit").click();});
 
 // ── ONBOARDING ──
-var ONB_STEP=0,ONB_TIPO="individual",ONB_FIJOS=[],ONB_PERIODO="semanal";
+var ONB_STEP=0,ONB_TIPO="individual",ONB_FIJOS=[],ONB_PERIODO="semanal",ONB_CURRENCY="MXN";
 var ONB_U1="",ONB_U2="",ONB_E1="😊",ONB_E2="😄",ONB_INGRESO=0;
 
 function showOnboarding(){
-  ONB_STEP=0;ONB_FIJOS=[];ONB_TIPO="individual";ONB_PERIODO="semanal";
+  ONB_STEP=0;ONB_FIJOS=[];ONB_TIPO="individual";ONB_PERIODO="semanal";ONB_CURRENCY=(ST.settings.currency||"MXN");
   ONB_U1=ST.perfiles.manolo.nombre||"";ONB_U2=ST.perfiles.esposa.nombre||"";
   ONB_E1=ST.perfiles.manolo.emoji||"😊";ONB_E2=ST.perfiles.esposa.emoji||"😄";
   ONB_INGRESO=ST.finanzas&&ST.finanzas.ingresoMensual>0?ST.finanzas.ingresoMensual:0;
@@ -2830,21 +2928,34 @@ function renderOnbStep(){
   } else if(ONB_STEP===2){
     c.innerHTML='<div class="onb-icon">💰</div><div class="onb-title">'+t('onb3Title')+'</div><div class="onb-desc">'+t('onb3Desc')+'</div>'
       +'<div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;width:100%">'+t('onbMonthlyLbl')+'</div>'
-      +'<input class="onb-inp" id="onb-ingreso" type="number" inputmode="decimal" placeholder="Ej: 20000" value="'+(ONB_INGRESO||"")+'">'
-      +'<div style="width:100%;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1.5px solid #bfdbfe;border-radius:14px;padding:12px 14px;margin-top:14px">'
+      +'<input class="onb-inp" id="onb-ingreso" type="number" inputmode="decimal" placeholder="20000" value="'+(ONB_INGRESO||"")+'">'
+      +'<div style="width:100%;margin-top:10px;margin-bottom:0">'
+      +'<div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">'+t('onbCurrLabel')+'</div>'
+      +buildCurrencySelect('onb-currency-sel', ONB_CURRENCY)
+      +'</div>'
+      +'<div style="width:100%;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1.5px solid #bfdbfe;border-radius:14px;padding:12px 14px;margin-top:12px">'
       +'<div style="font-size:11px;font-weight:800;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">'+t('onbHowTitle')+'</div>'
       +'<div style="display:flex;flex-direction:column;gap:5px">'
       +['onbHowStep1','onbHowStep2','onbHowStep3','onbHowStep4'].map(function(k,i){return'<div style="display:flex;align-items:flex-start;gap:8px"><div style="min-width:20px;height:20px;background:'+(i===0?'#2563EB':i===1?'#ef4444':i===2?'#10b981':'#8b5cf6')+';border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;flex-shrink:0">'+(i+1)+'</div><div style="font-size:12px;color:#374151;line-height:1.4">'+t(k)+'</div></div>';}).join('')
-      +'</div></div>'
-      +'<button class="onb-btn" id="onb-next" style="margin-top:16px">'+t('onbNext')+'</button>'
+      +'</div>'
+      +'<details style="margin-top:8px;border-top:1px solid #bfdbfe;padding-top:8px"><summary style="font-size:11px;font-weight:800;color:#2563EB;cursor:pointer;letter-spacing:.5px">'+t('onbWhy43Title')+'</summary><div style="font-size:11px;color:#374151;line-height:1.55;margin-top:6px;padding-left:4px">'+t('onbWhy43Body')+'</div></details>'
+      +'</div>'
+      +'<button class="onb-btn" id="onb-next" style="margin-top:14px">'+t('onbNext')+'</button>'
       +'<button class="onb-btn sec" id="onb-back" style="margin-top:6px">'+t('onbBack')+'</button>';
-    document.getElementById("onb-next").onclick=function(){ONB_INGRESO=parseFloat(document.getElementById("onb-ingreso").value)||0;onbNext();};
+    var curSel=document.getElementById('onb-currency-sel');
+    if(curSel)curSel.onchange=function(){ONB_CURRENCY=this.value;ST.settings.currency=this.value;};
+    document.getElementById("onb-next").onclick=function(){
+      ONB_INGRESO=parseFloat(document.getElementById("onb-ingreso").value)||0;
+      var cs=document.getElementById('onb-currency-sel');
+      if(cs){ONB_CURRENCY=cs.value;ST.settings.currency=cs.value;}
+      onbNext();
+    };
     document.getElementById("onb-back").onclick=onbBack;
   } else if(ONB_STEP===3){
     var fijosList=ONB_FIJOS.map(function(f,i){return'<div class="onb-fijo-item" style="margin-bottom:6px"><div><div class="onb-fijo-name">'+escapeHtml(f.nombre)+'</div></div><div style="display:flex;align-items:center;gap:8px"><span class="onb-fijo-amt">'+fmt(f.monto)+'</span><button class="onb-fijo-del" data-fi="'+i+'">✕</button></div></div>';}).join("");
     var totalFijos=ONB_FIJOS.reduce(function(s,f){return s+f.monto;},0);
     c.innerHTML='<div class="onb-icon">📋</div><div class="onb-title">'+t('onb4Title')+'</div><div class="onb-desc">'+t('onb4Desc')+'</div>'
-      +(ONB_FIJOS.length?'<div style="width:100%;margin-bottom:8px">'+fijosList+'</div><div style="font-size:13px;font-weight:800;color:#64748b;text-align:right;width:100%;margin-bottom:12px">'+t('onbFixedTotal')+' <span style="color:#ef4444">'+fmt(totalFijos)+'</span></div>':"<div style=\"color:#94a3b8;font-size:13px;margin-bottom:16px;text-align:center;width:100%\">'+t('finFixedNone')+'</div>'")
+      +(ONB_FIJOS.length?'<div style="width:100%;margin-bottom:8px">'+fijosList+'</div><div style="font-size:13px;font-weight:800;color:#64748b;text-align:right;width:100%;margin-bottom:12px">'+t('onbFixedTotal')+' <span style="color:#ef4444">'+fmt(totalFijos)+'</span></div>':'<div style="color:#94a3b8;font-size:13px;margin-bottom:16px;text-align:center;width:100%">'+t('finFixedNone')+'</div>')
       +'<div style="display:flex;gap:8px;width:100%;margin-bottom:8px"><input class="onb-inp" style="flex:1;margin:0" id="onb-fijo-nombre" placeholder="'+t('onbFixedNamePh')+'"/><input class="onb-inp" style="width:110px;margin:0" id="onb-fijo-monto" type="number" inputmode="decimal" placeholder="'+t('onbFixedAmtPh')+'"/></div>'
       +'<button onclick="onbAddFijo()" style="width:100%;padding:11px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px dashed #93c5fd;border-radius:12px;color:#1d4ed8;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit">'+t('onbAddFixed')+'</button>'
       +'<button class="onb-btn" id="onb-next" style="margin-top:12px">'+(ONB_FIJOS.length?t('onbNext'):t('onbContinueNoFixed'))+'</button>'
@@ -2944,6 +3055,7 @@ function onbFinish(){
   ST.settings.tipoCuenta=ONB_TIPO;
   ST.settings.onboardingDone=true;
   if(ONB_INGRESO>0)ST.finanzas.ingresoMensual=ONB_INGRESO;
+  if(ONB_CURRENCY)ST.settings.currency=ONB_CURRENCY;
   if(ONB_FIJOS.length)ST.finanzas.gastosRecurrentes=ONB_FIJOS;
   ST.perfiles.manolo.nombre=ONB_U1||"Usuario 1";
   ST.perfiles.manolo.emoji=ONB_E1;
