@@ -597,9 +597,9 @@ function setLang(l){LANG=l;try{localStorage.setItem('saldo_lang',l);}catch(e){}d
 var TX={
 es:{
   /* Login */
-  loginTitle:'Tu dinero, en orden',
-  loginSub:'Registra, analiza y controla tus<br>finanzas personales o en pareja.',
-  loginHint:'🔒 Tus datos son privados y seguros',
+  loginTitle:'Tu dinero, bajo control',
+  loginSub:'Saldo te dice cuánto puedes gastar esta semana<br>— sin hojas de cálculo ni sorpresas.',
+  loginHint:'🔒 Privado y seguro. Sin anuncios.',
   btnGoogle:'Continuar con Google',
   btnMicrosoft:'Continuar con Microsoft',
   btnEmail:'Iniciar sesión con email',
@@ -624,32 +624,32 @@ es:{
   rolTitle:'¿Quién eres tú?',rolSub:'Hay dos perfiles en este espacio.',
 
   /* Tabs */
-  tabHome:'📊 Resumen',tabInsights:'✨ Insights',tabAgregar:'➕ Agregar',
+  tabHome:'📊 Mi semana',tabInsights:'✨ Insights',tabAgregar:'➕ Agregar',
   tabHistorial:'📅 Historial',tabAnalisis:'📈 Análisis',tabFinanzas:'💰 Finanzas',tabConfig:'⚙️ Ajustes',
 
   /* Onboarding */
   onbSkip:'Saltar →',onbNext:'Continuar →',onbBack:'← Atrás',onbStart:'Empezar →',
-  onbIndividualTitle:'Uso individual',onbIndividualDesc:'Solo yo controlo mis finanzas',
-  onbCoupleTitle:'En pareja o compartido',onbCoupleDesc:'Dos personas en el mismo espacio',
+  onbIndividualTitle:'Uso individual',onbIndividualDesc:'Solo yo llevo mis finanzas',
+  onbCoupleTitle:'En pareja o compartido',onbCoupleDesc:'Dos personas, un presupuesto compartido',
   onbUser1Ph:'Tu nombre',onbUser2Ph:'Usuario 2',
-  onbMonthlyLbl:'Ingreso mensual (MXN)',
-  onbAddFixed:'+ Agregar gasto fijo',onbContinueNoFixed:'Continuar sin gastos fijos',
+  onbMonthlyLbl:'Ingreso mensual',
+  onbAddFixed:'+ Agregar gasto fijo',onbContinueNoFixed:'Continuar sin agregar fijos',
   onbPeriodWeekly:'Semanal',onbPeriodBiweekly:'Quincenal',onbPeriodMonthly:'Mensual',onbPeriodCustom:'Personalizado',
-  onbSuggestedLbl:'Presupuesto sugerido por semana',onbSuggestedSub:'Ingreso libre ({0}) ÷ 4.3 semanas',
+  onbSuggestedLbl:'Tu presupuesto semanal sugerido',onbSuggestedSub:'({0} libres) ÷ 4.3 semanas del mes',
 
   /* Home */
-  homeWeek:'Semana actual',homeAvail:'💰 Disponible',homeOver:'⚠️ Te pasaste por',
+  homeWeek:'Esta semana',homeAvail:'💰 Disponible',homeOver:'⚠️ Te pasaste en',
   homeSpent:'Gastado',homeBudget:'Presupuesto',homeNewWeek:'🆕 Nueva semana',
-  homeSavWeek:'🌱 Ahorro esta semana',homeSpentLabel:'Gastado',homeThisMonth:'Este mes',
-  homeAccumulated:'Total acumulado',homeEstMonth:'Estimado fin mes',
-  homeSavedPrev:'✨ Llevan',homeSavedPrev2:'ahorrado en semanas anteriores',
+  homeSavWeek:'🌱 Tu semana en números',homeSpentLabel:'Gastado',homeThisMonth:'Este mes',
+  homeAccumulated:'Ahorrado acumulado',homeEstMonth:'Proyección del mes',
+  homeSavedPrev:'✨ Llevan ahorrado',homeSavedPrev2:'en semanas anteriores — ¡sigan así!',
   homeToday:'Hoy',homeRemain:'Restan',homeDaysLeft:'días en la semana',homeOver2:'Te pasaste hoy en',
-  homeLastExp:'Últimos gastos esta semana',homeNoExp:'Sin gastos esta semana',homeLastExpenses:'Gastos recientes esta semana',
-  homeViewAll:'Ver historial completo →',homeGoInsights:'✨ Ver análisis detallado e Insights →',
+  homeLastExp:'Últimos gastos esta semana',homeNoExp:'Sin gastos esta semana',homeLastExpenses:'Últimos movimientos',
+  homeViewAll:'Ver todos los gastos →',homeGoInsights:'✨ Ver Insights y análisis →',
   homeDebts:'Deudas activas',homeDebtTotal:'Saldo total',homeDebtMonthly:'Pago mensual',
-  homeViewFin:'Ver todas en Finanzas →',homeAIAnalysis:'🤖 Análisis del mes con IA',
-  aiMonthSummary:'🤖 Análisis mensual con IA',
-  homeRollover:'¡Nueva semana! Se sumó',homeRollover2:'Tu presupuesto quedó en',
+  homeViewFin:'Ver en Finanzas →',homeAIAnalysis:'🤖 Resumen mensual con IA',
+  aiMonthSummary:'🤖 Resumen del mes con IA',
+  homeRollover:'¡Nueva semana! Pasaron',homeRollover2:'de la semana anterior. Tu presupuesto esta semana es',
   homeAdjBudget:'Ajustar presupuesto',
   homeWeeklyGoal:'Meta semanal de ahorro',
   homeWeeklyTarget:'Guía: gasta ~',homeWeeklyTargetDay:'por día para cerrar dentro del presupuesto',
@@ -660,75 +660,75 @@ es:{
   /* Agregar */
   addTitle:'➕ Registrar gasto',addQuick:'⚡ Accesos rápidos',
   addMonto:'💵 Monto',addDesc:'📝 Descripción',addCat:'🏷️ Categoría',
-  addShared:'Gasto compartido',addSharedSub:'Dividir entre los dos',
+  addShared:'Gasto compartido',addSharedSub:'Se divide entre los dos al guardar',
   addNote:'Agregar nota',addNoteSub:'Comentario adicional',addNotePlaceholder:'Escribe una nota...',
   addRequest:'Solicitar cobro',addRequestSub:'Enviar solicitud al otro usuario',
   addOCR:'📷 Escanear ticket (OCR)',addOCRloading:'⏳ Leyendo ticket...',
   addBtn:'Registrar gasto',addNewCat:'+ Nueva categoría',
   addNewCatLabel:'Nueva categoría',addNewCatPlaceholder:'Nombre',
   addNewCatSave:'Guardar',addNewCatCancel:'✕',
-  addMontoPlaceholder:'0.00',addDescPlaceholder:'¿En qué gastaron?',
+  addMontoPlaceholder:'0.00',addDescPlaceholder:'¿En qué gastaste?',
 
   /* Historial */
-  histTitle:'📅 Historial',histMov:'mov.',
+  histTitle:'📅 Mis gastos',histMov:'mov.',
   histSearch:'🔍 Buscar...',histNoResults:'Sin resultados para ese filtro',
   histFrom:'Desde',histTo:'Hasta',histCustomRange:'Rango de fechas personalizado',
   histPreset0:'Hoy',histPreset1:'Esta semana',histPreset2:'Este mes',
   histCal:'📅 Calendario',histList:'📋 Lista',
-  histCalTitle:'Toca un día para filtrar',
+  histCalTitle:'Selecciona un día para filtrar',
   histCalDays:'D,L,M,X,J,V,S',
 
   /* Insights */
-  insTitle:'✨ Insights financieros',
-  insDesc:'Aquí encontrarás análisis profundos sobre sus hábitos, proyecciones y herramientas para tomar mejores decisiones juntos.',
-  insProyTag:'📆 PROYECCIÓN',insProyTitle:'¿Cómo vamos a cerrar el mes?',
-  insProyDesc:'Con {n} días de datos, calculamos cuánto van a gastar en total si siguen a este ritmo.',
+  insTitle:'✨ Insights',
+  insDesc:'Proyecciones, patrones y herramientas para tomar mejores decisiones semana a semana.',
+  insProyTag:'📆 PROYECCIÓN',insProyTitle:'¿Cómo vas a cerrar este mes?',
+  insProyDesc:'Con {n} días de datos, proyectamos tu gasto total si mantienes este ritmo.',
   insProySpent:'Gasto proyectado',insProyBudget:'Presupuesto mes',
-  insProyUnder:'✅ Van {n} debajo del presupuesto',insProyOver:'⚠️ Van {n} arriba del presupuesto',
-  insProyGuide:'Guía: gasta ~{n} por día para cerrar dentro del presupuesto',
+  insProyUnder:'✅ Van {n} por debajo del presupuesto',insProyOver:'⚠️ Van {n} por encima del presupuesto',
+  insProyGuide:'Guía: gasta máximo ~{n} por día para cerrar el mes dentro del presupuesto',
   insProyExceeded:'⚠️ Ya excedieron el presupuesto mensual en {n}',
   insProyOk:'✅ Mes cerrado dentro del presupuesto',insProyFail:'⚠️ Mes cerrado arriba del presupuesto',
-  insPatTag:'🧠 PATRONES',insPatTitle:'Qué dicen sus hábitos de gasto',
-  insPatDesc:'Analizamos sus movimientos para detectar tendencias que pueden pasar desapercibidas.',
+  insPatTag:'🧠 PATRONES',insPatTitle:'Lo que tus hábitos revelan',
+  insPatDesc:'Detectamos tendencias en tus movimientos que fácilmente pasan desapercibidas.',
   insPatUp:'va subiendo:',insPatPrev:'vs mes pasado.',
   insPatNone:'📌 Ninguna categoría está disparada vs el mes pasado. ¡Buen control!',
   insPatDay:'🗓️ El día más caro suele ser',insPatDayAvg:'Ojo ese día.',
   insPatBig:'⚡ Gasto más grande en 30 días:',insPatBigIn:'en',
-  insSimTag:'🧪 SIMULADOR',insSimTitle:'¿Qué pasa si gastamos menos en...?',
-  insSimDesc:'Elige una categoría y simula cuánto ahorrarían si redujeran ese gasto.',
+  insSimTag:'🧪 SIMULADOR',insSimTitle:'¿Qué pasaría si gastaras menos en...?',
+  insSimDesc:'Elige una categoría y mira cuánto podrías ahorrar si reduces ese gasto.',
   insSimCat:'Categoría',insSimReduce:'Reducir',
-  insGameTag:'🎮 RACHA',insGameTitle:'¿Cómo van esta semana?',
-  insGameDesc:'Tu progreso hacia la meta de ahorro semanal. Mantener la racha es lo que construye buenos hábitos financieros.',
-  insGameStreak:'Racha:',insGameWeeks:'sem.',insGameNoMeta:'💡 Configura una meta de ahorro en Ajustes para ver la racha.',
-  insScoreTag:'⭐ PUNTAJE',insScoreTitle:'Score financiero semanal',
-  insScoreDesc:'Un número del 0-100 que resume qué tan bien están controlando sus finanzas esta semana.',
+  insGameTag:'🎮 RACHA',insGameTitle:'Racha de ahorro semanal',
+  insGameDesc:'Tu progreso hacia la meta de ahorro. Mantener la racha semana a semana es lo que construye hábitos financieros sólidos.',
+  insGameStreak:'Racha:',insGameWeeks:'sem.',insGameNoMeta:'💡 Define tu meta de ahorro semanal en Ajustes para activar la racha.',
+  insScoreTag:'⭐ PUNTAJE',insScoreTitle:'Puntaje de la semana',
+  insScoreDesc:'Un número del 0 al 100 que resume qué tan bien manejaste tu dinero esta semana.',
   insScoreParts:['🧾 Presupuesto','🎯 Ahorro','⚖️ Balance','📉 Tendencia'],
-  insScorePartDescs:['¿Se mantuvieron dentro del límite semanal?','¿Lograron guardar algo esta semana?','¿Gastan de forma equitativa entre los dos?','¿Están gastando menos que la semana pasada?'],
-  insScoreTip1:'💡 Para mejorar: el mayor impacto está en no pasarse del presupuesto semanal.',
-  insScoreTip2:'💡 Para mejorar: intenten cerrar las semanas con saldo positivo.',
-  insScoreTip3:'💡 Para mejorar: el gasto está desbalanceado entre los dos.',
-  insScoreTip4:'💡 Para mejorar: esta semana gastan más que la pasada.',
-  insScoreTip5:'✅ Score muy sólido. Sigan así para mantenerlo arriba.',
-  insOutOf:'sobre 100 puntos posibles',
-  insNoData:'Agrega gastos para ver tus Insights',
+  insScorePartDescs:['¿Te mantuviste dentro del límite semanal?','¿Guardaste algo esta semana?','¿El gasto está distribuido de forma equitativa?','¿Estás gastando menos que la semana pasada?'],
+  insScoreTip1:'💡 Para mejorar: mantenerte dentro del presupuesto semanal tiene el mayor impacto.',
+  insScoreTip2:'💡 Para mejorar: intenta cerrar cada semana con algo de saldo positivo.',
+  insScoreTip3:'💡 Para mejorar: hay una diferencia grande en el gasto entre los dos.',
+  insScoreTip4:'💡 Para mejorar: esta semana estás gastando más que la anterior.',
+  insScoreTip5:'✅ Excelente control financiero. Mantén el ritmo y la racha seguirá creciendo.',
+  insOutOf:'de 100 puntos posibles',
+  insNoData:'Aún sin datos para mostrar',
 
   /* Análisis */
-  analTitle:'📈 Análisis',
+  analTitle:'📈 Análisis mensual',
   analTotalSpent:'Total gastado en',
   analVsPrev:'vs mes anterior',
   analBudgetOk:'✅ Dentro del presupuesto',analBudgetOver:'⚠️ {n} arriba del presupuesto',
-  analFlowTitle:'💰 Flujo del mes',
+  analFlowTitle:'💰 Balance del mes',
   analIncome:'Ingreso mensual',analFixed:'Gastos fijos',analVariable:'Gastos variables',
-  analFree:'Libre real',analCommitted:'Ingreso comprometido:',
-  analFixedMonth:'📋 Gastos fijos del mes',analFixedPending:'pendiente',
+  analFree:'Disponible real',analCommitted:'Comprometido del ingreso:',
+  analFixedMonth:'📋 Fijos del mes',analFixedPending:'pendiente',
   analFixedAllPaid:'Todo pagado ✓',
   analAlertOver:'Presupuesto excedido en {n}',analAlertOverSub:'Revisa qué categoría lo generó y ajusta la siguiente semana.',
   analAlertTrend:'Gasto {n}% mayor que {m}',analAlertTrendSub:'Tendencia al alza. Identifica qué cambió.',
   analAlertCat:'{cat} concentra más del 50% del gasto',analAlertCatSub:'Considera si hay oportunidad de reducirlo.',
   analAlertFree:'Menos del 10% del ingreso libre',analAlertFreeSub:'Considera reducir gastos variables o ajustar el presupuesto.',
-  analCatTitle:'Desglose por categoría',
-  analUserTitle:'Por integrante',analUserPct:'% del total',
-  analDowTitle:'Patrón por día de la semana',analDowSub:'Promedio de gasto por día (últimos 30 días)',
+  analCatTitle:'Gasto por categoría',
+  analUserTitle:'Por persona',analUserPct:'% del total',
+  analDowTitle:'Días con más gasto',analDowSub:'Gasto promedio por día de la semana (últimos 30 días)',
   analDowNote:'🔴 Día con mayor gasto promedio',
   analCatPie:'🥧 Por categoría',analWeekBar:'📊 Semana a semana',
   analNoData:'Sin gastos en',
@@ -736,37 +736,37 @@ es:{
 
   /* Finanzas */
   finTitle:'💰 Finanzas',
-  finIncomeTitle:'💼 Ingreso mensual',finIncomeLabel:'Ingreso mensual total',finIncomePlaceholder:'0',
-  finSave:'Guardar',finApplyBudget:'Aplicar presupuesto sugerido:',
-  finFixedTitle:'📋 Gastos fijos mensuales',
-  finFixedDesc:'Renta, servicios, suscripciones — lo que pagas cada mes aunque cambie el monto.',
+  finIncomeTitle:'💼 Ingresos',finIncomeLabel:'Ingreso mensual',finIncomePlaceholder:'0',
+  finSave:'Guardar',finApplyBudget:'Usar este presupuesto:',
+  finFixedTitle:'📋 Gastos fijos del mes',
+  finFixedDesc:'Renta, servicios y suscripciones. Los restamos de tu ingreso para calcular cuánto tienes disponible cada semana.',
   finFixedPaid:'✅ Pagado',finFixedPending:'⏳ Pendiente',
   finFixedPaidTotal:'Pagado',finFixedPendingTotal:'Pendiente',
   finPay:'Pagar',finPaid:'✓ Pagado',
   finAddFixed:'+ Agregar gasto fijo',finFixedNone:'Sin gastos fijos registrados',
   finFixedName:'Nombre del gasto fijo:',finFixedAmount:'Monto mensual:',
-  finFrecTitle:'⚡ Accesos rápidos',finFrecDesc:'Atajos para tus gastos más comunes.',
+  finFrecTitle:'⚡ Gastos frecuentes',finFrecDesc:'Accesos directos para gastos que registras seguido — un toque y listo.',
   finFrecAdd:'+ Agregar acceso rápido',finFrecDesc2:'Descripción del gasto frecuente:',finFrecAmount:'Monto:',
-  finDebtTitle:'💳 Deudas',finDebtDesc:'Saldo total',finDebtMonthly:'Pago mensual',
+  finDebtTitle:'💳 Deudas y créditos',finDebtDesc:'Saldo total',finDebtMonthly:'Pago mensual',
   finDebtActive:'activa',finDebtActives:'activas',
   finDebtAdd:'+ Agregar deuda',finDebtPause:'⏸️ Pausar',finDebtResume:'▶ Activar',
   finExport:'📥 Exportar CSV',
-  finPeriodTitle:'📅 Período personalizado',
+  finPeriodTitle:'📅 Ciclo personalizado',
   finPeriodSave:'Guardar período',finPeriodClear:'Limpiar',
-  finResumenTitle:'🤖 Generar análisis con IA',finResumenBtn:'Generar análisis',
+  finResumenTitle:'🤖 Resumen del mes con IA',finResumenBtn:'Generar análisis',
   finCurPeriod:'Período actual',
 
   /* Config */
   cfgTitle:'⚙️ Ajustes',
   cfgProfileTitle:'👤 Perfiles',cfgProfileSave:'Guardar',cfgProfileEmoji:'Cambiar emoji',
-  cfgWeekTitle:'📅 Semana inicia el',cfgWeekDays:'Dom,Lun,Mar,Mié,Jue,Vie,Sáb',
+  cfgWeekTitle:'📅 Inicio de semana',cfgWeekDays:'Dom,Lun,Mar,Mié,Jue,Vie,Sáb',
   cfgBudgetTitle:'💰 Presupuesto semanal',
-  cfgGoalTitle:'🎯 Meta de ahorro semanal',cfgGoalPlaceholder:'0',cfgGoalSave:'Guardar meta',
-  cfgCatTitle:'🏷️ Categorías personalizadas',cfgCatPlaceholder:'Nombre de la categoría',cfgCatAdd:'+ Agregar categoría',
+  cfgGoalTitle:'🎯 Meta de ahorro',cfgGoalPlaceholder:'0',cfgGoalSave:'Guardar meta',
+  cfgCatTitle:'🏷️ Tus categorías',cfgCatPlaceholder:'Nombre de la categoría',cfgCatAdd:'+ Agregar categoría',
   cfgNotifTitle:'Notificaciones',cfgNotifLabel:'🔔 Recordatorios diarios',
-  cfgNotifSub:'Avisos para registrar tus gastos',cfgNotifOn:'Activadas',cfgNotifOff:'Activar',
-  cfgSpaceTitle:'🔗 Tu espacio',cfgSpaceCode:'Código de espacio',cfgSpaceCopy:'📋 Copiar código',
-  cfgLangTitle:'Idioma / Language',
+  cfgNotifSub:'Recordatorios para no olvidar registrar tus gastos',cfgNotifOn:'Activadas',cfgNotifOff:'Activar',
+  cfgSpaceTitle:'🔗 Código de espacio',cfgSpaceCode:'Código de espacio',cfgSpaceCopy:'📋 Copiar código',
+  cfgLangTitle:'🌐 Idioma / Language',
 
   /* Shared / modals */
   modalEditTitle:'✏️ Editar gasto',modalEditSave:'Guardar cambios',
@@ -774,25 +774,25 @@ es:{
   modalClose:'✕',
 
   /* Actions */
-  toastRecorded:'✅ Gasto registrado!',toastDeleted:'🗑️ Eliminado',toastUpdated:'✅ Gasto actualizado',
-  toastSaved:'💾 Guardado',toastBudgetUpdated:'✅ Presupuesto actualizado a',
+  toastRecorded:'✅ ¡Gasto registrado!',toastDeleted:'🗑️ Eliminado',toastUpdated:'✅ Gasto actualizado',
+  toastSaved:'💾 Guardado',toastBudgetUpdated:'✅ Presupuesto actualizado:',
   toastMetaSaved:'🎯 Meta guardada',toastCatAdded:'✅ Categoría agregada',
   toastCatDeleted:'🗑️ Eliminada',toastPaidOn:'✅ Marcado como pagado',toastPaidOff:'↩️ Desmarcado',
   toastGoal:'💚',toastOver:'🔴',
   toastDebtAdded:'💳 Deuda agregada',toastInvAccepted:'✅ Pago aceptado y registrado',toastInvRejected:'❌ Solicitud rechazada',
-  toastNoExport:'No hay datos para exportar',toastNoTicket:'Sin foto de ticket',toastNetError:'Error de red',
+  toastNoExport:'No hay datos para exportar',toastNoTicket:'Sin foto de ticket',toastNetError:'Error de conexión. Inténtalo de nuevo.',
   toastWriteName:'Escribe un nombre',toastFillAll:'Completa los campos',toastFillNameAmt:'Completa nombre y monto',
   toastFixedAdded:'✅ Gasto fijo agregado',toastFrecAdded:'✅ Frecuente guardado',
   toastAmtUpdated:'💾 Monto actualizado',toastDebtActive:'✅ Deuda activada',toastDebtPaused:'⏸️ Deuda pausada',
   toastAutoFijos1:'📅 ',toastAutoFijos2:' gasto fijo auto-registrado',toastAutoFijos2p:' gastos fijos auto-registrados',
   toastAmtUpdatedMonth:'💾 Monto actualizado para',
-  confirmDelete:'¿Eliminar este gasto?',confirmDelFixed:'¿Eliminar este gasto fijo?',confirmDelFrec:'¿Eliminar?',
+  confirmDelete:'¿Eliminar este gasto? Esta acción no se puede deshacer.',confirmDelFixed:'¿Eliminar este gasto fijo? Se quitará de los próximos meses.',confirmDelFrec:'¿Eliminar?',
   confirmDelDebt:'¿Eliminar esta deuda?',confirmDelCat:'¿Eliminar categoría?',
 
   /* Empty states */
   emptyInsights:'Agrega gastos para ver tus Insights',
   emptyHistorial:'Sin resultados para ese filtro',
-  emptyHome:'Sin gastos esta semana',
+  emptyHome:'¡Semana en cero! 🎉',
 
   /* Days/Months */
   days:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],
@@ -804,11 +804,11 @@ es:{
   /* Gamification */
   gameGoal:'🏆 Meta lograda',gameAlmost:'🔥 Casi llegan',gameGood:'💪 En buen ritmo',
   gameOk:'🙂 Arrancando',gameCold:'🧊 A calentar motores',
-  gameGoalDesc:'¡Se ganaron el badge esta semana! Excelente control.',
-  gameAlmostDesc:'Van muy cerca. Un pequeño ajuste y cierran la meta.',
-  gameGoodDesc:'Buen control. Eviten fugas de último momento.',
-  gameOkDesc:'Aún hay margen. Ojo con los gastos impulsivos.',
-  gameColdDesc:'Esta semana pide un plan. Pueden lograrlo.',
+  gameGoalDesc:'¡Meta lograda esta semana! Excelente disciplina financiera.',
+  gameAlmostDesc:'Muy cerca. Un pequeño ajuste y cierras la semana en verde.',
+  gameGoodDesc:'Buen ritmo. Cuídate de los gastos impulsivos de fin de semana.',
+  gameOkDesc:'Hay margen todavía. Evita gastos que no tenías planeados.',
+  gameColdDesc:'Esta semana pide más atención. Aún puedes revertirlo.',
 
   /* Debts */
   debtTypes:{tarjeta:'💳',prestamo:'🏦',diferido:'🗓️',otro:'📋'},
@@ -844,51 +844,51 @@ es:{
 
   /* Header inline keys */
   heroSignOut:'Salir ↩',heroAvailable:'💰 Disponible esta semana',heroOverBudget:'⚠️ Te pasaste en',
-  heroSpent:'Gastado',heroOf:'de',heroDailyBudget:'Guía de hoy',heroWeekEnd:'Cierre estimado',
+  heroSpent:'Gastado',heroOf:'de',heroDailyBudget:'Guía diaria',heroWeekEnd:'Proyección semanal',
   heroAddExp:'➕ Agregar gasto',heroExtraInc:'💰 Ingreso extra',heroAdjBudget:'⚙️ Ajustar presupuesto ▾',
 
   /* Home inline keys */
-  homeDailyLeft:'disponibles hoy',homeDailyOver:'Te pasaste hoy en',
-  homeDailySpent:'Gastaste',homeDailyOf:'de tu guía de',homeDailyDaysLeft:' días restantes en la semana',
+  homeDailyLeft:'disponible hoy',homeDailyOver:'Te pasaste hoy en',
+  homeDailySpent:'Gastaste',homeDailyOf:'de tu guía diaria de',homeDailyDaysLeft:' días restantes en la semana',
   homeSavingsGoalPct:'de la meta semanal',homeInvRequests:'te pide',
-  homeNoExpTip:'Toca ➕ para registrar tu primer gasto.',
-  homeInsightsCTA:'✨ Ver Insights y análisis detallado →',
+  homeNoExpTip:'Toca ➕ para registrar tu primer gasto esta semana.',
+  homeInsightsCTA:'✨ Ver Insights y análisis completo →',
 
   /* Insights inline */
-  insNoDataSub:'Registra gastos para desbloquear tus análisis.',
-  insProySpentLbl:'Gasto proyectado',insProyBudgetLbl:'Presupuesto semanal',
-  insWithDays:'Con',insOfData:'días de datos, calculamos cuánto van a gastar si siguen a este ritmo.',
+  insNoDataSub:'Registra tus primeros gastos y Saldo comenzará a analizar tus patrones.',
+  insProySpentLbl:'Gasto proyectado',insProyBudgetLbl:'Presupuesto del mes',
+  insWithDays:'Con',insOfData:'días de datos calculamos tu proyección si mantienes este ritmo.',
   insProySpent:'Gasto proyectado',insProyBudget:'Presupuesto semanal',
 
   /* Historial inline */
-  histTitleStr:'📅 Historial',histSearchPh:'🔍 Buscar..',
-  histFilterSub:'Prueba otro filtro o rango de fechas.',
+  histTitleStr:'📅 Historial de gastos',histSearchPh:'🔍 Buscar..',
+  histFilterSub:'Intenta con otro filtro o rango de fechas.',
 
   /* Análisis inline */
-  analBudgetExplain:'Revisa qué categoría lo generó y ajusta la siguiente semana.',
+  analBudgetExplain:'Identifica qué categoría lo disparó y ajusta tu ritmo la próxima semana.',
   analTrendExplain:'Tendencia al alza. Identifica qué cambió.',
   analTop50Explain:'Considera si hay oportunidad de reducirlo.',
-  analLowFreeWarn:'Menos del 10% del ingreso libre',
-  analLowFreeExplain:'Considera reducir gastos variables o ajustar el presupuesto.',
-  analPaidLabel:'✓ Pagado',analPendingLabel:'Pendiente',
-  analWeekChart:'📊 Semana a semana',
+  analLowFreeWarn:'Queda menos del 10% del ingreso disponible',
+  analLowFreeExplain:'Considera recortar algunos gastos variables o revisar tu presupuesto.',
+  analPaidLabel:'✅ Pagado',analPendingLabel:'Pendiente',
+  analWeekChart:'📊 Semana por semana',
   analTrendSpending:'Gasto',
 
   /* Finanzas inline */
-  finNoDebts:'Sin deudas registradas',finAddDebt:'+ Agregar deuda / crédito',
-  finNoFrec:'Sin frecuentes guardados',finAddFrecBtn:'+ Agregar frecuente',
-  finSectionFreqTitle:'⚡ Gastos frecuentes',
+  finNoDebts:'Sin deudas o créditos registrados',finAddDebt:'+ Agregar deuda / crédito',
+  finNoFrec:'Aún no tienes frecuentes guardados',finAddFrecBtn:'+ Agregar frecuente',
+  finSectionFreqTitle:'⚡ Frecuentes',
   finDebtActiveLabel:'✅ Activa',finDebtPausedLabel:'⏸️ Pausada',
   finDebtCard:'Tarjeta',finDebtLoan:'Préstamo',finDebtDeferred:'Diferido',finDebtOther:'Otro',
   finDebtBalance:'Saldo: ',finDebtPayLabel:'/mes',finDebtDayLabel:'Día',
-  finCalcAvail:'Disponible',finCalcPerWeek:'Por semana',finCalcWeeks:'Semanas',
-  finExportDesc:'Descarga todos tus gastos en formato CSV para abrirlos en Excel.',
+  finCalcAvail:'Libre para gastar',finCalcPerWeek:'Presupuesto/sem',finCalcWeeks:'Semanas',
+  finExportDesc:'Descarga todos tus gastos y fijos en formato CSV para Excel o Google Sheets.',
   finPeriodStart:'Inicio',finPeriodEnd:'Fin',
   finFixedPaidBadge:'✅ Pagado',finFixedPendingBadge:'Pendiente',
 
   /* Config inline */
   cfgProfileName:'Nombre',cfgWeekGoalLabel:'Meta semanal',cfgLangLabel:'Idioma de la app',
-  cfgSpaceJoinHint:'El otro usuario lo ingresa en "Unirme a un espacio" al crear su cuenta.',
+  cfgSpaceJoinHint:'Comparte este código con la otra persona para que se una a tu espacio desde la pantalla de inicio.',
   cfgEmojiSelect:'Seleccionar emoji',cfgEmojiRecent:'Recientes',cfgEmojiAll:'Todos',
 
   /* Modal inline */
@@ -904,23 +904,50 @@ es:{
   analBudgetOver2:'⚠️ Excedido por ',
 
   /* Onboarding */
-  onb4Title:'Gastos fijos',
-  onb4Desc:'Renta, servicios, suscripciones... Lo que pagas cada mes. Se descuenta antes de calcular tu presupuesto libre.',
+  onb1Title:'¿Cómo usarás Saldo?',
+  onb1Desc:'Saldo no es un rastreador de gastos genérico — es tu guía semanal. Te dice cuánto puedes gastar hoy y cómo vas a cerrar la semana.',
+  onb2Title:'¿Cómo te llamas?',
+  onb2Desc:'Personaliza tu perfil. Puedes cambiarlo cuando quieras.',
+  onb3Title:'¿Cuánto ganas al mes?',
+  onb3Desc:'Este es el punto de partida. Saldo resta tus gastos fijos y divide el resto en semanas — así sabe cuánto puedes gastar cada día sin quedarte corto.',
+  onb4Title:'Gastos fijos del mes',
+  onb4Desc:'Renta, servicios y suscripciones. Los restamos primero del ingreso, para que tu presupuesto semanal muestre solo el dinero que realmente puedes usar.',
+  onb5Title:'¿Con qué ciclo manejas tu dinero?',
+  onb5Desc:'Elige cómo divides el mes. Saldo ajusta tu presupuesto y proyecciones según el ciclo que elijas.',
+  onb6Title:'Conoce Saldo',
+  onb6Desc:'Cada sección tiene una función clara. Una guía rápida antes de empezar.',
+  onb7Title:'Todo listo',
+  onb7Desc:'Así calculamos tu presupuesto:',
+  onb7Tip:'💡 Un gasto fijo no siempre es el mismo monto — pero es un compromiso recurrente. En <b>Finanzas</b> puedes ajustar el monto mes a mes.',
+  onb7StartBtn:'¡Empezar →',
+
+  /* Onboarding weekly logic explanation */
+  onbHowTitle:'¿Cómo calcula Saldo tu presupuesto?',
+  onbHowStep1:'Ingreso mensual ÷ 4.3 semanas = base semanal',
+  onbHowStep2:'− Gastos fijos = dinero realmente disponible',
+  onbHowStep3:'÷ Días restantes = cuánto puedes gastar hoy',
+  onbHowStep4:'Al agregar gastos, todo se actualiza al instante',
+
+  /* Onboarding step 7 labels */
+  onb7MonthIncome:'Ingreso mensual',
+  onb7FixedLabel:'Gastos fijos',
+  onb7FreeLabel:'Libre para gastar',
+  onb7PeriodLabel:'Tu presupuesto',
 
   /* PRO */
-  proTitle:'Saldo Pro 🌟',proSubtitle:'Desbloquea el potencial completo de tu dinero',
-  proPlan:'Plan gratuito',proUnlock:'Desbloquear Pro',proCTA:'Próximamente',
-  proFeature1:'Proyecciones semanales inteligentes',proFeature2:'Historial completo sin límites',
-  proFeature3:'Modo pareja / familia compartido',proFeature4:'Análisis avanzado de patrones',
-  proFeature5:'Exportación y respaldo de datos',proFeature6:'Alertas personalizadas',
-  proFeature7:'Experiencia sin anuncios',proFeatureNote:'Todo lo que necesitas para no perder el control de tu dinero.',
+  proTitle:'Saldo Pro 🌟',proSubtitle:'Para quienes toman su dinero en serio',
+  proPlan:'Plan gratuito',proUnlock:'Desbloquear Pro',proCTA:'Muy pronto',
+  proFeature1:'Proyecciones semanales más precisas',proFeature2:'Historial ilimitado y búsqueda avanzada',
+  proFeature3:'Modo pareja con control compartido',proFeature4:'Análisis profundo de hábitos de gasto',
+  proFeature5:'Exportación y respaldo automático',proFeature6:'Alertas inteligentes de gasto',
+  proFeature7:'Sin anuncios, para siempre',proFeatureNote:'Más control, mejores decisiones, semana a semana.',
 },
 
 en:{
   /* Login */
-  loginTitle:'Your money, in order',
-  loginSub:'Track, analyze, and control your<br>personal or shared finances.',
-  loginHint:'🔒 Your data is private and secure',
+  loginTitle:'Your money, week by week',
+  loginSub:'Saldo tells you exactly how much to spend this week<br>— no spreadsheets, no guesswork.',
+  loginHint:'🔒 Private and secure. No ads.',
   btnGoogle:'Continue with Google',
   btnMicrosoft:'Continue with Microsoft',
   btnEmail:'Sign in with email',
@@ -945,31 +972,31 @@ en:{
   rolTitle:'Who are you?',rolSub:'There are two profiles in this space.',
 
   /* Tabs */
-  tabHome:'📊 Summary',tabInsights:'✨ Insights',tabAgregar:'➕ Add',
+  tabHome:'📊 My week',tabInsights:'✨ Insights',tabAgregar:'➕ Add',
   tabHistorial:'📅 History',tabAnalisis:'📈 Analysis',tabFinanzas:'💰 Finances',tabConfig:'⚙️ Settings',
 
   /* Onboarding */
   onbSkip:'Skip →',onbNext:'Continue →',onbBack:'← Back',onbStart:'Get started →',
-  onbIndividualTitle:'Individual use',onbIndividualDesc:'Just me managing my finances',
-  onbCoupleTitle:'Couple or shared',onbCoupleDesc:'Two people in the same space',
+  onbIndividualTitle:'Individual use',onbIndividualDesc:'Just me managing my own finances',
+  onbCoupleTitle:'Couple or shared',onbCoupleDesc:'Two people, one shared budget',
   onbUser1Ph:'Your name',onbUser2Ph:'User 2',
   onbMonthlyLbl:'Monthly income',
-  onbAddFixed:'+ Add fixed expense',onbContinueNoFixed:'Continue without fixed expenses',
+  onbAddFixed:'+ Add fixed expense',onbContinueNoFixed:'Continue without adding fixed expenses',
   onbPeriodWeekly:'Weekly',onbPeriodBiweekly:'Biweekly',onbPeriodMonthly:'Monthly',onbPeriodCustom:'Custom',
-  onbSuggestedLbl:'Suggested budget per week',onbSuggestedSub:'Free income ({0}) ÷ 4.3 weeks',
+  onbSuggestedLbl:'Your suggested weekly budget',onbSuggestedSub:'({0} free) ÷ 4.3 weeks per month',
 
   /* Home */
-  homeWeek:'Current week',homeAvail:'💰 Available',homeOver:'⚠️ Over by',
+  homeWeek:'This week',homeAvail:'💰 Available',homeOver:'⚠️ Over budget by',
   homeSpent:'Spent',homeBudget:'Budget',homeNewWeek:'🆕 New week',
-  homeSavWeek:'🌱 Savings this week',homeSpentLabel:'Spent',homeThisMonth:'This month',
-  homeAccumulated:'Total accumulated',homeEstMonth:'Estimated month end',
-  homeSavedPrev:'✨ You\'ve saved',homeSavedPrev2:'in previous weeks',
+  homeSavWeek:'🌱 Your week at a glance',homeSpentLabel:'Spent',homeThisMonth:'This month',
+  homeAccumulated:'Total saved so far',homeEstMonth:'Month-end projection',
+  homeSavedPrev:'✨ Saved so far:',homeSavedPrev2:'from previous weeks — keep it up!',
   homeToday:'Today',homeRemain:'Remaining',homeDaysLeft:'days in the week',homeOver2:'Over today by',
   homeLastExp:'Latest expenses this week',homeNoExp:'No expenses this week',
-  homeViewAll:'View full history →',homeGoInsights:'✨ Ver análisis detallado e Insights →',
+  homeViewAll:'View all transactions →',homeGoInsights:'✨ Ver Insights y análisis →',
   homeDebts:'Active debts',homeDebtTotal:'Total balance',homeDebtMonthly:'Monthly payment',
-  homeViewFin:'View all in Finances →',homeAIAnalysis:'🤖 AI monthly analysis',
-  homeRollover:'New week! Added',homeRollover2:'from previous balance. Your budget increased to',
+  homeViewFin:'See all in Finances →',homeAIAnalysis:'🤖 Monthly AI summary',
+  homeRollover:'New week! Rolled over',homeRollover2:'from last week. Your budget this week is',
   homeAdjBudget:'Adjust budget',
   homeWeeklyGoal:'Weekly savings goal',
   homeWeeklyTarget:'Guide: spend ~',homeWeeklyTargetDay:'per day to stay within budget',
@@ -980,7 +1007,7 @@ en:{
   /* Agregar */
   addTitle:'➕ Record expense',addQuick:'⚡ Quick access',
   addMonto:'💵 Amount',addDesc:'📝 Description',addCat:'🏷️ Category',
-  addShared:'Shared expense',addSharedSub:'Split between both',
+  addShared:'Shared expense',addSharedSub:'Split evenly when saved',
   addNote:'Add note',addNoteSub:'Extra comment',addNotePlaceholder:'Write a note...',
   addRequest:'Request payment',addRequestSub:'Send request to other user',
   addOCR:'📷 Scan receipt (OCR)',addOCRloading:'⏳ Reading receipt...',
@@ -995,33 +1022,33 @@ en:{
   histFrom:'From',histTo:'To',histCustomRange:'Custom date range',
   histPreset0:'Today',histPreset1:'This week',histPreset2:'This month',
   histCal:'📅 Calendar',histList:'📋 List',
-  histCalTitle:'Tap a day to filter',
+  histCalTitle:'Tap a day to filter transactions',
   histCalDays:'Su,Mo,Tu,We,Th,Fr,Sa',
 
   /* Insights */
   insTitle:'✨ Financial insights',
   insDesc:'Deep analysis of your spending habits, projections, and tools to make better financial decisions together.',
-  insProyTag:'📆 PROJECTION',insProyTitle:'How will we close the month?',
+  insProyTag:'📆 PROJECTION',insProyTitle:'How are you tracking for the month?',
   insProyDesc:'With {n} days of data, we calculate your projected total at this pace.',
   insProySpent:'Projected spend',insProyBudget:'Monthly budget',
   insProyUnder:'✅ {n} under budget',insProyOver:'⚠️ {n} over budget',
   insProyGuide:'Guide: spend ~{n} per day to stay within budget',
   insProyExceeded:'⚠️ Monthly budget already exceeded by {n}',
   insProyOk:'✅ Month closed within budget',insProyFail:'⚠️ Month closed over budget',
-  insPatTag:'🧠 PATTERNS',insPatTitle:'What your spending habits reveal',
+  insPatTag:'🧠 PATTERNS',insPatTitle:'What your habits reveal',
   insPatDesc:'We analyze your transactions to surface trends that can easily go unnoticed.',
   insPatUp:'is rising:',insPatPrev:'vs last month.',
   insPatNone:'📌 No category is spiking vs last month. Great control!',
   insPatDay:'🗓️ Most expensive day is usually',insPatDayAvg:'Watch that day.',
   insPatBig:'⚡ Biggest expense in 30 days:',insPatBigIn:'in',
-  insSimTag:'🧪 SIMULATOR',insSimTitle:'What if we spend less on...?',
-  insSimDesc:'Pick a category and simulate how much you\'d save by reducing that expense. Great for conscious decisions.',
+  insSimTag:'🧪 SIMULATOR',insSimTitle:'What if you cut spending on...?',
+  insSimDesc:'Pick a category and see how much you could save by spending less there.',
   insSimCat:'Category',insSimReduce:'Reduce by',
-  insGameTag:'🎮 STREAK',insGameTitle:'How are you doing this week?',
-  insGameDesc:'Your progress toward the weekly savings goal. Keeping the streak is what builds good financial habits.',
+  insGameTag:'🎮 STREAK',insGameTitle:'Weekly savings streak',
+  insGameDesc:'Your progress toward your savings goal. Keeping the streak week after week is what builds real financial habits.',
   insGameStreak:'Streak:',insGameWeeks:'wk.',insGameNoMeta:'💡 Set a savings goal in Settings to track your streak.',
-  insScoreTag:'⭐ SCORE',insScoreTitle:'Weekly financial score',
-  insScoreDesc:'A 0-100 number summarizing how well you\'re managing finances this week.',
+  insScoreTag:'⭐ SCORE',insScoreTitle:'Your weekly score',
+  insScoreDesc:'A 0–100 score that shows how well you managed your money this week. <b>70+ is excellent.</b>',
   insScoreParts:['🧾 Budget','🎯 Savings','⚖️ Balance','📉 Trend'],
   insScorePartDescs:['Did you stay within the weekly limit?','Did you save anything this week?','Is spending equitably shared?','Are you spending less than last week?'],
   insScoreTip1:'💡 To improve: the biggest impact is staying within your weekly budget.',
@@ -1033,13 +1060,13 @@ en:{
   insNoData:'Add expenses to see your Insights',
 
   /* Análisis */
-  analTitle:'📈 Analysis',
+  analTitle:'📈 Monthly analysis',
   analTotalSpent:'Total spent in',
   analVsPrev:'vs previous month',
   analBudgetOk:'✅ Within budget',analBudgetOver:'⚠️ {n} over budget',
   analFlowTitle:'💰 Monthly cashflow',
   analIncome:'Monthly income',analFixed:'Fixed expenses',analVariable:'Variable expenses',
-  analFree:'Real free cash',analCommitted:'Income committed:',
+  analFree:'Truly available',analCommitted:'Income committed:',
   analFixedMonth:'📋 Fixed expenses this month',analFixedPending:'pending',
   analFixedAllPaid:'All paid ✓',
   analAlertOver:'Budget exceeded by {n}',analAlertOverSub:'Revisa qué categoría lo generó y ajusta la siguiente semana.',
@@ -1056,16 +1083,16 @@ en:{
 
   /* Finanzas */
   finTitle:'💰 Finances',
-  finIncomeTitle:'💼 Monthly income',finIncomeLabel:'Total monthly income',finIncomePlaceholder:'0',
-  finSave:'Save',finApplyBudget:'Apply suggested budget:',
-  finFixedTitle:'📋 Fixed monthly expenses',
+  finIncomeTitle:'💼 Income',finIncomeLabel:'Monthly income',finIncomePlaceholder:'0',
+  finSave:'Save',finApplyBudget:'Use this budget:',
+  finFixedTitle:'📋 Fixed expenses',
   finFixedDesc:'Rent, utilities, subscriptions — what you pay every month even if the amount changes.',
   finFixedPaid:'✅ Paid',finFixedPending:'⏳ Pending',
   finFixedPaidTotal:'Paid',finFixedPendingTotal:'Pending',
   finPay:'Pay',finPaid:'✓ Paid',
   finAddFixed:'+ Add fixed expense',finFixedNone:'No fixed expenses registered',
   finFixedName:'Fixed expense name:',finFixedAmount:'Monthly amount:',
-  finFrecTitle:'⚡ Quick access',finFrecDesc:'Shortcuts for your most common expenses.',
+  finFrecTitle:'⚡ Frequent expenses',finFrecDesc:'Quick-add shortcuts for expenses you log regularly — one tap and done.',
   finFrecAdd:'+ Add quick access',finFrecDesc2:'Description of frequent expense:',finFrecAmount:'Amount:',
   finDebtTitle:'💳 Debts',finDebtDesc:'Total balance',finDebtMonthly:'Monthly payment',
   finDebtActive:'active',finDebtActives:'active',
@@ -1084,9 +1111,9 @@ en:{
   cfgGoalTitle:'🎯 Weekly savings goal',cfgGoalPlaceholder:'0',cfgGoalSave:'Save goal',
   cfgCatTitle:'🏷️ Custom categories',cfgCatPlaceholder:'Category name',cfgCatAdd:'+ Agregar categoría',
   cfgNotifTitle:'Notifications',cfgNotifLabel:'🔔 Daily reminders',
-  cfgNotifSub:'Reminders to log your expenses',cfgNotifOn:'Enabled',cfgNotifOff:'Enable',
+  cfgNotifSub:'Daily reminders so you never forget to log your expenses',cfgNotifOn:'Enabled',cfgNotifOff:'Enable',
   cfgSpaceTitle:'🔗 Your space',cfgSpaceCode:'Space code',cfgSpaceCopy:'📋 Copy code',
-  cfgLangTitle:'Idioma / Language',
+  cfgLangTitle:'🌐 Idioma / Language',
 
   /* Shared / modals */
   modalEditTitle:'✏️ Edit expense',modalEditSave:'Save changes',
@@ -1095,12 +1122,12 @@ en:{
 
   /* Actions */
   toastRecorded:'✅ Expense recorded!',toastDeleted:'🗑️ Deleted',toastUpdated:'✅ Expense updated',
-  toastSaved:'💾 Saved',toastBudgetUpdated:'✅ Budget updated to',
+  toastSaved:'💾 Saved',toastBudgetUpdated:'✅ Budget updated:',
   toastMetaSaved:'🎯 Goal saved',toastCatAdded:'✅ Category added',
   toastCatDeleted:'🗑️ Deleted',toastPaidOn:'✅ Marked as paid',toastPaidOff:'↩️ Unmarked',
   toastGoal:'💚',toastOver:'🔴',
   toastDebtAdded:'💳 Debt added',toastInvAccepted:'✅ Payment accepted and recorded',toastInvRejected:'❌ Request rejected',
-  toastNoExport:'No data to export',toastNoTicket:'No ticket photo',toastNetError:'Network error',
+  toastNoExport:'No data to export',toastNoTicket:'No ticket photo',toastNetError:'Connection error. Please try again.',
   toastWriteName:'Enter a name',toastFillAll:'Fill in all fields',toastFillNameAmt:'Fill in name and amount',
   toastFixedAdded:'✅ Fixed expense added',toastFrecAdded:'✅ Frequent expense saved',
   toastAmtUpdated:'💾 Amount updated',toastDebtActive:'✅ Debt activated',toastDebtPaused:'⏸️ Debt paused',
@@ -1112,7 +1139,7 @@ en:{
   /* Empty states */
   emptyInsights:'Add expenses to see your Insights',
   emptyHistorial:'No results for that filter',
-  emptyHome:'No expenses this week',
+  emptyHome:'Nothing spent yet this week 🎉',
 
   /* Days/Months */
   days:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
@@ -1178,8 +1205,8 @@ en:{
   cfgGoalDesc:'Set how much you want to save each week. This activates the progress bar and streak in Insights.',
   cfgSpaceTitle:'Your space code',
   cfgSpaceShare:'Share this code to invite someone',
-  homeLastExpenses:'Recent expenses this week',
-  aiMonthSummary:'🤖 Monthly AI analysis',
+  homeLastExpenses:'Recent transactions',
+  aiMonthSummary:'🤖 Monthly AI summary',
   analBudgetOver:'Budget exceeded by ',
   analTrendPct:'% higher than ',analTop50:' accounts for over 50% of spending',
   analBestDay:'🔴 Day with highest avg spending',
@@ -1192,21 +1219,21 @@ en:{
   toastGenerating:'Generating...',toastGeneratingAI:'🤖 Generating analysis...',
   toastAddedIncome:' added',
   promptExtraIncome:"How much extra income to add to this week's budget?",
-  onb1Title:'How will you use Saldo?',onb1Desc:'This helps us personalize your experience.',
-  onb2Title:"What's your name?",onb2Desc:'Personalize your profile. You can change it later.',
+  onb1Title:'How will you use Saldo?',onb1Desc:'Saldo is not a generic expense tracker — it is your weekly money guide. It tells you how much you can safely spend today and how you will close the week.',
+  onb2Title:"What's your name?",onb2Desc:'Personalize your profile. You can always update it later.',
   onb3Title:'What is your monthly income?',
-  onb3Desc:'We use this to calculate how much you have available after covering fixed expenses.',
+  onb3Desc:'This is the starting point. Saldo subtracts your fixed obligations and divides the rest across your weeks — so you always know your safe daily spending number.',
   onb4Title:'Gastos fijos',
   onb4Desc:'Rent, utilities, subscriptions... Everything you pay every month. Deducted before calculating your free budget.',
-  onb5Title:'How do you split your month?',
-  onb5Desc:'Choose how you want to manage your budget. This defines your tracking cycle.',
-  onb6Title:'Meet Saldo',onb6Desc:'Each section has a clear purpose. A quick map before you start.',
-  onb7Title:'All set!',onb7Desc:'Here is what you configured for your finances:',
-  onb7Tip:'💡 A fixed expense does not always mean the same amount — but it is a recurring obligation. In <b>Finances</b> you can adjust the amount for each month.',
+  onb5Title:'How do you track your money?',
+  onb5Desc:'Choose your cycle. Saldo adjusts your weekly budget and projections based on how you divide your month.',
+  onb6Title:'Your weekly money guide',onb6Desc:'Each section has a clear purpose. A quick map before you start.',
+  onb7Title:'All set!',onb7Desc:'Here is how your budget breaks down:',
+  onb7Tip:'💡 Fixed expenses may vary each month. In <b>Finances</b> you can update each one before it is due.',
   onbBack:'← Back',
 
-  insTitle:'✨ Financial Insights',
-  insDesc:'Automatic analysis of your spending patterns, projections and more.',
+  insTitle:'✨ Insights',
+  insDesc:'Projections, patterns and tools to make smarter decisions every week.',
   analCatBreakTitle:'Breakdown by category',analDowTitle2:'Pattern by day of week',
   analPieTitle:'🥧 By category',
   promptDebtPayment:'Minimum monthly payment:',promptDebtCutDay:'Statement/payment day of month (1-31):',
@@ -1223,52 +1250,52 @@ en:{
 
   /* Header inline keys */
   heroSignOut:'Sign out ↩',heroAvailable:'💰 Available this week',heroOverBudget:'⚠️ Over budget by',
-  heroSpent:'Spent',heroOf:'of',heroDailyBudget:'Daily budget',heroWeekEnd:'Week-end projection',
+  heroSpent:'Spent',heroOf:'of',heroDailyBudget:'Daily guide',heroWeekEnd:'Week projection',
   heroAddExp:'➕ Add expense',heroExtraInc:'💰 Extra income',heroAdjBudget:'⚙️ Adjust budget ▾',
 
   /* Home inline keys */
   homeDailyLeft:'left today',homeDailyOver:'Over today by',
-  homeDailySpent:"You've spent",homeDailyOf:'of your daily guide of',
+  homeDailySpent:"You spent",homeDailyOf:'of your daily guide of',
   homeDailyDaysLeft:' days left in the week',
   homeSavingsGoalPct:'of weekly goal',homeInvRequests:'requests',
-  homeNoExpTip:'Tap ➕ to log your first expense.',
-  homeInsightsCTA:'✨ View Insights & detailed analysis →',
-  homeLastExpenses:'Recent expenses this week',
+  homeNoExpTip:'Tap ➕ to log your first expense this week.',
+  homeInsightsCTA:'✨ View Insights & full analysis →',
+  homeLastExpenses:'Recent transactions',
 
   /* Insights inline */
-  insNoDataSub:'Start adding expenses to unlock insights.',
+  insNoDataSub:'Log your first expenses and Saldo will start building your insights.',
   insProySpentLbl:'Projected spend',insProyBudgetLbl:'Weekly budget',
-  insWithDays:'With',insOfData:'days of data, we calculate your projected total at this pace.',
+  insWithDays:'With',insOfData:'days of data, your projected total at the current pace.',
 
   /* Historial inline */
-  histTitleStr:'📅 History',histSearchPh:'🔍 Search..',
+  histTitleStr:'📅 Expense history',histSearchPh:'🔍 Search..',
   histFilterSub:'Try a different filter or date range.',
 
   /* Análisis inline */
-  analBudgetExplain:'Check which category caused it and adjust next week.',
+  analBudgetExplain:'Identify which category pushed you over and adjust next week.',
   analTrendExplain:'Upward trend. Identify what changed.',
   analTop50Explain:'Consider if there is an opportunity to reduce it.',
   analLowFreeWarn:'Less than 10% of income free',
-  analLowFreeExplain:'Consider reducing variable expenses or adjusting your budget.',
-  analPaidLabel:'✓ Paid',analPendingLabel:'Pending',
+  analLowFreeExplain:'Consider cutting some variable expenses or revisiting your budget.',
+  analPaidLabel:'✅ Paid',analPendingLabel:'Pending',
   analWeekChart:'📊 Week by week',
   analTrendSpending:'Spending',
 
   /* Finanzas inline */
-  finNoDebts:'No debts registered',finAddDebt:'+ Add debt / credit',
-  finNoFrec:'No quick-access items saved',finAddFrecBtn:'+ Add quick access',
+  finNoDebts:'No debts or credit registered yet',finAddDebt:'+ Add debt / credit',
+  finNoFrec:'No frequent expenses saved yet',finAddFrecBtn:'+ Add quick access',
   finSectionFreqTitle:'⚡ Quick expenses',
   finDebtActiveLabel:'✅ Active',finDebtPausedLabel:'⏸️ Paused',
   finDebtCard:'Card',finDebtLoan:'Loan',finDebtDeferred:'Deferred',finDebtOther:'Other',
   finDebtBalance:'Balance: ',finDebtPayLabel:'/mo',finDebtDayLabel:'Day',
-  finCalcAvail:'Available',finCalcPerWeek:'Per week',finCalcWeeks:'Weeks',
-  finExportDesc:'Download all your expenses as CSV to open in Excel.',
+  finCalcAvail:'Free to spend',finCalcPerWeek:'Budget/week',finCalcWeeks:'Weeks',
+  finExportDesc:'Download your expenses and fixed costs as CSV for Excel or Google Sheets.',
   finPeriodStart:'Start',finPeriodEnd:'End',
   finFixedPaidBadge:'✅ Paid',finFixedPendingBadge:'Pending',
 
   /* Config inline */
   cfgProfileName:'Name',cfgWeekGoalLabel:'Weekly goal',cfgLangLabel:'App language',
-  cfgSpaceJoinHint:'The other user enters this in "Join a space" when creating their account.',
+  cfgSpaceJoinHint:'Share this with the other person — they enter it when they create their account.',
   cfgEmojiSelect:'Select emoji',cfgEmojiRecent:'Recent',cfgEmojiAll:'All',
 
   /* Modal inline */
@@ -1284,17 +1311,29 @@ en:{
 
   /* Onboarding */
   onb4Title:'Fixed expenses',
-  onb4Desc:'Rent, utilities, subscriptions... What you pay every month. Deducted before calculating your free budget.',
+  onb4Desc:'Rent, utilities and subscriptions. Subtracted first so your weekly budget only reflects money you are truly free to spend.',
+  onbStartBtn:'Get started →',
+
+  /* Onboarding weekly logic explanation */
+  onbHowTitle:'How does Saldo calculate your budget?',
+  onbHowStep1:'Monthly income ÷ 4.3 weeks = weekly base',
+  onbHowStep2:'− Fixed expenses = money truly available',
+  onbHowStep3:'÷ Days remaining = how much you can spend today',
+  onbHowStep4:'Each expense you log updates everything instantly',
+  onb7FixedLabel:'Fixed expenses',
+  onb7FreeLabel:'Free to spend',
+  onb7PeriodLabel:'Your budget',
+  onb7StartBtn:'Get started →',
 
   /* PRO */
-  proTitle:'Saldo Pro 🌟',proSubtitle:'Unlock the full potential of your money',
+  proTitle:'Saldo Pro 🌟',proSubtitle:'For people who take their money seriously',
   proPlan:'Free plan',proUnlock:'Unlock Pro',proCTA:'Coming soon',
-  proFeature1:'Smart weekly projections',proFeature2:'Unlimited history',
-  proFeature3:'Couple & family shared mode',proFeature4:'Advanced pattern analysis',
-  proFeature5:'Data export & backup',proFeature6:'Custom alerts',
-  proFeature7:'Ad-free experience',proFeatureNote:'Everything you need to stay in control of your money.',
+  proFeature1:'Smarter weekly projections',proFeature2:'Unlimited history & advanced search',
+  proFeature3:'Shared couple & family mode',proFeature4:'Deep spending habit analysis',
+  proFeature5:'Export & automatic backup',proFeature6:'Smart spending alerts',
+  proFeature7:'Ad-free, forever',proFeatureNote:'More control, better decisions, week after week.',
 
-  aiMonthSummary:'🤖 Monthly AI analysis',
+  aiMonthSummary:'🤖 Monthly AI summary',
   analBudgetOver:'Budget exceeded by ',
   analTrendPct:'% higher than ',analTop50:' accounts for over 50% of spending',
   analBestDay:'🔴 Day with highest avg spending',
@@ -2669,7 +2708,12 @@ function renderOnbStep(){
     c.innerHTML='<div class="onb-icon">💰</div><div class="onb-title">'+t('onb3Title')+'</div><div class="onb-desc">'+t('onb3Desc')+'</div>'
       +'<div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;width:100%">'+t('onbMonthlyLbl')+'</div>'
       +'<input class="onb-inp" id="onb-ingreso" type="number" inputmode="decimal" placeholder="Ej: 20000" value="'+(ONB_INGRESO||"")+'">'
-      +'<button class="onb-btn" id="onb-next" style="margin-top:20px">'+t('onbNext')+'</button>'
+      +'<div style="width:100%;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1.5px solid #bfdbfe;border-radius:14px;padding:12px 14px;margin-top:14px">'
+      +'<div style="font-size:11px;font-weight:800;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">'+t('onbHowTitle')+'</div>'
+      +'<div style="display:flex;flex-direction:column;gap:5px">'
+      +['onbHowStep1','onbHowStep2','onbHowStep3','onbHowStep4'].map(function(k,i){return'<div style="display:flex;align-items:flex-start;gap:8px"><div style="min-width:20px;height:20px;background:'+(i===0?'#2563EB':i===1?'#ef4444':i===2?'#10b981':'#8b5cf6')+';border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;flex-shrink:0">'+(i+1)+'</div><div style="font-size:12px;color:#374151;line-height:1.4">'+t(k)+'</div></div>';}).join('')
+      +'</div></div>'
+      +'<button class="onb-btn" id="onb-next" style="margin-top:16px">'+t('onbNext')+'</button>'
       +'<button class="onb-btn sec" id="onb-back" style="margin-top:6px">'+t('onbBack')+'</button>';
     document.getElementById("onb-next").onclick=function(){ONB_INGRESO=parseFloat(document.getElementById("onb-ingreso").value)||0;onbNext();};
     document.getElementById("onb-back").onclick=onbBack;
@@ -2705,32 +2749,22 @@ function renderOnbStep(){
   } else if(ONB_STEP===5){
     // App tour
     var ONB_SECTIONS_ES=[
-      (LANG==="en"?[
-  {icon:"📊",title:"Summary",desc:"Your command center: weekly spending, available budget and latest transactions at a glance."},
-  {icon:"➕",title:"Add expense",desc:"Log any expense in seconds. Choose category, amount and description. Scan a receipt to auto-fill."},
-  {icon:"💰",title:"Finances",desc:"Add rent, utilities and subscriptions. Track monthly amounts — they can vary and you control them."},
-  {icon:"📅",title:"History",desc:"Search, filter and review all transactions. List or calendar view. Filter by date, category or free text."},
-  {icon:"✨",title:"Insights",desc:"Automatic analysis: month-end projection, spending patterns, financial score and the what-if simulator."},
-  {icon:"📈",title:"Analysis",desc:"Full monthly view: real available income, fixed vs variable, alerts, trends and category breakdown."},
-  {icon:"⚙️",title:"Settings",desc:"Customize names, emojis, custom categories, weekly savings goal and export data to CSV."}
-]:[
-  {icon:"📊",title:"Resumen",desc:"Tu centro de mando: ve cuánto llevas gastado esta semana, cuánto tienes disponible y tus últimos movimientos de un vistazo."},
-      {icon:"➕",title:"Agregar gasto",desc:"Registra cualquier gasto en segundos. Elige categoría, monto y descripción. Puedes escanear el ticket para autocompletar."},
-      {icon:"💰",title:"Finanzas / Gastos fijos",desc:"Agrega tu renta, servicios y suscripciones. Marca cada mes cuánto pagaste — los montos pueden variar y tú los controlas."},
-      {icon:"📅",title:"Historial",desc:"Busca, filtra y revisa todos tus movimientos. Vista de lista o calendario. Filtra por fecha, categoría o texto libre."},
-      {icon:"✨",title:"Insights",desc:"Análisis automático: proyección de cierre, patrones de gasto, puntaje financiero y el simulador '¿qué pasa si...?'"},
-      {icon:"📈",title:"Análisis",desc:"Vista mensual completa: ingreso real disponible, gastos fijos vs variables, alertas, tendencias y desglose por categoría."},
-      {icon:"⚙️",title:"Ajustes",desc:"Personaliza nombres, emojis, categorías propias, meta de ahorro semanal y exporta tus datos a CSV."}
-])
+      {icon:"📊",title:"Mi semana",desc:"Tu pantalla principal. Muestra cuánto llevas gastado, cuánto tienes disponible hoy y cómo vas a cerrar la semana — de un vistazo."},
+      {icon:"➕",title:"Agregar gasto",desc:"Registra cualquier gasto en segundos: categoría, monto y descripción. Cada gasto que agregas actualiza al instante tu disponible semanal y tu guía diaria."},
+      {icon:"💰",title:"Finanzas",desc:"Aquí defines tu ingreso y tus gastos fijos mensuales (renta, servicios, suscripciones). Saldo los resta primero para que tu presupuesto semanal sea dinero que realmente puedes usar."},
+      {icon:"📅",title:"Historial",desc:"Todos tus movimientos en un solo lugar. Busca por fecha, categoría o texto. Vista de lista o calendario."},
+      {icon:"✨",title:"Insights",desc:"Análisis automático: proyección de cierre del mes, patrones de gasto, puntaje financiero semanal y el simulador '¿qué pasaría si...?'"},
+      {icon:"📈",title:"Análisis",desc:"Vista mensual completa: flujo de dinero, desglose por categoría, tendencias y alertas inteligentes."},
+      {icon:"⚙️",title:"Ajustes",desc:"Configura tu meta de ahorro semanal (activa la racha), personaliza categorías y exporta tus datos."}
     ];
     var ONB_SECTIONS_EN=[
-      {icon:"📊",title:"Summary",desc:"Your command center: see how much you've spent this week, what's available, and your latest transactions at a glance."},
-      {icon:"➕",title:"Add expense",desc:"Record any expense in seconds. Pick category, amount, description. You can scan a receipt to autocomplete."},
-      {icon:"💰",title:"Finances / Fixed expenses",desc:"Add your rent, utilities and subscriptions. Mark each month how much you paid — amounts can vary and you control it."},
-      {icon:"📅",title:"History",desc:"Search, filter and review all your transactions. List or calendar view. Filter by date, category or free text."},
-      {icon:"✨",title:"Insights",desc:"Automatic analysis: month projection, spending patterns, financial score and the 'what if...?' simulator."},
-      {icon:"📈",title:"Analysis",desc:"Full monthly view: real disposable income, fixed vs variable expenses, alerts, trends and category breakdown."},
-      {icon:"⚙️",title:"Settings",desc:"Customize names, emojis, custom categories, weekly savings goal and export your data to CSV."}
+      {icon:"📊",title:"My week",desc:"Your main screen. Shows how much you have left this week, your safe daily amount, and how you are tracking — all at a glance."},
+      {icon:"➕",title:"Add expense",desc:"Log any expense in seconds: category, amount, description. Each one instantly updates your weekly available balance and your daily guide."},
+      {icon:"💰",title:"Finances",desc:"Set your income and fixed monthly expenses (rent, utilities, subscriptions). Saldo subtracts them first so your weekly budget only shows money you are truly free to spend."},
+      {icon:"📅",title:"History",desc:"All your transactions in one place. Filter by date, category or text. List or calendar view."},
+      {icon:"✨",title:"Insights",desc:"Automatic analysis: month-end projection, spending patterns, weekly financial score and the 'what if?' simulator."},
+      {icon:"📈",title:"Analysis",desc:"Full monthly view: money flow, category breakdown, trends and smart alerts."},
+      {icon:"⚙️",title:"Settings",desc:"Set your weekly savings goal (unlocks the streak), customize categories and export your data."}
     ];
     var sections=LANG==="en"?ONB_SECTIONS_EN:ONB_SECTIONS_ES;
     c.innerHTML='<div class="onb-icon">🗺️</div><div class="onb-title">'+t("onb6Title")+'</div><div class="onb-desc">'+t("onb6Desc")+'</div>'
@@ -2740,7 +2774,7 @@ function renderOnbStep(){
         +'<div><div style="font-size:13px;font-weight:900;color:#0f172a;margin-bottom:2px">'+s.title+'</div>'
         +'<div style="font-size:12px;color:#64748b;line-height:1.5">'+s.desc+'</div></div></div>';}).join('')
       +'</div>'
-      +'<button class="onb-btn" id="onb-next" style="margin-top:4px">Continuar →</button>'
+      +'<button class="onb-btn" id="onb-next" style="margin-top:4px">'+t('onbNext')+'</button>'
       +'<button class="onb-btn sec" id="onb-back" style="margin-top:6px">'+t('onbBack')+'</button>';
     document.getElementById("onb-next").onclick=onbNext;
     document.getElementById("onb-back").onclick=onbBack;
@@ -2751,13 +2785,13 @@ function renderOnbStep(){
     var presSem=Math.round(libre2/semsxMes2/100)*100;
     c.innerHTML='<div class="onb-icon">🎉</div><div class="onb-title">'+t('onb7Title')+'</div><div class="onb-desc">'+t('onb7Desc')+'</div>'
       +(ONB_INGRESO>0?'<div style="width:100%;background:#fff;border-radius:16px;padding:16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.06)">'
-        +'<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:13px;color:#64748b">Ingreso mensual</span><span style="font-size:13px;font-weight:800">'+fmt(ONB_INGRESO)+'</span></div>'
-        +(ONB_FIJOS.length?'<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:13px;color:#64748b">Gastos fijos ('+ONB_FIJOS.length+')</span><span style="font-size:13px;font-weight:800;color:#ef4444">−'+fmt(totalFijos3)+'</span></div>':"")
-        +'<div style="display:flex;justify-content:space-between;padding:8px 0"><span style="font-size:14px;font-weight:800">Libre para gastar/mes</span><span style="font-size:14px;font-weight:900;color:#10b981">'+fmt(libre2)+'</span></div>'
+        +'<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:13px;color:#64748b">'+t('onb7MonthIncome')+'</span><span style="font-size:13px;font-weight:800">'+fmt(ONB_INGRESO)+'</span></div>'
+        +(ONB_FIJOS.length?'<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:13px;color:#64748b">'+t('onb7FixedLabel')+' ('+ONB_FIJOS.length+')</span><span style="font-size:13px;font-weight:800;color:#ef4444">−'+fmt(totalFijos3)+'</span></div>':"")
+        +'<div style="display:flex;justify-content:space-between;padding:8px 0"><span style="font-size:14px;font-weight:800">'+t('onb7FreeLabel')+'</span><span style="font-size:14px;font-weight:900;color:#10b981">'+fmt(libre2)+'</span></div>'
         +'</div>':"")
-      +(presSem>0?'<div class="onb-highlight"><div class="onb-big">'+fmt(presSem)+'</div><div class="onb-big-label">Tu presupuesto '+ONB_PERIODO+'</div></div>':"")
+      +(presSem>0?'<div class="onb-highlight"><div class="onb-big">'+fmt(presSem)+'</div><div class="onb-big-label">'+t('onb7PeriodLabel')+' '+ONB_PERIODO+'</div></div>':"")
       +'<div style="font-size:12px;color:#64748b;text-align:center;line-height:1.6;margin-top:8px">'+t('onb7Tip')+'</div>'
-      +'<button class="onb-btn" id="onb-finish" style="margin-top:20px;background:linear-gradient(135deg,#2563EB,#7c3aed)">Empezar →</button>'
+      +'<button class="onb-btn" id="onb-finish" style="margin-top:20px;background:linear-gradient(135deg,#2563EB,#7c3aed)">'+t('onb7StartBtn')+'</button>'
       +'<button class="onb-btn sec" id="onb-back" style="margin-top:6px">'+t('onbBack')+'</button>';
     document.getElementById("onb-finish").onclick=onbFinish;
     document.getElementById("onb-back").onclick=onbBack;
