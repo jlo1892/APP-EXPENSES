@@ -644,11 +644,12 @@ es:{
   homeAccumulated:'Total acumulado',homeEstMonth:'Estimado fin mes',
   homeSavedPrev:'✨ Llevan',homeSavedPrev2:'ahorrado en semanas anteriores',
   homeToday:'Hoy',homeRemain:'Restan',homeDaysLeft:'días en la semana',homeOver2:'Te pasaste hoy en',
-  homeLastExp:'Últimos gastos esta semana',homeNoExp:'Sin gastos esta semana',
+  homeLastExp:'Últimos gastos esta semana',homeNoExp:'Sin gastos esta semana',homeLastExpenses:'Gastos recientes esta semana',
   homeViewAll:'Ver historial completo →',homeGoInsights:'✨ Ver análisis detallado e Insights →',
   homeDebts:'Deudas activas',homeDebtTotal:'Saldo total',homeDebtMonthly:'Pago mensual',
   homeViewFin:'Ver todas en Finanzas →',homeAIAnalysis:'🤖 Análisis del mes con IA',
-  homeRollover:'¡Nueva semana! Se añadió',homeRollover2:'de saldo anterior. Tu presupuesto aumentó a',
+  aiMonthSummary:'🤖 Análisis mensual con IA',
+  homeRollover:'¡Nueva semana! Se sumó',homeRollover2:'Tu presupuesto quedó en',
   homeAdjBudget:'Ajustar presupuesto',
   homeWeeklyGoal:'Meta semanal de ahorro',
   homeWeeklyTarget:'Guía: gasta ~',homeWeeklyTargetDay:'por día para cerrar dentro del presupuesto',
@@ -839,7 +840,80 @@ es:{
   csvType:'TIPO',csvDate:'Fecha',csvUser:'Usuario',csvAmount:'Monto',
   csvDesc:'Descripción',csvCat:'Categoría',csvSplit:'Split',csvTicket:'Ticket',
   csvFixed:'Fijo',csvBaseAmt:'Monto base',csvAdjAmt:'Monto ajustado mes',csvStatus:'Estado',
-  csvPaid:'Pagado',csvPending:'Pendiente',csvSection:'── GASTOS FIJOS',csvOf:'──',
+  csvYes:'Sí',csvNo:'No',csvPaid:'Pagado',csvPending:'Pendiente',csvSection:'── GASTOS FIJOS',csvOf:'──',
+
+  /* Header inline keys */
+  heroSignOut:'Salir ↩',heroAvailable:'💰 Disponible esta semana',heroOverBudget:'⚠️ Te pasaste en',
+  heroSpent:'Gastado',heroOf:'de',heroDailyBudget:'Guía de hoy',heroWeekEnd:'Cierre estimado',
+  heroAddExp:'➕ Agregar gasto',heroExtraInc:'💰 Ingreso extra',heroAdjBudget:'⚙️ Ajustar presupuesto ▾',
+
+  /* Home inline keys */
+  homeDailyLeft:'disponibles hoy',homeDailyOver:'Te pasaste hoy en',
+  homeDailySpent:'Gastaste',homeDailyOf:'de tu guía de',homeDailyDaysLeft:' días restantes en la semana',
+  homeSavingsGoalPct:'de la meta semanal',homeInvRequests:'te pide',
+  homeNoExpTip:'Toca ➕ para registrar tu primer gasto.',
+  homeInsightsCTA:'✨ Ver Insights y análisis detallado →',
+
+  /* Insights inline */
+  insNoDataSub:'Registra gastos para desbloquear tus análisis.',
+  insProySpentLbl:'Gasto proyectado',insProyBudgetLbl:'Presupuesto semanal',
+  insWithDays:'Con',insOfData:'días de datos, calculamos cuánto van a gastar si siguen a este ritmo.',
+  insProySpent:'Gasto proyectado',insProyBudget:'Presupuesto semanal',
+
+  /* Historial inline */
+  histTitleStr:'📅 Historial',histSearchPh:'🔍 Buscar..',
+  histFilterSub:'Prueba otro filtro o rango de fechas.',
+
+  /* Análisis inline */
+  analBudgetExplain:'Revisa qué categoría lo generó y ajusta la siguiente semana.',
+  analTrendExplain:'Tendencia al alza. Identifica qué cambió.',
+  analTop50Explain:'Considera si hay oportunidad de reducirlo.',
+  analLowFreeWarn:'Menos del 10% del ingreso libre',
+  analLowFreeExplain:'Considera reducir gastos variables o ajustar el presupuesto.',
+  analPaidLabel:'✓ Pagado',analPendingLabel:'Pendiente',
+  analWeekChart:'📊 Semana a semana',
+  analTrendSpending:'Gasto',
+
+  /* Finanzas inline */
+  finNoDebts:'Sin deudas registradas',finAddDebt:'+ Agregar deuda / crédito',
+  finNoFrec:'Sin frecuentes guardados',finAddFrecBtn:'+ Agregar frecuente',
+  finSectionFreqTitle:'⚡ Gastos frecuentes',
+  finDebtActiveLabel:'✅ Activa',finDebtPausedLabel:'⏸️ Pausada',
+  finDebtCard:'Tarjeta',finDebtLoan:'Préstamo',finDebtDeferred:'Diferido',finDebtOther:'Otro',
+  finDebtBalance:'Saldo: ',finDebtPayLabel:'/mes',finDebtDayLabel:'Día',
+  finCalcAvail:'Disponible',finCalcPerWeek:'Por semana',finCalcWeeks:'Semanas',
+  finExportDesc:'Descarga todos tus gastos en formato CSV para abrirlos en Excel.',
+  finPeriodStart:'Inicio',finPeriodEnd:'Fin',
+  finFixedPaidBadge:'✅ Pagado',finFixedPendingBadge:'Pendiente',
+
+  /* Config inline */
+  cfgProfileName:'Nombre',cfgWeekGoalLabel:'Meta semanal',cfgLangLabel:'Idioma de la app',
+  cfgSpaceJoinHint:'El otro usuario lo ingresa en "Unirme a un espacio" al crear su cuenta.',
+  cfgEmojiSelect:'Seleccionar emoji',cfgEmojiRecent:'Recientes',cfgEmojiAll:'Todos',
+
+  /* Modal inline */
+  modalAmount:'Monto',modalDesc:'Descripción',modalCat:'Categoría',
+
+  /* Error / Toast inline */
+  toastCodeCopied:'📋 Código copiado: ',errTooManyAttempts:'Demasiados intentos. Intenta más tarde.',
+  toastPeriodSaved:'📅 Período guardado',toastPeriodEndDate:'Fecha final debe ser posterior',
+  toastSimAbove:'arriba del presupuesto',toastSimBelow:'debajo del presupuesto',
+  simIfSpend:'si bajan ',simPct:'%',
+
+  /* Análisis missing */
+  analBudgetOver2:'⚠️ Excedido por ',
+
+  /* Onboarding */
+  onb4Title:'Gastos fijos',
+  onb4Desc:'Renta, servicios, suscripciones... Lo que pagas cada mes. Se descuenta antes de calcular tu presupuesto libre.',
+
+  /* PRO */
+  proTitle:'Saldo Pro 🌟',proSubtitle:'Desbloquea el potencial completo de tu dinero',
+  proPlan:'Plan gratuito',proUnlock:'Desbloquear Pro',proCTA:'Próximamente',
+  proFeature1:'Proyecciones semanales inteligentes',proFeature2:'Historial completo sin límites',
+  proFeature3:'Modo pareja / familia compartido',proFeature4:'Análisis avanzado de patrones',
+  proFeature5:'Exportación y respaldo de datos',proFeature6:'Alertas personalizadas',
+  proFeature7:'Experiencia sin anuncios',proFeatureNote:'Todo lo que necesitas para no perder el control de tu dinero.',
 },
 
 en:{
@@ -1081,7 +1155,7 @@ en:{
   csvType:'TYPE',csvDate:'Date',csvUser:'User',csvAmount:'Amount',
   csvDesc:'Description',csvCat:'Category',csvSplit:'Split',csvTicket:'Receipt',
   csvFixed:'Fixed',csvBaseAmt:'Base amount',csvAdjAmt:'Adjusted this month',csvStatus:'Status',
-  csvPaid:'Paid',csvPending:'Pending',csvSection:'── FIXED EXPENSES',csvOf:'──',
+  csvYes:'Yes',csvNo:'No',csvPaid:'Paid',csvPending:'Pending',csvSection:'── FIXED EXPENSES',csvOf:'──',
 
   /* Auth extras */
   greetHola:'Hello, ',toastRedirecting:'Opening with redirect...',
@@ -1146,6 +1220,89 @@ en:{
   simIfSpend:'spending ',simPct:'% less',
   onbTourTitle:'Meet Saldo',
   homeRolloverSuffix:' from previous balance',homeBudgetIncreased:'Your budget increased to ',
+
+  /* Header inline keys */
+  heroSignOut:'Sign out ↩',heroAvailable:'💰 Available this week',heroOverBudget:'⚠️ Over budget by',
+  heroSpent:'Spent',heroOf:'of',heroDailyBudget:'Daily budget',heroWeekEnd:'Week-end projection',
+  heroAddExp:'➕ Add expense',heroExtraInc:'💰 Extra income',heroAdjBudget:'⚙️ Adjust budget ▾',
+
+  /* Home inline keys */
+  homeDailyLeft:'left today',homeDailyOver:'Over today by',
+  homeDailySpent:"You've spent",homeDailyOf:'of your daily guide of',
+  homeDailyDaysLeft:' days left in the week',
+  homeSavingsGoalPct:'of weekly goal',homeInvRequests:'requests',
+  homeNoExpTip:'Tap ➕ to log your first expense.',
+  homeInsightsCTA:'✨ View Insights & detailed analysis →',
+  homeLastExpenses:'Recent expenses this week',
+
+  /* Insights inline */
+  insNoDataSub:'Start adding expenses to unlock insights.',
+  insProySpentLbl:'Projected spend',insProyBudgetLbl:'Weekly budget',
+  insWithDays:'With',insOfData:'days of data, we calculate your projected total at this pace.',
+
+  /* Historial inline */
+  histTitleStr:'📅 History',histSearchPh:'🔍 Search..',
+  histFilterSub:'Try a different filter or date range.',
+
+  /* Análisis inline */
+  analBudgetExplain:'Check which category caused it and adjust next week.',
+  analTrendExplain:'Upward trend. Identify what changed.',
+  analTop50Explain:'Consider if there is an opportunity to reduce it.',
+  analLowFreeWarn:'Less than 10% of income free',
+  analLowFreeExplain:'Consider reducing variable expenses or adjusting your budget.',
+  analPaidLabel:'✓ Paid',analPendingLabel:'Pending',
+  analWeekChart:'📊 Week by week',
+  analTrendSpending:'Spending',
+
+  /* Finanzas inline */
+  finNoDebts:'No debts registered',finAddDebt:'+ Add debt / credit',
+  finNoFrec:'No quick-access items saved',finAddFrecBtn:'+ Add quick access',
+  finSectionFreqTitle:'⚡ Quick expenses',
+  finDebtActiveLabel:'✅ Active',finDebtPausedLabel:'⏸️ Paused',
+  finDebtCard:'Card',finDebtLoan:'Loan',finDebtDeferred:'Deferred',finDebtOther:'Other',
+  finDebtBalance:'Balance: ',finDebtPayLabel:'/mo',finDebtDayLabel:'Day',
+  finCalcAvail:'Available',finCalcPerWeek:'Per week',finCalcWeeks:'Weeks',
+  finExportDesc:'Download all your expenses as CSV to open in Excel.',
+  finPeriodStart:'Start',finPeriodEnd:'End',
+  finFixedPaidBadge:'✅ Paid',finFixedPendingBadge:'Pending',
+
+  /* Config inline */
+  cfgProfileName:'Name',cfgWeekGoalLabel:'Weekly goal',cfgLangLabel:'App language',
+  cfgSpaceJoinHint:'The other user enters this in "Join a space" when creating their account.',
+  cfgEmojiSelect:'Select emoji',cfgEmojiRecent:'Recent',cfgEmojiAll:'All',
+
+  /* Modal inline */
+  modalAmount:'Amount',modalDesc:'Description',modalCat:'Category',
+
+  /* Error / Toast inline */
+  toastCodeCopied:'📋 Code copied: ',errTooManyAttempts:'Too many attempts. Try again later.',
+  toastPeriodSaved:'📅 Period saved',toastPeriodEndDate:'End date must be later',
+  toastSimAbove:'above budget',toastSimBelow:'below budget',
+
+  /* Análisis missing */
+  analBudgetOver2:'⚠️ Exceeded by ',
+
+  /* Onboarding */
+  onb4Title:'Fixed expenses',
+  onb4Desc:'Rent, utilities, subscriptions... What you pay every month. Deducted before calculating your free budget.',
+
+  /* PRO */
+  proTitle:'Saldo Pro 🌟',proSubtitle:'Unlock the full potential of your money',
+  proPlan:'Free plan',proUnlock:'Unlock Pro',proCTA:'Coming soon',
+  proFeature1:'Smart weekly projections',proFeature2:'Unlimited history',
+  proFeature3:'Couple & family shared mode',proFeature4:'Advanced pattern analysis',
+  proFeature5:'Data export & backup',proFeature6:'Custom alerts',
+  proFeature7:'Ad-free experience',proFeatureNote:'Everything you need to stay in control of your money.',
+
+  aiMonthSummary:'🤖 Monthly AI analysis',
+  analBudgetOver:'Budget exceeded by ',
+  analTrendPct:'% higher than ',analTop50:' accounts for over 50% of spending',
+  analBestDay:'🔴 Day with highest avg spending',
+  finDebtTitle:'💳 Debts & credit',finCalcDist:'📊 Calculated distribution',
+  finSectionPeriod:'Custom period',
+  finPeriodDesc:'Define a custom period different from calendar weeks (e.g. bi-weekly).',
+  finSectionDebts:'Debts & credit',finSectionFrec:'Quick access',
+  finSectionAI:'Monthly AI summaries',
 }
 };
 function t(k){return(TX[LANG]||TX.es)[k]||(TX.es[k]||k);}
@@ -1324,7 +1481,7 @@ document.getElementById("btn-crear-espacio").onclick=function(){
   var u={};u["espacios/"+sid+"/miembros/"+user.uid]=rol;u["espacios/"+sid+"/codigoInvitacion"]=code;u["espacios/"+sid+"/creadoPor"]=user.uid;u["espacios/"+sid+"/creadoEn"]=Date.now();u["codigos/"+code]=sid;u["usuarios/"+user.uid]={espacioId:sid,email:user.email||"",nombre:user.displayName||"",rol:rol};
   db.ref().update(u,function(err){if(err){alert("Error: "+err.message);return;}document.getElementById("code-value").textContent=code;showScreen("scr-codigo");});
 };
-document.getElementById("btn-copiar-codigo").onclick=function(){var code=document.getElementById("code-value").textContent;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast((LANG==="en"?"📋 Code copied: ":"📋 Código copiado: ")+code,"#10b981");}).catch(function(){prompt("Copia:",code);});}else{prompt("Copia:",code);}};
+document.getElementById("btn-copiar-codigo").onclick=function(){var code=document.getElementById("code-value").textContent;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast(t('toastCodeCopied')+code,"#10b981");}).catch(function(){prompt("Copia:",code);});}else{prompt("Copia:",code);}};
 document.getElementById("btn-continuar-sin-pareja").onclick=function(){
   var sid=_pendingSid,rol=_pendingRol||"manolo";
   if(!sid){var user=auth.currentUser;if(!user)return;db.ref("usuarios/"+user.uid).once("value",function(snap){var d=snap.val()||{};sid=d.espacioId;rol=d.rol||"manolo";if(!sid){alert("Error: no se encontró el espacio.");return;}_doEntrar(sid,rol);});return;}
@@ -1547,7 +1704,7 @@ function insProyeccion(todos){
   var col=ok?"#10b981":"#ef4444";
   var rem=bud-st.total,rec=st.daysLeft?Math.round(rem/st.daysLeft):rem;
   var msg=st.daysLeft?(rec<0?t('insProyExceeded').replace('{n}',fmt(Math.abs(rem))):t('insProyGuide').replace('{n}',fmt(rec))):(ok?t('insProyOk'):t('insProyFail'));
-  return'<div class="ins-section"><div class="ins-head"><span class="ins-tag" style="background:#dbeafe;color:#1d4ed8">'+t('insTagProy')+'</span><div class="ins-title">'+t('insTitleProy')+'</div><div class="ins-desc">'+(LANG==='en'?'With':'Con')+' '+st.daysElapsed+' '+(LANG==='en'?'days of data, we calculate your projected total at this pace.':'días de datos, calculamos cuánto van a gastar en total si siguen a este ritmo.')+'</div></div><div class="ins-body"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px"><div><div style="font-size:11px;color:#64748b;font-weight:700">Gasto proyectado</div><div style="font-size:32px;font-weight:900;color:'+col+'">'+fmt(st.projTotal)+'</div></div><div style="text-align:right"><div style="font-size:11px;color:#64748b;font-weight:700">Presupuesto mes</div><div style="font-size:20px;font-weight:900;color:#374151">'+fmt(bud)+'</div></div></div><div style="background:#f1f5f9;border-radius:50px;height:8px;overflow:hidden;margin-bottom:10px"><div style="height:8px;border-radius:50px;background:'+col+';width:'+Math.min(100,Math.round((st.projTotal/Math.max(bud,1))*100))+'%"></div></div><div style="font-size:13px;font-weight:800;color:'+col+';margin-bottom:4px">'+(ok?t('insProyUnder').replace('{n}',fmt(diff)):t('insProyOver').replace('{n}',fmt(Math.abs(diff))))+'</div><div style="font-size:12px;color:#64748b">'+msg+'</div></div></div>';
+  return'<div class="ins-section"><div class="ins-head"><span class="ins-tag" style="background:#dbeafe;color:#1d4ed8">'+t('insTagProy')+'</span><div class="ins-title">'+t('insTitleProy')+'</div><div class="ins-desc">'+t('insWithDays')+' '+st.daysElapsed+' '+t('insOfData')+'</div></div><div class="ins-body"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px"><div><div style="font-size:11px;color:#64748b;font-weight:700">'+t('insProySpent')+'</div><div style="font-size:32px;font-weight:900;color:'+col+'">'+fmt(st.projTotal)+'</div></div><div style="text-align:right"><div style="font-size:11px;color:#64748b;font-weight:700">'+t('insProyBudget')+'</div><div style="font-size:20px;font-weight:900;color:#374151">'+fmt(bud)+'</div></div></div><div style="background:#f1f5f9;border-radius:50px;height:8px;overflow:hidden;margin-bottom:10px"><div style="height:8px;border-radius:50px;background:'+col+';width:'+Math.min(100,Math.round((st.projTotal/Math.max(bud,1))*100))+'%"></div></div><div style="font-size:13px;font-weight:800;color:'+col+';margin-bottom:4px">'+(ok?t('insProyUnder').replace('{n}',fmt(diff)):t('insProyOver').replace('{n}',fmt(Math.abs(diff))))+'</div><div style="font-size:12px;color:#64748b">'+msg+'</div></div></div>';
 }
 
 function insPatrones(todos){
@@ -1611,7 +1768,7 @@ function updateWhatIf(todos){
   WF.cat=cE.value;WF.pct=parseInt(pE.value||"0");
   if(lbl)lbl.textContent=WF.pct+"%";
   var st=monthStats(todos,mesKey()),bud=monthlyBudgetForDays(st.dim),baseCat=st.byCatProj[WF.cat]||0,save=Math.round(baseCat*(WF.pct/100)),newProj=Math.max(0,st.projTotal-save),diff=bud-newProj,ok=diff>=0,c=CATS.find(function(x){return x.id===WF.cat;})||{i:"📦",l:"Otro"};
-  out.innerHTML='<div style="font-weight:900;margin-bottom:8px">'+c.i+' '+c.l+': '+(LANG==="en"?t('simIfSpend')+WF.pct+t('simPct'):'si bajan '+WF.pct+'%')+'</div><div>• '+t('simEstimated')+'<b>'+fmt(save)+'</b> (≈ '+fmt(Math.round(save*12))+t('simPerYear')+')</div><div>• '+t('simProjDrop')+'<b>'+fmt(newProj)+'</b></div><div>• '+t('simVsBud')+fmt(bud)+'): <b style="color:'+(ok?"#10b981":"#ef4444")+'">'+(ok?"+"+fmt(diff)+" debajo":fmt(Math.abs(diff))+" arriba")+'</b></div>';
+  out.innerHTML='<div style="font-weight:900;margin-bottom:8px">'+c.i+' '+c.l+': '+t('simIfSpend')+WF.pct+t('simPct')+'</div><div>• '+t('simEstimated')+'<b>'+fmt(save)+'</b> (≈ '+fmt(Math.round(save*12))+t('simPerYear')+')</div><div>• '+t('simProjDrop')+'<b>'+fmt(newProj)+'</b></div><div>• '+t('simVsBud')+fmt(bud)+'): <b style="color:'+(ok?"#10b981":"#ef4444")+'">'+fmt(Math.abs(diff))+" "+(ok?t("toastSimBelow"):t("toastSimAbove"))+'</b></div>';
 }
 
 // ── RENDER APP ──
@@ -1643,19 +1800,19 @@ function renderApp(){
     +'<div style="font-size:9px;opacity:.65;text-transform:uppercase;letter-spacing:2px">'+t('homeWeek')+'</div>'
     +'<div style="font-size:16px;font-weight:900;margin-top:1px">'+p[u].emoji+' '+p[u].nombre+'</div>'
     +'<div style="margin-top:3px"><span class="hbadge">'+fmtR(iA,fA)+'</span>'+(esSemNueva?'<span style="background:#22c55e;border-radius:50px;padding:3px 10px;font-size:11px;font-weight:700;margin-left:6px">'+t('homeNewWeek')+'</span>':'')+(roll>0?'<span class="hroll">+'+fmt(roll)+'</span>':'')+'</div></div>'
-    +'<button class="bcam" id="bcam">'+(LANG==='en'?'Sign out ↩':'Salir ↩')+'</button></div>'
+    +'<button class="bcam" id="bcam">'+t('heroSignOut')+'</button></div>'
     +'<div class="hero-center">'
-    +'<div class="hero-label">'+(rojo?(LANG==='en'?'⚠️ Over budget by':'⚠️ Te pasaste en'):(LANG==='en'?'💰 Available this week':'💰 Disponible esta semana'))+'</div>'
+    +'<div class="hero-label">'+(rojo?t('heroOverBudget'):t('heroAvailable'))+'</div>'
     +'<div class="hmonto">'+fmt(Math.abs(disp))+'</div>'
-    +'<div class="hero-sub">'+(LANG==='en'?'Spent':'Gastado')+' <b>'+fmt(tot)+'</b> '+(LANG==='en'?'of':'de')+' '+fmt(presTot)+' · '+(pct>=100?"🔴":pct>=75?"🟡":"🟢")+' '+Math.round(pct)+'%</div>'
+    +'<div class="hero-sub">'+t('heroSpent')+' <b>'+fmt(tot)+'</b> '+t('heroOf')+' '+fmt(presTot)+' · '+(pct>=100?"🔴":pct>=75?"🟡":"🟢")+' '+Math.round(pct)+'%</div>'
     +'</div>'
     +'<div class="barw"><div class="barf" style="width:'+pct+'%;background:'+(rojo?"#fbbf24":"rgba(255,255,255,.85)")+';"></div></div>'
     +'<div class="hero-stats">'
-    +'<div class="hero-stat"><div class="hero-stat-val">'+(dcH.presHoy>0?fmt(dcH.presHoy):"—")+'</div><div class="hero-stat-lbl">'+(LANG==='en'?'Daily budget':'Guía de hoy')+'</div></div>'
-    +'<div class="hero-stat"><div class="hero-stat-val" style="color:'+(proyFin>=0?"#86efac":"#fca5a5")+'">'+fmt(proyFin)+'</div><div class="hero-stat-lbl">'+(LANG==='en'?'Week-end projection':'Cierre estimado')+'</div></div>'
+    +'<div class="hero-stat"><div class="hero-stat-val">'+(dcH.presHoy>0?fmt(dcH.presHoy):"—")+'</div><div class="hero-stat-lbl">'+t('heroDailyBudget')+'</div></div>'
+    +'<div class="hero-stat"><div class="hero-stat-val" style="color:'+(proyFin>=0?"#86efac":"#fca5a5")+'">'+fmt(proyFin)+'</div><div class="hero-stat-lbl">'+t('heroWeekEnd')+'</div></div>'
     +'</div>'
-    +'<div class="hdr-quick-btns"><button class="hdr-qbtn" id="btn-quick-gasto">➕ '+(LANG==='en'?'Add expense':'Agregar gasto')+'</button><button class="hdr-qbtn" id="btn-quick-ingreso">💰 '+(LANG==='en'?'Extra income':'Ingreso extra')+'</button></div>'
-    +'<details style="margin:0 0 0"><summary class="ctrl-toggle">⚙️ '+(LANG==='en'?'Adjust budget':'Ajustar presupuesto')+' ▾</summary>'
+    +'<div class="hdr-quick-btns"><button class="hdr-qbtn" id="btn-quick-gasto">'+t('heroAddExp')+'</button><button class="hdr-qbtn" id="btn-quick-ingreso">'+t('heroExtraInc')+'</button></div>'
+    +'<details style="margin:0 0 0"><summary class="ctrl-toggle">'+t('heroAdjBudget')+'</summary>'
     +'<div class="ctrl" style="margin-top:8px">'
     +'<div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">'
     +'<input type="number" inputmode="decimal" id="inp-ajuste" value="'+ajuste+'" min="1" style="flex:1;min-width:0;border:1.5px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(255,255,255,.1);color:#fff;padding:7px 10px;font-size:14px;font-weight:900;font-family:inherit;outline:none;text-align:center"/>'
@@ -1773,7 +1930,7 @@ function bindAll(todos){
   if(wfCat||wfPct){setTimeout(function(){updateWhatIf(todos);},0);}
   qa(".gcreact",function(b){b.addEventListener("click",function(e){e.stopPropagation();reactFor=b.dataset.id;renderApp();});});
   var bsp2=g("btn-save-periodo2");
-  if(bsp2)bsp2.onclick=function(){var ini=g("inp-periodo-ini")&&g("inp-periodo-ini").value,fin=g("inp-periodo-fin")&&g("inp-periodo-fin").value;if(!ini||!fin){toast(t("toastBothDates"),"#f59e0b");return;}var d1=new Date(ini+"T00:00:00"),d2=new Date(fin+"T00:00:00");if(isNaN(d1)||isNaN(d2)||d2<=d1){toast(LANG==="en"?"End date must be later":"Fecha final debe ser posterior","#ef4444");return;}ST.settings.periodoInicio=ini;ST.settings.periodoFin=fin;saveDB();toast((LANG==="en"?"📅 Period saved":(LANG==="en"?"📅 Period saved":"📅 Período guardado")),"#0ea5e9");renderApp();};
+  if(bsp2)bsp2.onclick=function(){var ini=g("inp-periodo-ini")&&g("inp-periodo-ini").value,fin=g("inp-periodo-fin")&&g("inp-periodo-fin").value;if(!ini||!fin){toast(t("toastBothDates"),"#f59e0b");return;}var d1=new Date(ini+"T00:00:00"),d2=new Date(fin+"T00:00:00");if(isNaN(d1)||isNaN(d2)||d2<=d1){toast(t('toastPeriodEndDate'),"#ef4444");return;}ST.settings.periodoInicio=ini;ST.settings.periodoFin=fin;saveDB();toast(t('toastPeriodSaved'),"#0ea5e9");renderApp();};
   var bcp=g("btn-clear-periodo");if(bcp)bcp.onclick=function(){ST.settings.periodoInicio="";ST.settings.periodoFin="";saveDB();toast(t("toastPeriodRemoved"),"#64748b");renderApp();};
   if(vista==="finanzas"){
     var bar=g("btn-add-rec");if(bar)bar.onclick=addRec;
@@ -1815,7 +1972,7 @@ function bindAll(todos){
     qa(".emoji-opt",function(b){b.onclick=function(){tempCatEmoji=b.dataset.e;saveEmojiReciente(b.dataset.e);emojiPickerOpenCat=false;emojiSearchCat="";renderApp();};});
     // Copy space code button
     var bcc=g("btn-copy-spcode");
-    if(bcc)bcc.onclick=function(){var codeEl=g("conf-code-val");var code=codeEl?codeEl.textContent.trim():"";if(!code||code==="···")return;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast((LANG==="en"?"📋 Code copied: ":"📋 Código copiado: ")+code,"#10b981");}).catch(function(){prompt("Copia:",code);});}else{prompt("Copia:",code);}};
+    if(bcc)bcc.onclick=function(){var codeEl=g("conf-code-val");var code=codeEl?codeEl.textContent.trim():"";if(!code||code==="···")return;if(navigator.clipboard){navigator.clipboard.writeText(code).then(function(){toast(t('toastCodeCopied')+code,"#10b981");}).catch(function(){prompt("Copia:",code);});}else{prompt("Copia:",code);}};
   }
   if(editGastoId){
     if(g("modal-close"))g("modal-close").onclick=function(){editGastoId=null;renderApp();};
@@ -1925,15 +2082,15 @@ function bHome(sem,todos,pres,tot,disp,roll){
     var cardClass=okD?(pctD<60?"daily-ok":"daily-warn"):"daily-over";
     var icon=okD?(pctD<60?"✅":"⚡"):"🔴";
     var mainMsg=okD
-      ?fmt(dc.dispHoy)+' '+(LANG==='en'?'left today':'disponibles hoy')
-      :(LANG==='en'?'Over today by ':'Te pasaste hoy en ')+fmt(Math.abs(dc.dispHoy));
+      ?fmt(dc.dispHoy)+' '+t('homeDailyLeft')
+      :t('homeDailyOver')+' '+fmt(Math.abs(dc.dispHoy));
     var subMsg=okD
-      ?(LANG==='en'?'You\'ve spent ':'Gastaste ')+fmt(dc.gastHoy)+' '+(LANG==='en'?'of your daily guide of ':'de tu guía de ')+fmt(dc.presHoy)
-      :(LANG==='en'?dc.diasRest+' days left in the week':dc.diasRest+' días restantes en la semana');
+      ?t('homeDailySpent')+' '+fmt(dc.gastHoy)+' '+t('homeDailyOf')+' '+fmt(dc.presHoy)
+      :(dc.diasRest+t('homeDailyDaysLeft'));
     dailyCardHtml='<div class="daily-card '+cardClass+'"><div class="daily-icon">'+icon+'</div>'
       +'<div style="flex:1"><div class="daily-main">'+mainMsg+'</div>'
       +'<div class="daily-sub">'+subMsg+'</div>'
-      +'<div style="background:rgba(0,0,0,.1);border-radius:50px;height:4px;margin-top:6px"><div style="height:4px;border-radius:50px;background:'+(okD?"#059669":"#dc2626")+'";width:'+pctD+'%"></div></div>'
+      +'<div style="background:rgba(0,0,0,.1);border-radius:50px;height:4px;margin-top:6px"><div style="height:4px;border-radius:50px;background:'+(okD?"#059669":"#dc2626")+';width:'+pctD+'%"></div></div>'
       +'</div></div>';
   }
 
@@ -1943,8 +2100,8 @@ function bHome(sem,todos,pres,tot,disp,roll){
     +'<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">'
     +'<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#065f46">'+t('homeSavWeek')+'</div>'
     +'<div style="font-size:36px;font-weight:900;color:#047857;letter-spacing:-1.5px;line-height:1;margin-top:4px">'+fmt(ah.ahorroSem)+'</div></div>'
-    +'<div style="text-align:right"><div style="font-size:10px;color:#065f46;font-weight:700;text-transform:uppercase">'+(LANG==='en'?'Spent':'Gastado')+'</div><div style="font-size:16px;font-weight:900;color:#374151">'+fmt(ah.gastSem)+'</div></div></div>'
-    +(ah.meta>0?'<div class="ahorro-bar-w"><div class="ahorro-bar-f" style="width:'+ah.pct+'%"></div></div><div style="font-size:11px;color:#065f46;font-weight:700;text-align:right;margin-bottom:4px">'+ah.pct+'% '+(LANG==='en'?'of weekly goal':'de la meta semanal')+' ('+fmt(ah.meta)+')</div>':'')
+    +'<div style="text-align:right"><div style="font-size:10px;color:#065f46;font-weight:700;text-transform:uppercase">'+t('heroSpent')+'</div><div style="font-size:16px;font-weight:900;color:#374151">'+fmt(ah.gastSem)+'</div></div></div>'
+    +(ah.meta>0?'<div class="ahorro-bar-w"><div class="ahorro-bar-f" style="width:'+ah.pct+'%"></div></div><div style="font-size:11px;color:#065f46;font-weight:700;text-align:right;margin-bottom:4px">'+ah.pct+'% '+t('homeSavingsGoalPct')+' ('+fmt(ah.meta)+')</div>':'')
     +'<div class="ahorro-grid-3">'
     +'<div class="ahorro-stat"><div style="font-size:9px;color:#065f46;font-weight:800;text-transform:uppercase;margin-bottom:3px">'+t('homeThisMonth')+'</div><div style="font-size:15px;font-weight:900;color:#047857">'+fmt(ah.ahorroMes)+'</div></div>'
     +'<div class="ahorro-stat" style="border:2px solid #34d399"><div style="font-size:9px;color:#065f46;font-weight:800;text-transform:uppercase;margin-bottom:3px">'+t('homeAccumulated')+'</div><div style="font-size:15px;font-weight:900;color:#047857">'+fmt(ah.totalConActual)+'</div></div>'
@@ -1962,7 +2119,7 @@ function bHome(sem,todos,pres,tot,disp,roll){
 
   // INVITATIONS
   var inv=ST.invitaciones&&Object.values(ST.invitaciones).filter(function(i){return i.estado==="pendiente"&&i.para===usuario;});
-  var invHtml=inv&&inv.length?'<div class="alert aw"><div style="font-size:24px">💸</div><div><div class="at">'+p[inv[0].de].nombre+' '+(LANG==='en'?'requests':'te pide')+' '+fmt(inv[0].monto)+'</div><div class="as">'+escapeHtml(inv[0].desc)+'</div><div style="display:flex;gap:8px;margin-top:8px"><button style="background:#22c55e;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit" onclick="aceptarInv(\''+inv[0].id+'\')">'+t('invAccept')+'</button><button style="background:#ef4444;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit" onclick="rechazarInv(\''+inv[0].id+'\')">'+t('invReject')+'</button></div></div></div>':"";
+  var invHtml=inv&&inv.length?'<div class="alert aw"><div style="font-size:24px">💸</div><div><div class="at">'+p[inv[0].de].nombre+' '+t('homeInvRequests')+' '+fmt(inv[0].monto)+'</div><div class="as">'+escapeHtml(inv[0].desc)+'</div><div style="display:flex;gap:8px;margin-top:8px"><button style="background:#22c55e;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit" onclick="aceptarInv(\''+inv[0].id+'\')">'+t('invAccept')+'</button><button style="background:#ef4444;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit" onclick="rechazarInv(\''+inv[0].id+'\')">'+t('invReject')+'</button></div></div></div>':"";
 
   // RECENT EXPENSES
   var ult=sem.slice(0,5);
@@ -1970,7 +2127,7 @@ function bHome(sem,todos,pres,tot,disp,roll){
     +(sem.length
       ?'<div class="scard">'+ult.map(function(gx){return buildGastoRow(gx,p);}).join("")+'</div>'
        +'<button id="btn-ver-hist" style="width:100%;background:none;border:none;color:var(--uc);font-size:13px;font-weight:800;padding:8px;cursor:pointer;font-family:inherit;margin-top:4px">'+t('homeViewAll')+'</button>'
-      :'<div class="empty" style="padding:32px 0"><div style="font-size:44px">🌱</div><div style="margin-top:8px;font-weight:700">'+t('homeNoExp')+'</div><div style="font-size:12px;margin-top:4px;color:#94a3b8">'+(LANG==='en'?'Tap ➕ to log your first expense.':'Toca ➕ para registrar tu primer gasto.')+'</div></div>')
+      :'<div class="empty" style="padding:32px 0"><div style="font-size:44px">🌱</div><div style="margin-top:8px;font-weight:700">'+t('homeNoExp')+'</div><div style="font-size:12px;margin-top:4px;color:#94a3b8">'+t('homeNoExpTip')+'</div></div>')
     +'</div>';
 
   // ACTIVE DEBTS
@@ -1995,48 +2152,11 @@ function bHome(sem,todos,pres,tot,disp,roll){
   var resumenHtml=rMes?'<div style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-radius:var(--ra);padding:18px;margin-bottom:12px;box-shadow:var(--sh);border-top:4px solid #0ea5e9"><div style="font-size:14px;font-weight:900;margin-bottom:8px">'+t('aiMonthSummary')+'</div><div style="font-size:13px;line-height:1.7;color:#374151">'+escapeHtml(rMes.texto).replace(/\n/g,"<br/>")+'</div></div>':"";
 
   // CTA to Insights
-  var insightsCTA='<button id="go-insights" style="width:100%;background:linear-gradient(135deg,#8b5cf6,#6366f1);border:none;border-radius:16px;padding:13px;color:#fff;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px">'+(LANG==='en'?'✨ View Insights & detailed analysis →':'✨ Ver Insights y análisis detallado →')+'</button>';
+  var insightsCTA='<button id="go-insights" style="width:100%;background:linear-gradient(135deg,#8b5cf6,#6366f1);border:none;border-radius:16px;padding:13px;color:#fff;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px">'+t('homeInsightsCTA')+'</button>';
 
-  return (esSemNueva&&rolloverVal>0?'<div class="alert an"><div style="font-size:24px">🔄</div><div><div class="at">'+t('homeRollover')+' '+fmt(rolloverVal)+' '+t('homeRollover2')+'</div><div class="as">'+t('homeRollover2')+' '+fmt(pres)+'</div></div></div>':"")
+  return (esSemNueva&&rolloverVal>0?'<div class="alert an"><div style="font-size:24px">🔄</div><div><div class="at">'+t('homeRollover')+' '+fmt(rolloverVal)+'. '+t('homeRollover2')+' '+fmt(pres)+'</div></div></div>':"")
     +invHtml+dailyCardHtml+ahHtml+ul+ultHtml+deudaHtml+resumenHtml+insightsCTA;
 }
-    +'<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">'
-    +'<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#065f46">🌱 Ahorro esta semana</div><div style="font-size:38px;font-weight:900;color:#047857;letter-spacing:-1.5px;line-height:1;margin-top:4px">'+fmt(ah.ahorroSem)+'</div></div>'
-    +'<div style="text-align:right"><div style="font-size:10px;color:#065f46;font-weight:700;text-transform:uppercase">Gastado</div><div style="font-size:18px;font-weight:900;color:#374151">'+fmt(ah.gastSem)+'</div></div></div>'
-    +(ah.meta>0?'<div class="ahorro-bar-w"><div class="ahorro-bar-f" style="width:'+ah.pct+'%"></div></div><div style="font-size:11px;color:#065f46;font-weight:700;text-align:right;margin-bottom:4px">'+ah.pct+'% de la meta semanal ('+fmt(ah.meta)+')</div>':'')
-    +'<div class="ahorro-grid-3">'
-    +'<div class="ahorro-stat"><div style="font-size:9px;color:#065f46;font-weight:800;text-transform:uppercase;margin-bottom:3px">Este mes</div><div style="font-size:16px;font-weight:900;color:#047857">'+fmt(ah.ahorroMes)+'</div></div>'
-    +'<div class="ahorro-stat" style="border:2px solid #34d399"><div style="font-size:9px;color:#065f46;font-weight:800;text-transform:uppercase;margin-bottom:3px">Total acumulado</div><div style="font-size:16px;font-weight:900;color:#047857">'+fmt(ah.totalConActual)+'</div></div>'
-    +'<div class="ahorro-stat"><div style="font-size:9px;color:#065f46;font-weight:800;text-transform:uppercase;margin-bottom:3px">Estimado fin mes</div><div style="font-size:16px;font-weight:900;color:#047857">'+fmt(ah.estimacion)+'</div></div>'
-    +'</div>'
-    +(ah.ahorroAcumulado>0?'<div style="background:rgba(255,255,255,.5);border-radius:10px;padding:8px 12px;margin-top:8px;font-size:12px;color:#065f46;font-weight:700">✨ Llevan <b>'+fmt(ah.ahorroAcumulado)+'</b> ahorrado en semanas anteriores</div>':'')
-    +'</div>';
-
-  // Daily card
-  var dc=calcDiario(sem,pres),dc2="";
-  if(dc.presHoy>0){var pctD=Math.min((dc.gastHoy/Math.max(dc.presHoy,1))*100,100),okD=dc.dispHoy>=0;dc2='<div class="'+(okD?"alert an":"alert aw")+'"><div style="font-size:24px">'+(okD?"📅":"⚡")+'</div><div><div class="at">Hoy ('+dc.diaNom+'): '+fmt(dc.gastHoy)+' gastados</div><div class="as">'+(okD?t('homeRemain')+" "+fmt(dc.dispHoy)+" · "+dc.diasRest+" "+t('homeDaysLeft'):t('homeOver2')+" "+fmt(Math.abs(dc.dispHoy)))+'</div><div style="background:rgba(0,0,0,.1);border-radius:50px;height:4px;margin-top:6px"><div style="height:4px;border-radius:50px;background:'+(okD?"#059669":"#dc2626")+'";width:'+pctD+'%"></div></div></div></div>';}
-
-  // User cards
-  var ul='<div class="ucards"><div class="ucard '+(usuario==="manolo"?"act":"")+'"><div style="display:flex;align-items:center;gap:8px"><span>'+p.manolo.emoji+'</span><span style="font-size:13px;font-weight:900">'+escapeHtml(p.manolo.nombre)+'</span></div><div style="font-size:22px;font-weight:900;margin:6px 0">'+fmt(mT)+'</div><div class="mbw"><div class="mbf" style="width:'+pctM+'%;background:#2563EB"></div></div></div><div class="ucard '+(usuario==="esposa"?"act":"")+'"><div style="display:flex;align-items:center;gap:8px"><span>'+p.esposa.emoji+'</span><span style="font-size:13px;font-weight:900">'+escapeHtml(p.esposa.nombre)+'</span></div><div style="font-size:22px;font-weight:900;margin:6px 0">'+fmt(eT)+'</div><div class="mbw"><div class="mbf" style="width:'+pctE+'%;background:#DB2777"></div></div></div></div>';
-
-  // Invitaciones
-  var inv=ST.invitaciones&&Object.values(ST.invitaciones).filter(function(i){return i.estado==="pendiente"&&i.para===usuario;});
-  var invHtml=inv&&inv.length?'<div class="alert aw"><div style="font-size:24px">💸</div><div><div class="at">'+p[inv[0].de].nombre+' te pide '+fmt(inv[0].monto)+'</div><div class="as">'+escapeHtml(inv[0].desc)+'</div><div style="display:flex;gap:8px;margin-top:8px"><button style="background:#22c55e;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit" onclick="aceptarInv(\''+inv[0].id+'\')">✓ Aceptar</button><button style="background:#ef4444;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit" onclick="rechazarInv(\''+inv[0].id+'\')">✗ Rechazar</button></div></div></div>':"";
-
-  // Últimos gastos
-  var ult=sem.slice(0,5);
-  var ultHtml='<div class="ss"><div class="sst">'+t('homeLastExpenses')+'</div>'+(sem.length?'<div class="scard">'+ult.map(function(gx){return buildGastoRow(gx,p);}).join("")+'</div><button id="btn-ver-hist" style="width:100%;background:none;border:none;color:var(--uc);font-size:13px;font-weight:800;padding:8px;cursor:pointer;font-family:inherit;margin-top:4px">'+t('homeViewAll')+'</button>':'<div class="empty"><div style="font-size:48px">🌱</div><div>'+(LANG==="en"?'No expenses this week':'Sin gastos esta semana')+'</div></div>')+'</div>';
-
-  // Deudas activas
-  var deudasActivas=(ST.deudas||[]).filter(function(d){return d.activa;});
-  var deudaHtml="";
-  if(deudasActivas.length){
-    var totSaldo=deudasActivas.reduce(function(s,d){return s+(d.saldo||0);},0);
-    var totPago=deudasActivas.reduce(function(s,d){return s+(d.pagoMensual||0);},0);
-    var top3=deudasActivas.slice(0,3);
-    var tipoIcon={tarjeta:"💳",prestamo:"🏦",diferido:"🗓️",otro:"📋"};
-    deudaHtml='<div style="background:#fff;border-radius:var(--ra);padding:18px;margin-bottom:12px;box-shadow:var(--sh);border-left:4px solid #6366f1"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:15px;font-weight:900">💳 Deudas activas</div><div style="font-size:11px;color:#64748b">'+deudasActivas.length+' '+t('homeDebts').replace('💳 ','')+'</div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px"><div style="background:#f5f3ff;border-radius:12px;padding:10px"><div style="font-size:10px;color:#5b21b6;font-weight:800;text-transform:uppercase">Saldo total</div><div style="font-size:20px;font-weight:900;color:#6d28d9">'+fmt(totSaldo)+'</div></div><div style="background:#fef3c7;border-radius:12px;padding:10px"><div style="font-size:10px;color:#92400e;font-weight:800;text-transform:uppercase">Pago mensual</div><div style="font-size:20px;font-weight:900;color:#d97706">'+fmt(totPago)+'</div></div></div>'+top3.map(function(d){return'<div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:18px">'+(tipoIcon[d.tipo]||"📋")+'</span><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+escapeHtml(d.nombre)+'</div></div><div style="text-align:right"><div style="font-size:14px;font-weight:900;color:#374151">'+fmt(d.saldo)+'</div></div></div>';}).join("")+'<button onclick="vista=\'finanzas\';renderApp();" style="background:none;border:none;color:#6366f1;font-size:12px;font-weight:800;margin-top:8px;cursor:pointer;font-family:inherit;padding:4px 0">Ver todas en Finanzas →</button></div>';
-  }
 
 function bInsights(sem,todos,pres,tot,disp,roll){
   var p=ST.perfiles,dI=ST.settings.semanaInicia||4;
@@ -2052,7 +2172,7 @@ function bInsights(sem,todos,pres,tot,disp,roll){
     +insPatrones(todos)
     +insWhatIf(todos)
     +insGamificacion(sem,todos,pres,tot)
-    +(todos.length===0?'<div class="empty" style="padding:40px 0"><div style="font-size:48px">📊</div><div style="margin-top:12px;font-weight:700">'+t('insNoData')+'</div><div style="font-size:12px;margin-top:6px;color:#94a3b8">'+(LANG==='en'?'Start adding expenses to unlock insights.':'Registra gastos para desbloquear tus análisis.')+'</div></div>':"");
+    +(todos.length===0?'<div class="empty" style="padding:40px 0"><div style="font-size:48px">📊</div><div style="margin-top:12px;font-weight:700">'+t('insNoData')+'</div><div style="font-size:12px;margin-top:6px;color:#94a3b8">'+t('insNoDataSub')+'</div></div>':"");
 }
 
 function bAgregar(){
@@ -2081,9 +2201,9 @@ function bHistorial(todos){
   var totalFiltrado=filtered.reduce(function(s,g){return s+g.monto;},0);
   var calToggleBtn='<button id="btn-cal-toggle" style="background:'+(histVistaCalendario?'var(--uc)':'#f1f5f9')+';color:'+(histVistaCalendario?'#fff':'#64748b')+';border:none;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation">'+(histVistaCalendario?t('histList'):t('histCal'))+'</button>';
   return '<div>'
-    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:18px;font-weight:900">'+(LANG==="en"?"📅 History":"📅 Historial")+'</div><div style="display:flex;align-items:center;gap:8px">'+(filtered.length?'<div style="font-size:12px;font-weight:800;color:#64748b">'+filtered.length+' mov.</div>':'')+calToggleBtn+'</div></div>'
+    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:18px;font-weight:900">'+t('histTitleStr')+'</div><div style="display:flex;align-items:center;gap:8px">'+(filtered.length?'<div style="font-size:12px;font-weight:800;color:#64748b">'+filtered.length+' mov.</div>':'')+calToggleBtn+'</div></div>'
     +'<div class="hist-filter-bar">'
-    +'<input id="hist-search" type="text" placeholder="'+(LANG==="en"?"🔍 Search..":"🔍 Buscar..")+'" value="'+escapeHtml(histBusqueda)+'" style="margin-bottom:12px;font-size:14px"/>'
+    +'<input id="hist-search" type="text" placeholder="'+t('histSearchPh')+'" value="'+escapeHtml(histBusqueda)+'" style="margin-bottom:12px;font-size:14px"/>'
     +'<div class="filter-presets">'
     +'<button class="preset-btn '+(histFiltroPreset==="hoy"?"on":"")+'\" data-pre="hoy">'+t('histPreset0')+'</button>'
     +'<button class="preset-btn '+(histFiltroPreset==="semana"?"on":"")+'\" data-pre="semana">'+t('histPreset1')+'</button>'
@@ -2094,7 +2214,7 @@ function bHistorial(todos){
     +'</div>'
     +(histVistaCalendario?buildCalendar(todos):
       '<div id="hist-list">'
-      +(filtered.length?filtered.map(function(gx){return buildGastoRow(gx,p);}).join(""):'<div class="empty"><div style="font-size:44px">🔍</div><div style="margin-top:8px;font-weight:700">'+t('histNoResults')+'</div><div style="font-size:12px;margin-top:4px;color:#94a3b8">'+(LANG==='en'?'Try a different filter or date range.':'Prueba otro filtro o rango de fechas.')+'</div></div>')
+      +(filtered.length?filtered.map(function(gx){return buildGastoRow(gx,p);}).join(""):'<div class="empty"><div style="font-size:44px">🔍</div><div style="margin-top:8px;font-weight:700">'+t('histNoResults')+'</div><div style="font-size:12px;margin-top:4px;color:#94a3b8">'+t('histFilterSub')+'</div></div>')
       +'</div>')
     +'</div>';
 }
@@ -2162,16 +2282,16 @@ function bAnalisis(todos){
   // Fijos status (only current month)
   var fijosCard=recs.length&&isCurMonth?'<div style="background:#fff;border-radius:var(--ra);padding:16px;box-shadow:var(--sh);margin-bottom:12px">'
     +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="font-size:13px;font-weight:900">'+t('analFixedMonth')+'</div>'
-    +(fijosPendientes>0?'<div style="font-size:11px;font-weight:800;color:#f59e0b">'+fmt(fijosPendientes)+' pendiente</div>':'<div style="font-size:11px;font-weight:800;color:#10b981">'+t('analFixedAllPaid')+'</div>')+'</div>'
-    +recs.map(function(r){var pg=pagadoState[r.nombre]||false;var adj=getFijoAdjM(r);return'<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:16px">'+(allCats().find(function(c){return c.id===r.categoria;})||{i:"📦"}).i+'</span><span style="flex:1;font-size:12px;font-weight:700;color:'+(pg?"#94a3b8":"#374151")+'">'+escapeHtml(r.nombre)+'</span><span style="font-size:12px;font-weight:800;color:'+(pg?"#10b981":"#f59e0b")+'">'+fmt(adj)+'</span><span style="font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;background:'+(pg?"#d1fae5":"#fef3c7")+';color:'+(pg?"#065f46":"#92400e")+'">'+(pg?"✓ Pagado":"Pendiente")+'</span></div>';}).join("")
+    +(fijosPendientes>0?'<div style="font-size:11px;font-weight:800;color:#f59e0b">'+fmt(fijosPendientes)+' '+t('analFixedPending')+'</div>':'<div style="font-size:11px;font-weight:800;color:#10b981">'+t('analFixedAllPaid')+'</div>')+'</div>'
+    +recs.map(function(r){var pg=pagadoState[r.nombre]||false;var adj=getFijoAdjM(r);return'<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:16px">'+(allCats().find(function(c){return c.id===r.categoria;})||{i:"📦"}).i+'</span><span style="flex:1;font-size:12px;font-weight:700;color:'+(pg?"#94a3b8":"#374151")+'">'+escapeHtml(r.nombre)+'</span><span style="font-size:12px;font-weight:800;color:'+(pg?"#10b981":"#f59e0b")+'">'+fmt(adj)+'</span><span style="font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;background:'+(pg?"#d1fae5":"#fef3c7")+';color:'+(pg?"#065f46":"#92400e")+'">'+(pg?t('analPaidLabel'):t('analPendingLabel'))+'</span></div>';}).join("")
     +'</div>':"";
 
   // Alerts
   var alerts="";
-  if(tot>bud&&bud>0){alerts+='<div class="alert ad"><div style="font-size:22px">⚠️</div><div><div class="at">'+ t('analBudgetOver')+fmt(tot-bud)+'</div><div class="as">'+(LANG==='en'?'Check which category caused it and adjust next week.':'Revisa qué categoría lo generó y ajusta la siguiente semana.')+'</div></div></div>';}
-  if(trendPct!==null&&trendPct>25){alerts+='<div class="alert aw"><div style="font-size:22px">📈</div><div><div class="at">'+( LANG==="en"? 'Spending '+(trendPct)+t('analTrendPct')+getMeses()[ymFromKey(prevKey).m0] : 'Gasto '+(trendPct)+'% mayor que '+getMeses()[ymFromKey(prevKey).m0] )+'</div><div class="as">'+(LANG==='en'?'Upward trend. Identify what changed.':'Tendencia al alza. Identifica qué cambió.')+'</div></div></div>';}
-  if(topCat&&topCat.v>tot*0.5){alerts+='<div class="alert aw"><div style="font-size:22px">'+topCat.c.i+'</div><div><div class="at">'+topCat.c.l+''+(LANG==='en'?' accounts for over 50% of spending':t('analTop50'))+'</div><div class="as">'+(LANG==="en"?'Consider if there is an opportunity to reduce it.':'Considera si hay oportunidad de reducirlo.')+'</div></div></div>';}
-  if(libreReal>0&&ingreso>0&&libreReal<ingreso*0.1){alerts+='<div class="alert aw"><div style="font-size:22px">💡</div><div><div class="at">Menos del 10% del ingreso libre</div><div class="as">Considera reducir gastos variables o ajustar el presupuesto.</div></div></div>';}
+  if(tot>bud&&bud>0){alerts+='<div class="alert ad"><div style="font-size:22px">⚠️</div><div><div class="at">'+t('analBudgetOver')+fmt(tot-bud)+'</div><div class="as">'+t('analBudgetExplain')+'</div></div></div>';}
+  if(trendPct!==null&&trendPct>25){alerts+='<div class="alert aw"><div style="font-size:22px">📈</div><div><div class="at">'+t('analTrendSpending')+' '+trendPct+t('analTrendPct')+getMeses()[ymFromKey(prevKey).m0]+'</div><div class="as">'+t('analTrendExplain')+'</div></div></div>';}
+  if(topCat&&topCat.v>tot*0.5){alerts+='<div class="alert aw"><div style="font-size:22px">'+topCat.c.i+'</div><div><div class="at">'+topCat.c.l+t('analTop50')+'</div><div class="as">'+t('analTop50Explain')+'</div></div></div>';}
+  if(libreReal>0&&ingreso>0&&libreReal<ingreso*0.1){alerts+='<div class="alert aw"><div style="font-size:22px">💡</div><div><div class="at">'+t('analLowFreeWarn')+'</div><div class="as">'+t('analLowFreeExplain')+'</div></div></div>';}
 
   // Category breakdown
   var catCard=catTots.length?'<div class="ss"><div class="sst">'+ t('analCatTitle') +'</div><div class="scard">'
@@ -2187,13 +2307,13 @@ function bAnalisis(todos){
   var dowCard=dw.bestAvg>0?'<div class="ss"><div class="sst">'+ t('analDowTitle') +'</div><div class="scard"><div style="font-size:12px;color:#64748b;margin-bottom:10px">'+t('analDowSub')+'</div>'
     +'<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px">'
     +getDias().map(function(dn,di){var avg=dw.avgs[di]||0;var h=avg>0?Math.round((avg/dw.bestAvg)*100):0;return'<div style="text-align:center"><div style="font-size:9px;color:#94a3b8;font-weight:700;margin-bottom:4px">'+dn+'</div><div style="height:48px;display:flex;align-items:flex-end;justify-content:center"><div style="width:70%;border-radius:4px;background:'+(di===dw.bestDow?"#ef4444":"#3b82f6")+'66;height:'+Math.max(4,h)+'%"></div></div><div style="font-size:9px;font-weight:800;color:#374151;margin-top:2px">'+(avg>0?"$"+Math.round(avg):"")+'</div></div>';}).join("")
-    +'</div><div style="font-size:11px;color:#94a3b8;margin-top:8px;text-align:center"'+t('analBestDay')+'</div>'
+    +'</div><div style="font-size:11px;color:#94a3b8;margin-top:8px;text-align:center">'+t('analBestDay')+'</div>'
     +'</div></div>':"";
 
   // Charts
   var chartCards=del.length?
     '<div class="chcard"><div style="font-size:14px;font-weight:900;margin-bottom:4px">'+t('analPieTitle')+'</div><canvas id="chartCat"></canvas></div>'
-    +'<div class="chcard"><div style="font-size:14px;font-weight:900;margin-bottom:4px">📊 Semana a semana</div><canvas id="chartMes"></canvas></div>':"";
+    +'<div class="chcard"><div style="font-size:14px;font-weight:900;margin-bottom:4px">'+t('analWeekChart')+'</div><canvas id="chartMes"></canvas></div>':"";
 
   return'<div>'+nav+mainCard+alerts+libreCard+fijosCard+chartCards+catCard+userCard+dowCard
     +(del.length===0?'<div class="empty" style="padding:40px 0"><div style="font-size:48px">📊</div><div style="margin-top:8px;font-weight:700">'+t('analNoData')+' '+getMeses()[m]+' '+y+'</div></div>':"")
@@ -2212,68 +2332,95 @@ function bFinanzas(){
   var pagadoTotal=recs.reduce(function(s,r){return s+(pagadoState[r.nombre]?getFijoMonto(r):0);},0);
   var pendienteTotal=recs.reduce(function(s,r){return s+(!pagadoState[r.nombre]?getFijoMonto(r):0);},0);
   var fijoSummary=recs.length?'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">'
-    +'<div style="background:#f0fdf4;border-radius:12px;padding:10px;text-align:center"><div style="font-size:9px;color:#065f46;font-weight:800;text-transform:uppercase">✅ Pagado</div><div style="font-size:18px;font-weight:900;color:#10b981">'+fmt(pagadoTotal)+'</div></div>'
-    +'<div style="background:#fff7ed;border-radius:12px;padding:10px;text-align:center"><div style="font-size:9px;color:#92400e;font-weight:800;text-transform:uppercase">⏳ Pendiente</div><div style="font-size:18px;font-weight:900;color:#f59e0b">'+fmt(pendienteTotal)+'</div></div>'
+    +'<div style="background:#f0fdf4;border-radius:12px;padding:10px;text-align:center"><div style="font-size:9px;color:#065f46;font-weight:800;text-transform:uppercase">'+t('finFixedPaidBadge')+'</div><div style="font-size:18px;font-weight:900;color:#10b981">'+fmt(pagadoTotal)+'</div></div>'
+    +'<div style="background:#fff7ed;border-radius:12px;padding:10px;text-align:center"><div style="font-size:9px;color:#92400e;font-weight:800;text-transform:uppercase">'+t('finFixedPendingBadge')+'</div><div style="font-size:18px;font-weight:900;color:#f59e0b">'+fmt(pendienteTotal)+'</div></div>'
     +'</div>':"";
   var recHtml=recs.length?fijoSummary+recs.map(function(r,i){var pg=pagadoState[r.nombre]||false;var montoMes=getFijoMonto(r);var catInfo=allCats().find(function(c){return c.id===r.categoria;})||{i:"📦"};
     return'<div class="pagado-row"><div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0"><span style="font-size:20px">'+catInfo.i+'</span><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:'+(pg?"#94a3b8":"#374151")+'">'+escapeHtml(r.nombre)+'</div>'
-    +'<div style="font-size:11px;color:#94a3b8">'+getMeses()[new Date().getMonth()]+' · '+(pg?'<span style="color:#10b981;font-weight:700">'+t('finFixedPaid').replace('✅ ','')+'</span>':'<span style="color:#f59e0b;font-weight:700">'+t('finFixedPending').replace('⏳ ','')+'</span>')+'</div>'
+    +'<div style="font-size:11px;color:#94a3b8">'+getMeses()[new Date().getMonth()]+' · '+(pg?'<span style="color:#10b981;font-weight:700">'+t('finFixedPaidBadge').replace('✅ ','')+'</span>':'<span style="color:#f59e0b;font-weight:700">'+t('finFixedPendingBadge')+'</span>')+'</div>'
     +'</div></div><div style="display:flex;align-items:center;gap:6px;flex-shrink:0">'
     +'<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:8px;padding:3px 6px;display:flex;align-items:center;gap:2px">'
     +'<span style="font-size:11px;color:#94a3b8">$</span><input type="number" class="fijo-adj-inp" data-i="'+i+'" data-nombre="'+escapeHtml(r.nombre)+'" value="'+montoMes+'" min="0" style="width:64px;border:none;background:transparent;font-size:13px;font-weight:800;outline:none;font-family:inherit;text-align:right;color:#374151"/>'
     +'</div>'
     +'<button class="btn-pagado" data-nombre="'+escapeHtml(r.nombre)+'" style="background:'+(pg?"#10b981":"none")+';color:'+(pg?"#fff":"#64748b")+';border:2px solid '+(pg?"#10b981":"#e2e8f0")+';border-radius:8px;padding:5px 10px;cursor:pointer;font-family:inherit;touch-action:manipulation;font-size:11px;font-weight:800">'+(pg?t('finPaid'):t('finPay'))+'</button>'
-    +'<button class="btn-del-rec" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:5px 6px;cursor:pointer;font-size:13px" title="Eliminar">🗑️</button>'
+    +'<button class="btn-del-rec" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:5px 6px;cursor:pointer;font-size:13px" title="'+t('confirmDelFixed').replace('?','')+'">🗑️</button>'
     +'</div></div>';
-  }).join(""):'<div style="color:#94a3b8;font-size:13px;padding:8px 0;text-align:center">Sin gastos fijos registrados</div>';
+  }).join(""):'<div style="color:#94a3b8;font-size:13px;padding:8px 0;text-align:center">'+t('finFixedNone')+'</div>';
   var deudas=ST.deudas||[];
   var tipoIcon={tarjeta:"💳",prestamo:"🏦",diferido:"🗓️",otro:"📋"};
-  var deudaHtml='<div style="font-size:15px;font-weight:900;margin-bottom:12px">'+t('finDebtTitle')+'</div>'+(deudas.length?deudas.map(function(d,i){return'<div class="deuda-fin-card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div><span class="deuda-tipo-badge deuda-tipo-'+d.tipo+'">'+(tipoIcon[d.tipo]||"📋")+" "+(LANG==="en"?(d.tipo==="tarjeta"?"Card":d.tipo==="prestamo"?"Loan":d.tipo==="diferido"?"Deferred":"Other"):(d.tipo==="tarjeta"?"Tarjeta":d.tipo==="prestamo"?"Préstamo":d.tipo==="diferido"?"Diferido":"Otro"))+'</span><div style="font-size:15px;font-weight:900;margin-top:2px">'+escapeHtml(d.nombre)+'</div><div style="font-size:12px;color:#64748b;margin-top:2px">'+( LANG==="en"?'Balance: <b>':'Saldo: <b>' )+fmt(d.saldo)+'</b> · Pago: <b>'+fmt(d.pagoMensual)+'/mes</b>'+(d.fechaPago?' · Día '+d.fechaPago:'')+'</div></div><div style="display:flex;gap:6px;flex-shrink:0"><button class="btn-toggle-deuda" data-i="'+i+'" style="background:'+(d.activa?"#d1fae5":"#f1f5f9")+';border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:11px;font-weight:800;color:'+(d.activa?"#065f46":"#64748b")+';font-family:inherit;touch-action:manipulation">'+(d.activa?"✅ Activa":"⏸️ Pausada")+'</button><button class="btn-del-deuda" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:14px">🗑️</button></div></div></div>';}).join(""):'<div style="color:#94a3b8;font-size:13px;padding:8px 0">Sin deudas registradas</div>')+'<button id="btn-add-deuda" style="width:100%;margin-top:10px;padding:11px;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:2px dashed #a78bfa;border-radius:12px;color:#5b21b6;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation">+ Agregar deuda / crédito</button>';
-  var frecHtml='<div style="font-size:15px;font-weight:900;margin-bottom:12px">⚡ Gastos frecuentes</div>'+(frec.length?frec.map(function(fi,i){return'<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f1f5f9"><div><div style="font-size:13px;font-weight:700">'+escapeHtml(fi.desc)+'</div><div style="font-size:11px;color:#64748b">'+fmt(fi.monto)+'</div></div><button class="btn-del-frec" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:14px">🗑️</button></div>';}).join(""):'<div style="color:#94a3b8;font-size:13px;padding:8px 0">Sin frecuentes guardados</div>')+'<button id="btn-add-frec" style="width:100%;margin-top:10px;padding:11px;background:#f8fafc;border:2px dashed #e2e8f0;border-radius:12px;color:#64748b;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation">+ Agregar frecuente</button>';
+  var deudaHtml='<div style="font-size:15px;font-weight:900;margin-bottom:12px">'+t('finDebtTitle')+'</div>'
+    +(deudas.length?deudas.map(function(d,i){
+      var tipoLabel=d.tipo==="tarjeta"?t('finDebtCard'):d.tipo==="prestamo"?t('finDebtLoan'):d.tipo==="diferido"?t('finDebtDeferred'):t('finDebtOther');
+      return'<div class="deuda-fin-card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div>'
+        +'<span class="deuda-tipo-badge deuda-tipo-'+d.tipo+'">'+(tipoIcon[d.tipo]||"📋")+' '+tipoLabel+'</span>'
+        +'<div style="font-size:15px;font-weight:900;margin-top:2px">'+escapeHtml(d.nombre)+'</div>'
+        +'<div style="font-size:12px;color:#64748b;margin-top:2px">'+t('finDebtBalance')+'<b>'+fmt(d.saldo)+'</b> · '+t('finDebtDesc')+': <b>'+fmt(d.pagoMensual)+t('finDebtPayLabel')+'</b>'+(d.fechaPago?' · '+t('finDebtDayLabel')+' '+d.fechaPago:'')+'</div>'
+        +'</div><div style="display:flex;gap:6px;flex-shrink:0">'
+        +'<button class="btn-toggle-deuda" data-i="'+i+'" style="background:'+(d.activa?"#d1fae5":"#f1f5f9")+';border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:11px;font-weight:800;color:'+(d.activa?"#065f46":"#64748b")+';font-family:inherit;touch-action:manipulation">'+(d.activa?t('finDebtActiveLabel'):t('finDebtPausedLabel'))+'</button>'
+        +'<button class="btn-del-deuda" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:14px">🗑️</button>'
+        +'</div></div></div>';
+    }).join(""):'<div style="color:#94a3b8;font-size:13px;padding:8px 0">'+t('finNoDebts')+'</div>')
+    +'<button id="btn-add-deuda" style="width:100%;margin-top:10px;padding:11px;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:2px dashed #a78bfa;border-radius:12px;color:#5b21b6;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation">'+t('finAddDebt')+'</button>';
+  var frecHtml='<div style="font-size:15px;font-weight:900;margin-bottom:12px">'+t('finSectionFreqTitle')+'</div>'
+    +(frec.length?frec.map(function(fi,i){return'<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f1f5f9"><div><div style="font-size:13px;font-weight:700">'+escapeHtml(fi.desc)+'</div><div style="font-size:11px;color:#64748b">'+fmt(fi.monto)+'</div></div><button class="btn-del-frec" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:14px">🗑️</button></div>';}).join("")
+    :'<div style="color:#94a3b8;font-size:13px;padding:8px 0">'+t('finNoFrec')+'</div>')
+    +'<button id="btn-add-frec" style="width:100%;margin-top:10px;padding:11px;background:#f8fafc;border:2px dashed #e2e8f0;border-radius:12px;color:#64748b;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation">'+t('finAddFrecBtn')+'</button>';
   return'<div class="fincard"><div style="font-size:18px;font-weight:900;margin-bottom:16px">'+t('finTitle')+'</div>'
     +'<div class="ss"><div class="sst">'+t('finIncomeTitle')+'</div><div class="scard">'
     +'<div class="sr"><label class="flbl" style="margin:0">'+t('finIncomeLabel')+'</label><input id="inp-ingreso" type="number" inputmode="decimal" value="'+(f.ingresoMensual||"")+'" style="width:140px;padding:8px 10px;font-size:15px;font-weight:900;text-align:right"/></div>'
     +'<div style="margin-top:14px"><div style="font-size:13px;font-weight:800;margin-bottom:4px">'+t('finFixedTitle')+'</div><div style="font-size:12px;color:#64748b;margin-bottom:10px">'+t('finFixedDesc')+'</div>'+recHtml
     +'<button id="btn-add-rec" style="width:100%;margin-top:10px;padding:11px;background:#f8fafc;border:2px dashed #e2e8f0;border-radius:12px;color:#64748b;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation" onclick="addRec()">'+t('finAddFixed')+'</button></div>'
-    +(calc?'<div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:12px;padding:12px;margin-top:14px"><div style="font-size:12px;color:#1e40af;font-weight:800;margin-bottom:8px">'+t('finCalcDist')+'</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center"><div><div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase">'+(LANG==='en'?'Available':'Disponible')+'</div><div style="font-size:16px;font-weight:900;color:#1d4ed8">'+fmt(calc.disp)+'</div></div><div><div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase">'+(LANG==='en'?'Per week':'Por semana')+'</div><div style="font-size:16px;font-weight:900;color:#1d4ed8">'+fmt(calc.porSem)+'</div></div><div><div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase">'+(LANG==='en'?'Weeks':'Semanas')+'</div><div style="font-size:16px;font-weight:900;color:#1d4ed8">'+calc.sems+'</div></div></div>'+(calc.porSem!==ST.settings.presupuesto?'<button id="btn-apply-pres" data-v="'+calc.porSem+'" class="bprimary" style="background:#1d4ed8;margin-top:8px">'+t('finApplyBudget')+' '+fmt(calc.porSem)+'</button>':'')+'</div>':"")
+    +(calc?'<div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:12px;padding:12px;margin-top:14px"><div style="font-size:12px;color:#1e40af;font-weight:800;margin-bottom:8px">'+t('finCalcDist')+'</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center"><div><div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase">'+t('finCalcAvail')+'</div><div style="font-size:16px;font-weight:900;color:#1d4ed8">'+fmt(calc.disp)+'</div></div><div><div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase">'+t('finCalcPerWeek')+'</div><div style="font-size:16px;font-weight:900;color:#1d4ed8">'+fmt(calc.porSem)+'</div></div><div><div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase">'+t('finCalcWeeks')+'</div><div style="font-size:16px;font-weight:900;color:#1d4ed8">'+calc.sems+'</div></div></div>'+(calc.porSem!==ST.settings.presupuesto?'<button id="btn-apply-pres" data-v="'+calc.porSem+'" class="bprimary" style="background:#1d4ed8;margin-top:8px">'+t('finApplyBudget')+' '+fmt(calc.porSem)+'</button>':'')+'</div>':"")
     +'<button id="btn-save-fin" class="bprimary" style="background:#0ea5e9;margin-top:12px">💾 '+t('finSave')+'</button></div></div>'
-    +'<div class="ss"><div class="sst">'+t('finSectionPeriod')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('finPeriodDesc')+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px"><div><label class="flbl">'+(LANG==='en'?'Start':'Inicio')+'</label><input type="date" id="inp-periodo-ini" value="'+(ST.settings.periodoInicio||"")+'" style="font-size:14px;padding:10px"/></div><div><label class="flbl">'+(LANG==='en'?'End':'Fin')+'</label><input type="date" id="inp-periodo-fin" value="'+(ST.settings.periodoFin||"")+'" style="font-size:14px;padding:10px"/></div></div><button id="btn-save-periodo2" class="bprimary" style="background:#0ea5e9">'+t('finPeriodSave')+'</button>'+(ST.settings.periodoInicio?'<button id="btn-clear-periodo" class="btnsec" style="margin-top:6px">'+t('finPeriodClear')+'</button>':'')+'</div></div>'
+    +'<div class="ss"><div class="sst">'+t('finSectionPeriod')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('finPeriodDesc')+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px"><div><label class="flbl">'+t('finPeriodStart')+'</label><input type="date" id="inp-periodo-ini" value="'+(ST.settings.periodoInicio||"")+'" style="font-size:14px;padding:10px"/></div><div><label class="flbl">'+t('finPeriodEnd')+'</label><input type="date" id="inp-periodo-fin" value="'+(ST.settings.periodoFin||"")+'" style="font-size:14px;padding:10px"/></div></div><button id="btn-save-periodo2" class="bprimary" style="background:#0ea5e9">'+t('finPeriodSave')+'</button>'+(ST.settings.periodoInicio?'<button id="btn-clear-periodo" class="btnsec" style="margin-top:6px">'+t('finPeriodClear')+'</button>':'')+'</div></div>'
     +'<div class="ss"><div class="sst">'+t('finSectionDebts')+'</div><div class="scard">'+deudaHtml+'</div></div>'
     +'<div class="ss"><div class="sst">'+t('finSectionFrec')+'</div><div class="scard">'+frecHtml+'</div></div>'
     +(Object.keys(res).length?'<div class="ss"><div class="sst">'+t('finSectionAI')+'</div>'+Object.entries(res).sort(function(a,b){return b[0].localeCompare(a[0]);}).map(function(e){var mc=e[0],rv=e[1];return'<div style="background:#f0f9ff;border-radius:14px;padding:14px 16px;margin-bottom:10px"><div style="font-size:13px;font-weight:900;margin-bottom:4px">📆 '+mc+'<span style="font-size:12px;font-weight:600;color:#64748b;margin-left:8px">'+fmt(rv.totalMes||0)+'</span></div><div style="font-size:12px;color:#374151;line-height:1.6">'+escapeHtml(rv.texto||"").slice(0,150)+'...</div></div>';}).join("")+'</div>':"")
-    +'<div class="ss"><div class="sst">'+t('finExport').replace('📥 ','')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+(LANG==='en'?'Download all your expenses as CSV to open in Excel.':'Descarga todos tus gastos en formato CSV para abrirlos en Excel.')+'</div><button id="btn-export" class="bprimary" style="background:#64748b">'+t('finExport')+'</button></div></div></div>';
+    +'<div class="ss"><div class="sst">'+t('finExport').replace('📥 ','')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('finExportDesc')+'</div><button id="btn-export" class="bprimary" style="background:#64748b">'+t('finExport')+'</button></div></div></div>';
 }
 
 function bConfig(){
   var p=ST.perfiles,s=ST.settings,custCats=ST.categorias||[];
   var recientes=getEmojiRecientes();
   var filteredEmojis=emojiSearchCat?EMOJI_ALL.filter(function(e){return e.includes(emojiSearchCat);}):EMOJI_ALL;
+  // PRO section
+  var proFeatures=[t('proFeature1'),t('proFeature2'),t('proFeature3'),t('proFeature4'),t('proFeature5'),t('proFeature6'),t('proFeature7')];
+  var proSection='<div class="ss"><div class="sst">'+t('proTitle')+'</div><div class="scard" style="padding:0;overflow:hidden"><div style="background:linear-gradient(135deg,#1e1b4b,#312e81,#4c1d95);padding:20px;border-radius:var(--ra) var(--ra) 0 0">'
+    +'<div style="display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:4px">'+t('proTitle')+'</div><div style="font-size:12px;color:#c7d2fe">'+t('proSubtitle')+'</div></div><div style="background:rgba(255,255,255,.15);border-radius:12px;padding:6px 12px;font-size:11px;font-weight:800;color:#c7d2fe">'+t('proPlan')+'</div></div>'
+    +'<div style="font-size:12px;color:#c7d2fe;margin-top:12px">'+t('proFeatureNote')+'</div>'
+    +'</div>'
+    +'<div style="padding:16px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">'
+    +proFeatures.map(function(f){return'<div style="display:flex;align-items:center;gap:8px;padding:8px;background:#f8fafc;border-radius:10px"><div style="width:6px;height:6px;border-radius:50%;background:#6366f1;flex-shrink:0"></div><div style="font-size:11px;font-weight:700;color:#374151">'+f+'</div></div>';}).join("")
+    +'</div>'
+    +'<button style="width:100%;padding:13px;background:linear-gradient(135deg,#6366f1,#4f46e5);border:none;border-radius:12px;color:#fff;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;opacity:.7">🌟 '+t('proCTA')+'</button>'
+    +'</div></div></div>';
   return'<div>'
-    +'<div class="ss"><div class="sst">'+t('cfgProfileTitle')+'</div><div class="scard">'+["manolo","esposa"].map(function(k){var pf=p[k];return'<div class="pe"><button class="peeb" data-k="'+k+'">'+pf.emoji+'</button><div style="flex:1"><input class="peni" id="pinp-'+k+'" value="'+escapeHtml(pf.nombre)+'" placeholder="'+(LANG==='en'?'Name':'Nombre')+'"/></div><button class="pesv" data-k="'+k+'" style="background:'+COL[k]+'">'+t('cfgProfileSave')+'</button></div>';}).join("")+'</div></div>'
+    +'<div class="ss"><div class="sst">'+t('cfgProfileTitle')+'</div><div class="scard">'+["manolo","esposa"].map(function(k){var pf=p[k];return'<div class="pe"><button class="peeb" data-k="'+k+'">'+pf.emoji+'</button><div style="flex:1"><input class="peni" id="pinp-'+k+'" value="'+escapeHtml(pf.nombre)+'" placeholder="'+t('cfgProfileName')+'"/></div><button class="pesv" data-k="'+k+'" style="background:'+COL[k]+'">'+t('cfgProfileSave')+'</button></div>';}).join("")+'</div></div>'
     +'<div class="ss"><div class="sst">'+t('cfgWeekTitle')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('cfgWeekDesc')+'</div><div class="dg">'+getDias().map(function(d,i){return'<button class="db '+(s.semanaInicia===i?"on":"")+'\" data-i="'+i+'">'+d+'</button>';}).join("")+'</div></div></div>'
-    +'<div class="ss"><div class="sst">'+t('cfgGoalTitle')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('cfgGoalDesc')+'</div><div class="sr"><label class="flbl" style="margin:0">🎯 '+(LANG==='en'?'Weekly goal':'Meta semanal')+'</label><input id="inp-meta" type="number" inputmode="decimal" value="'+(s.metaAhorro||0)+'" style="width:120px;text-align:right;padding:8px 10px;font-size:15px;font-weight:900"/></div><button id="btn-save-meta" class="bprimary" style="background:#8b5cf6">'+t('cfgGoalSave')+'</button></div></div>'
-    +'<div class="ss"><div class="sst">'+t('cfgSpaceTitle')+'</div><div class="space-code-card"><div style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">'+t('cfgSpaceShare')+'</div><div id="conf-code-val" class="space-code-value">···</div><div class="space-code-label">'+t('cfgSpaceCode')+'</div><button id="btn-copy-spcode" class="btn-copy-code">'+t('cfgSpaceCopy')+'</button></div><div style="font-size:12px;color:#94a3b8;padding:8px">'+(LANG==='en'?'The other user enters this in "Join a space" when creating their account.':'El otro usuario lo ingresa en "Unirme a un espacio" al crear su cuenta.')+'</div></div>'
+    +'<div class="ss"><div class="sst">'+t('cfgGoalTitle')+'</div><div class="scard"><div style="font-size:13px;color:#64748b;margin-bottom:10px">'+t('cfgGoalDesc')+'</div><div class="sr"><label class="flbl" style="margin:0">🎯 '+t('cfgWeekGoalLabel')+'</label><input id="inp-meta" type="number" inputmode="decimal" value="'+(s.metaAhorro||0)+'" style="width:120px;text-align:right;padding:8px 10px;font-size:15px;font-weight:900"/></div><button id="btn-save-meta" class="bprimary" style="background:#8b5cf6">'+t('cfgGoalSave')+'</button></div></div>'
+    +'<div class="ss"><div class="sst">'+t('cfgSpaceTitle')+'</div><div class="space-code-card"><div style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">'+t('cfgSpaceShare')+'</div><div id="conf-code-val" class="space-code-value">···</div><div class="space-code-label">'+t('cfgSpaceCode')+'</div><button id="btn-copy-spcode" class="btn-copy-code">'+t('cfgSpaceCopy')+'</button></div><div style="font-size:12px;color:#94a3b8;padding:8px">'+t('cfgSpaceJoinHint')+'</div></div>'
     +'<div class="ss"><div class="sst">'+t('cfgCatTitle')+'</div><div class="scard">'
     +'<div style="margin-bottom:12px"><label class="flbl">Emoji</label>'
-    +'<button id="btn-emoji-picker-toggle" class="btn-emoji-toggle"><span style="font-size:28px">'+tempCatEmoji+'</span><span style="font-size:14px;font-weight:700">'+(LANG==='en'?'Select emoji':'Seleccionar emoji')+'</span><span style="font-size:12px;color:#64748b;margin-left:auto">'+(emojiPickerOpenCat?"▲":"▼")+'</span></button>'
-    +(emojiPickerOpenCat?'<div class="emoji-picker-wrap"><input id="emoji-search-cat" class="emoji-search-inp" placeholder="🔍 '+(LANG==='en'?'Search...':'Buscar...')+'" value="'+escapeHtml(emojiSearchCat)+'" />'
-    +(recientes.length&&!emojiSearchCat?'<div class="emoji-section-label">'+(LANG==='en'?'Recent':'Recientes')+'</div><div class="emoji-grid">'+recientes.map(function(e){return'<button class="emoji-opt '+(tempCatEmoji===e?"sel":"")+'\" data-e="'+e+'">'+e+'</button>';}).join("")+'</div>':"")
-    +'<div class="emoji-section-label">'+(LANG==='en'?'All':'Todos')+'</div><div class="emoji-grid">'+filteredEmojis.map(function(e){return'<button class="emoji-opt '+(tempCatEmoji===e?"sel":"")+'\" data-e="'+e+'">'+e+'</button>';}).join("")+'</div></div>':"")
+    +'<button id="btn-emoji-picker-toggle" class="btn-emoji-toggle"><span style="font-size:28px">'+tempCatEmoji+'</span><span style="font-size:14px;font-weight:700">'+t('cfgEmojiSelect')+'</span><span style="font-size:12px;color:#64748b;margin-left:auto">'+(emojiPickerOpenCat?"▲":"▼")+'</span></button>'
+    +(emojiPickerOpenCat?'<div class="emoji-picker-wrap"><input id="emoji-search-cat" class="emoji-search-inp" placeholder="🔍 '+t('histSearchPh').replace('🔍 ','')+'..." value="'+escapeHtml(emojiSearchCat)+'" />'
+    +(recientes.length&&!emojiSearchCat?'<div class="emoji-section-label">'+t('cfgEmojiRecent')+'</div><div class="emoji-grid">'+recientes.map(function(e){return'<button class="emoji-opt '+(tempCatEmoji===e?"sel":"")+'\" data-e="'+e+'">'+e+'</button>';}).join("")+'</div>':"")
+    +'<div class="emoji-section-label">'+t('cfgEmojiAll')+'</div><div class="emoji-grid">'+filteredEmojis.map(function(e){return'<button class="emoji-opt '+(tempCatEmoji===e?"sel":"")+'\" data-e="'+e+'">'+e+'</button>';}).join("")+'</div></div>':"")
     +'</div>'
     +'<div style="display:flex;gap:8px;margin-bottom:8px"><input id="inp-cat-nombre" type="text" placeholder="'+t('cfgCatPlaceholder')+'" style="flex:1;padding:10px 12px;font-size:14px"/></div>'
     +'<button id="btn-add-catcustom" style="width:100%;padding:11px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px dashed #93c5fd;border-radius:12px;color:#1d4ed8;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;touch-action:manipulation">'+t('cfgCatAdd')+'</button>'
     +(custCats.length?'<div style="margin-top:12px">'+custCats.map(function(c,i){return'<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9"><span style="font-size:24px">'+c.i+'</span><span style="flex:1;font-size:14px;font-weight:700">'+escapeHtml(c.l)+'</span><button class="btn-del-catcustom" data-i="'+i+'" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:14px">🗑️</button></div>';}).join("")+'</div>':"")
     +'</div></div>'
-    +'<div class="ss"><div class="sst">'+t('cfgLangTitle')+'</div><div class="scard"><div class="sr"><div style="font-size:14px;font-weight:700">🌐 '+(LANG==='en'?'App language':'Idioma de la app')+'</div><div style="display:flex;gap:8px;margin-top:8px">'
+    +'<div class="ss"><div class="sst">'+t('cfgLangTitle')+'</div><div class="scard"><div class="sr"><div style="font-size:14px;font-weight:700">🌐 '+t('cfgLangLabel')+'</div><div style="display:flex;gap:8px;margin-top:8px">'
     +'<button id="lang-es-cfg" onclick="setLang(\'es\');renderApp();" style="background:'+(LANG==='es'?'#2563EB':'#f1f5f9')+';color:'+(LANG==='es'?'#fff':'#475569')+';border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit">🇲🇽 Español</button>'
     +'<button id="lang-en-cfg" onclick="setLang(\'en\');renderApp();" style="background:'+(LANG==='en'?'#2563EB':'#f1f5f9')+';color:'+(LANG==='en'?'#fff':'#475569')+';border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit">🇺🇸 English</button>'
     +'</div></div></div></div>'
     +'<div class="ss"><div class="sst">'+t('cfgNotifTitle')+'</div><div class="scard"><div class="sr"><div><div style="font-size:14px;font-weight:700">'+t('cfgNotifLabel')+'</div><div style="font-size:12px;color:#64748b;margin-top:2px">'+t('cfgNotifSub')+'</div></div><button id="btn-notif" class="btnpill '+(s.notifActivas?"":"sec")+'">'+(s.notifActivas?t('cfgNotifOn'):t('cfgNotifOff'))+'</button></div></div></div>'
+    +proSection
     +'</div>';
 }
 
 function renderModal(){
-  if(editGastoId){var gx=ST.gastos[editGastoId];if(!gx)return "";var cats=allCats();return'<div class="mo" id="mo"><div class="mobox"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div style="font-size:17px;font-weight:900">'+t('modalEditTitle')+'</div><button id="modal-close" class="moc" style="width:auto;padding:6px 14px">✕</button></div><label class="flbl">💵 '+(LANG==='en'?'Amount':'Monto')+'</label><input id="edit-monto" type="number" inputmode="decimal" value="'+gx.monto+'" style="margin-bottom:12px"/><label class="flbl">📝 '+(LANG==='en'?'Description':'Descripción')+'</label><input id="edit-desc" type="text" value="'+escapeHtml(gx.descripcion||"")+'" style="margin-bottom:12px"/><label class="flbl">🏷️ '+(LANG==='en'?'Category':'Categoría')+'</label><div class="cg" style="margin-bottom:16px">'+cats.map(function(c){return'<button class="cb edit-cat-btn '+(gx.categoria===c.id?"on":"")+'\" data-c="'+c.id+'"><span>'+c.i+'</span>'+escapeHtml(c.l)+'</button>';}).join("")+'</div><button id="edit-save" class="btng">'+t('modalEditSave')+'</button></div></div>';}
+  if(editGastoId){var gx=ST.gastos[editGastoId];if(!gx)return "";var cats=allCats();return'<div class="mo" id="mo"><div class="mobox"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div style="font-size:17px;font-weight:900">'+t('modalEditTitle')+'</div><button id="modal-close" class="moc" style="width:auto;padding:6px 14px">✕</button></div><label class="flbl">💵 '+t('modalAmount')+'</label><input id="edit-monto" type="number" inputmode="decimal" value="'+gx.monto+'" style="margin-bottom:12px"/><label class="flbl">📝 '+t('modalDesc')+'</label><input id="edit-desc" type="text" value="'+escapeHtml(gx.descripcion||"")+'" style="margin-bottom:12px"/><label class="flbl">🏷️ '+t('modalCat')+'</label><div class="cg" style="margin-bottom:16px">'+cats.map(function(c){return'<button class="cb edit-cat-btn '+(gx.categoria===c.id?"on":"")+'\" data-c="'+c.id+'"><span>'+c.i+'</span>'+escapeHtml(c.l)+'</button>';}).join("")+'</div><button id="edit-save" class="btng">'+t('modalEditSave')+'</button></div></div>';}
   if(reactFor){return'<div class="mo" id="mo"><div class="mobox"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div style="font-size:17px;font-weight:900">'+t('modalReactTitle')+'</div><button id="modal-close" class="moc" style="width:auto;padding:6px 14px">✕</button></div><div class="eg">'+REACTS.map(function(r){return'<button class="eo reactb" data-r="'+r+'">'+r+'</button>';}).join("")+'</div></div></div>';}
   if(emojiFor){var ef=emojiFor;return'<div class="mo" id="mo"><div class="mobox"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div style="font-size:17px;font-weight:900">'+t('modalEmojiTitle')+'</div><button id="modal-close" class="moc" style="width:auto;padding:6px 14px">✕</button></div><div class="eg">'+EMOJIS[ef].map(function(e){return'<button class="eo '+(ST.perfiles[ef]&&ST.perfiles[ef].emoji===e?"sel":"")+'\" data-e="'+e+'">'+e+'</button>';}).join("")+'</div></div></div>';}
   return "";
@@ -2358,7 +2505,7 @@ function exportarCSV(){
   var p=ST.perfiles;
   // Section 1: variable expenses
   var rows=[[t("csvType"),t("csvDate"),t("csvUser"),t("csvAmount"),t("csvDesc"),t("csvCat"),t("csvSplit"),t("csvTicket")]];
-  todos.forEach(function(g){var c=allCats().find(function(x){return x.id===g.categoria;})||{l:"Otro"};rows.push([t("analVariable").replace("💰 ","").replace("Gastos ","").replace("Variable ","").split(" ")[0]||"Gasto",fmtD(g.fecha),(p[g.usuario]||{nombre:g.usuario}).nombre,g.monto,g.descripcion||"",c.l,g.split?(LANG==="en"?"Yes":"Sí"):(LANG==="en"?"No":"No"),g.ticketThumb?(LANG==="en"?"Yes":"Sí"):(LANG==="en"?"No":"No")]);});
+  todos.forEach(function(g){var c=allCats().find(function(x){return x.id===g.categoria;})||{l:"Otro"};rows.push([t("analVariable").replace("💰 ","").replace("Gastos ","").replace("Variable ","").split(" ")[0]||"Gasto",fmtD(g.fecha),(p[g.usuario]||{nombre:g.usuario}).nombre,g.monto,g.descripcion||"",c.l,g.split?t("csvYes"):t("csvNo"),g.ticketThumb?t("csvYes"):t("csvNo")]);});
   // Section 2: fixed expenses
   var pagadoState=getPagadoState();
   var recs=ST.finanzas&&ST.finanzas.gastosRecurrentes||[];
@@ -2430,7 +2577,7 @@ function showSpin2(yes){var sp=document.getElementById("spin2");if(sp)sp.style.d
 function showSpin3(yes){var sp=document.getElementById("spin3");if(sp)sp.style.display=yes?"flex":"none";}
 function setErr(id,msg){var el=document.getElementById(id);if(!el)return;el.textContent=msg;el.style.display=msg?"block":"none";}
 function fberrMsg(code){
-  var m={"auth/email-already-in-use":t("errEmailUsed"),"auth/weak-password":t("errWeakPass"),"auth/invalid-email":t("errBadEmail"),"auth/user-not-found":t("errUserNotFound"),"auth/wrong-password":t("errWrongPass"),"auth/too-many-requests":(LANG==="en"?"Too many attempts. Try again later.":"Demasiados intentos. Intenta más tarde.")};
+  var m={"auth/email-already-in-use":t("errEmailUsed"),"auth/weak-password":t("errWeakPass"),"auth/invalid-email":t("errBadEmail"),"auth/user-not-found":t("errUserNotFound"),"auth/wrong-password":t("errWrongPass"),"auth/too-many-requests":t("errTooManyAttempts")};
   return m[code]||"Error: "+code;
 }
 // Navigation buttons
@@ -2586,7 +2733,7 @@ function renderOnbStep(){
       {icon:"⚙️",title:"Settings",desc:"Customize names, emojis, custom categories, weekly savings goal and export your data to CSV."}
     ];
     var sections=LANG==="en"?ONB_SECTIONS_EN:ONB_SECTIONS_ES;
-    c.innerHTML='<div class="onb-icon">🗺️</div><div class="onb-title">'+(LANG==="en"?"Meet Saldo":t("onb6Title"))+'</div><div class="onb-desc">'+(LANG==="en"?"Each section has a clear purpose. A quick map before you start.":t("onb6Desc"))+'</div>'
+    c.innerHTML='<div class="onb-icon">🗺️</div><div class="onb-title">'+t("onb6Title")+'</div><div class="onb-desc">'+t("onb6Desc")+'</div>'
       +'<div style="width:100%;display:flex;flex-direction:column;gap:8px;margin-bottom:12px">'
       +sections.map(function(s){return'<div style="background:#fff;border-radius:14px;padding:12px 14px;display:flex;align-items:flex-start;gap:12px;box-shadow:0 2px 6px rgba(0,0,0,.06)">'
         +'<div style="font-size:26px;flex-shrink:0;line-height:1.2">'+s.icon+'</div>'
