@@ -1642,12 +1642,18 @@ var histFiltroFrom="",histFiltroTo="",histFiltroPreset="";
 var ocrPendingThumb="",histVistaCalendario=false;
 var newCatInlineOpen=false,newCatInlineEmoji="📦",newCatInlineName="";
 
-function getPagadoKey(){return"pagadoFijos_"+(spaceId||"local")+"_"+mesKey();}
+// ── CYCLE KEY: uses custom period if set, otherwise calendar month ──
+function cicloKey(){
+  var ini=ST.settings.periodoInicio,fin=ST.settings.periodoFin;
+  if(ini&&fin)return ini+"_"+fin;
+  return mesKey();
+}
+function getPagadoKey(){return"pagadoFijos_"+(spaceId||"local")+"_"+cicloKey();}
 function getPagadoState(){try{return JSON.parse(localStorage.getItem(getPagadoKey())||"{}");} catch(e){return{};}}
 function togglePagado(nombre){var s=getPagadoState();s[nombre]=!s[nombre];localStorage.setItem(getPagadoKey(),JSON.stringify(s));toast(s[nombre]?t('toastPaidOn'):t('toastPaidOff'),"#10b981");renderApp();}
 // ── ABONOS (variable expenses) ──
 var abonosExpanded={};
-function getAbonosKey(){return"abonos_"+(spaceId||"local")+"_"+mesKey();}
+function getAbonosKey(){return"abonos_"+(spaceId||"local")+"_"+cicloKey();}
 function getAbonosState(){try{return JSON.parse(localStorage.getItem(getAbonosKey())||"{}");} catch(e){return{};}}
 function saveAbonosState(s){localStorage.setItem(getAbonosKey(),JSON.stringify(s));}
 function getAbonosFor(nombre){var s=getAbonosState();return s[nombre]||[];}
@@ -1671,7 +1677,7 @@ function cargarEspacio(sid,rol){
     var col=rol==="manolo"?"#2563EB":"#DB2777",light=rol==="manolo"?"#EFF6FF":"#FDF2F8";
     document.documentElement.style.setProperty("--uc",col);document.documentElement.style.setProperty("--ul",light);
     document.getElementById("auth-container").style.display="none";document.getElementById("app").style.display="block";
-    checkSemana();checkMes();
+    checkCiclo();checkSemana();checkMes();
     if(!ST.settings.onboardingDone){showOnboarding();}else{renderApp();}
     dbListener=function(snap2){if(!fbGuard&&snap2.exists()){var v2=snap2.val();if(v2.settings)ST.settings=Object.assign({},ST.settings,v2.settings);if(v2.perfiles)ST.perfiles=v2.perfiles;if(v2.finanzas)ST.finanzas=v2.finanzas;ST.gastos=v2.gastos||{};ST.rollovers=v2.rollovers||{};ST.deficits=v2.deficits||{};ST.resumenesMensuales=v2.resumenesMensuales||{};ST.frecuentes=v2.frecuentes||[];ST.invitaciones=v2.invitaciones||{};ST.reacciones=v2.reacciones||{};ST.deudas=v2.deudas||[];ST.autoadds=v2.autoadds||{};ST.categorias=v2.categorias||[];renderApp();}};
     db.ref("espacios/"+sid).on("value",dbListener);
@@ -1814,7 +1820,7 @@ function _doEntrar(sid,rol){
   var col=rol==="manolo"?"#2563EB":"#DB2777",light=rol==="manolo"?"#EFF6FF":"#FDF2F8";
   document.documentElement.style.setProperty("--uc",col);document.documentElement.style.setProperty("--ul",light);
   document.getElementById("auth-container").style.display="none";document.getElementById("app").style.display="block";
-  checkSemana();checkMes();
+  checkCiclo();checkSemana();checkMes();
   if(!ST.settings.onboardingDone){showOnboarding();}else{renderApp();}
   db.ref("espacios/"+sid).once("value",function(snap){if(snap.exists()){var v=snap.val();if(v.settings)ST.settings=Object.assign({},ST.settings,v.settings);if(v.perfiles)ST.perfiles=v.perfiles;if(v.finanzas)ST.finanzas=v.finanzas;ST.gastos=v.gastos||{};ST.rollovers=v.rollovers||{};ST.deficits=v.deficits||{};ST.ultimaSemana=v.ultimaSemana||null;ST.ultimoMes=v.ultimoMes||null;ST.resumenesMensuales=v.resumenesMensuales||{};ST.frecuentes=v.frecuentes||[];ST.invitaciones=v.invitaciones||{};ST.reacciones=v.reacciones||{};ST.deudas=v.deudas||[];ST.autoadds=v.autoadds||{};ST.categorias=v.categorias||[];renderApp();}},function(err){console.warn("Firebase read error:",err.message);});
   dbListener=function(snap2){if(!fbGuard&&snap2.exists()){var v2=snap2.val();if(v2.settings)ST.settings=Object.assign({},ST.settings,v2.settings);if(v2.perfiles)ST.perfiles=v2.perfiles;ST.gastos=v2.gastos||{};ST.rollovers=v2.rollovers||{};ST.deficits=v2.deficits||{};ST.resumenesMensuales=v2.resumenesMensuales||{};ST.frecuentes=v2.frecuentes||[];ST.deudas=v2.deudas||[];renderApp();}};
@@ -1953,6 +1959,33 @@ function checkSemana(){
   if(kHoy!==ST.ultimaSemana)ST.ultimaSemana=kHoy;
 }
 function checkMes(){var mc=mesKey();if(ST.ultimoMes&&ST.ultimoMes!==mc){if(!(ST.resumenesMensuales||{})[ST.ultimoMes])generarResumen(ST.ultimoMes);autoRegistrarFijos(mc);}if(mc!==ST.ultimoMes)ST.ultimoMes=mc;}
+
+// ── CYCLE RESET: when periodoFin passes, advance dates and reset pagado/abonos ──
+function checkCiclo(){
+  var ini=ST.settings.periodoInicio,fin=ST.settings.periodoFin;
+  if(!ini||!fin)return;
+  var hoy=new Date();hoy.setHours(0,0,0,0);
+  var dFin=new Date(fin+"T00:00:00");
+  if(isNaN(dFin)||hoy<dFin)return;
+  // Cycle has ended — advance
+  var dIni=new Date(ini+"T00:00:00");
+  var diasCiclo=Math.round((dFin-dIni)/86400000);
+  if(diasCiclo<=0)diasCiclo=30;
+  // Store old cicloKey before advancing
+  var oldCK=cicloKey();
+  // Auto-advance: new period starts at old fin, ends diasCiclo days later
+  var nuevoIni=new Date(dFin);
+  var nuevoFin=new Date(nuevoIni.getTime()+diasCiclo*86400000);
+  var fmtD=function(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");};
+  ST.settings.periodoInicio=fmtD(nuevoIni);
+  ST.settings.periodoFin=fmtD(nuevoFin);
+  // localStorage pagado and abonos already reset because cicloKey() changed
+  // Recalculate presupuesto from new period
+  var calc=calcPres();
+  if(calc)ST.settings.presupuesto=calc.porSem;
+  saveDB();
+  toast(LANG==="en"?"🔄 New cycle started! Fixed expenses reset.":"🔄 ¡Nuevo ciclo! Gastos fijos reiniciados.","#6366f1");
+}
 function autoRegistrarFijos(mc){var recs=(ST.finanzas&&ST.finanzas.gastosRecurrentes)||[];if(!recs.length)return;if(!ST.autoadds)ST.autoadds={};if(ST.autoadds[mc])return;var h=new Date(),f=new Date(h.getFullYear(),h.getMonth(),1).toISOString(),n=0;var autorRol=usuario||"manolo";recs.forEach(function(r){var gid="gauto_"+mc+"_"+r.nombre.replace(/[^a-zA-Z0-9]/g,"");if(!ST.gastos[gid]){ST.gastos[gid]={usuario:autorRol,monto:r.monto,descripcion:r.nombre,categoria:"renta",fecha:f,auto:true};n++;}});if(n>0){ST.autoadds[mc]=true;saveDB();toast(t('toastAutoFijos1')+n+(n>1?t('toastAutoFijos2p'):t('toastAutoFijos2')),"#8b5cf6");}}
 
 // ── RESUMEN IA ──
@@ -1976,7 +2009,9 @@ function calcPres(){
   // Helper to read adjusted per-month amount from localStorage
   function getAdjMonto(r){try{var k="fijoAdj_"+(spaceId||"local")+"_"+mesKey()+"_"+btoa(encodeURIComponent(r.nombre)).slice(0,16);var v=localStorage.getItem(k);return v!==null?parseFloat(v):r.monto;}catch(e){return r.monto;}}
   var rec=(f.gastosRecurrentes||[]).reduce(function(s,r){
-    return s+getAdjMonto(r);
+    var adj=getAdjMonto(r);
+    if(r.variable){return s+getTotalAbonado(r.nombre);}
+    return s+adj;
   },0);
   var deudaRec=(ST.deudas||[]).filter(function(d){return d.tipo&&d.activa&&d.pagoMensual>0;}).reduce(function(s,d){return s+(d.pagoMensual||0);},0);
   rec+=deudaRec;
@@ -2195,7 +2230,10 @@ function buildVista(sem,todos,pres,tot,disp,roll){
 function renderApp(){
   if(chartCat){try{chartCat.destroy();}catch(e){}chartCat=null;}
   if(chartMes){try{chartMes.destroy();}catch(e){}chartMes=null;}
-  var u=usuario,p=ST.perfiles,s=ST.settings,dI=s.semanaInicia||4,presBase=s.presupuesto||0;
+  var u=usuario,p=ST.perfiles,s=ST.settings,dI=s.semanaInicia||4;
+  // Dynamic budget: recalculate from calcPres so variable expense abonos are reflected
+  var _calc=calcPres();
+  var presBase=_calc?_calc.porSem:(s.presupuesto||0);
   var kHoy=keyI(iniSem(dI,0)),roll=ST.rollovers[kHoy]||0,presTot=presBase+roll;
   var iA=iniSem(dI,0),fA=finSem(iA);
   var todos=Object.entries(ST.gastos||{}).map(function(e){return Object.assign({id:e[0]},e[1]);}).sort(function(a,b){return new Date(b.fecha)-new Date(a.fecha);});
